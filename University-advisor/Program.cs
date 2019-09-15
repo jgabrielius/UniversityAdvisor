@@ -17,7 +17,7 @@ namespace University_advisor
         [STAThread]
         static void Main()
         {
-            ArrayList result = SqlDriver.fetch("SELECT * FROM test");
+            ArrayList result = SqlDriver.Fetch("SELECT * FROM test");
             Debug.WriteLine("the result is: ");
             foreach (Object[] row in result)
             {

@@ -11,7 +11,7 @@ namespace University_advisor
 {
     class SqlDriver
     {
-        private static SQLiteConnection connect()
+        private static SQLiteConnection Connect()
         {
             try
             {
@@ -26,9 +26,9 @@ namespace University_advisor
             }
         }
 
-        public static void exec(string sql)
+        public static void Execute(string sql)
         {
-            SQLiteConnection dbConnection = connect();
+            SQLiteConnection dbConnection = Connect();
             if(dbConnection == null)
             {
                 Console.WriteLine("Failed to connect to database. Aborting query");
@@ -47,9 +47,9 @@ namespace University_advisor
             dbConnection.Close();
         }
 
-        public static ArrayList fetch(string sql)
+        public static ArrayList Fetch(string sql)
         {
-            SQLiteConnection dbConnection = connect();
+            SQLiteConnection dbConnection = Connect();
             if (dbConnection == null)
             {
                 Console.WriteLine("Failed to connect to database. Aborting query");
