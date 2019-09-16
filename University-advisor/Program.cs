@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using University_advisor.Forms;
 
 namespace University_advisor
 {
@@ -17,7 +18,8 @@ namespace University_advisor
         [STAThread]
         static void Main()
         {
-            ArrayList result = SqlDriver.Fetch("SELECT * FROM test");
+            SetProcessDPIAware();
+            /*ArrayList result = SqlDriver.Fetch("SELECT * FROM test");
             Debug.WriteLine("the result is: ");
             foreach (Object[] row in result)
             {
@@ -25,10 +27,13 @@ namespace University_advisor
                 {
                     Debug.Write(column.ToString());
                 }
-            }
+            }*/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }
