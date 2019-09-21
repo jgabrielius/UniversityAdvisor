@@ -79,7 +79,7 @@
             this.aboutButton.TabIndex = 4;
             this.aboutButton.Text = "About";
             this.aboutButton.UseVisualStyleBackColor = false;
-            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
+            this.aboutButton.Click += new System.EventHandler(this.AboutButton_Click);
             // 
             // logoButton
             // 
@@ -94,7 +94,7 @@
             this.logoButton.TabIndex = 3;
             this.logoButton.Text = "University advisor";
             this.logoButton.UseVisualStyleBackColor = false;
-            this.logoButton.Click += new System.EventHandler(this.logoButton_Click);
+            this.logoButton.Click += new System.EventHandler(this.LogoButton_Click);
             // 
             // settingsButton
             // 
@@ -109,7 +109,7 @@
             this.settingsButton.TabIndex = 0;
             this.settingsButton.Text = "Settings";
             this.settingsButton.UseVisualStyleBackColor = false;
-            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            this.settingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // logoutButton
             // 
@@ -124,7 +124,7 @@
             this.logoutButton.TabIndex = 2;
             this.logoutButton.Text = "Log Out";
             this.logoutButton.UseVisualStyleBackColor = false;
-            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            this.logoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // homeButton
             // 
@@ -139,7 +139,7 @@
             this.homeButton.TabIndex = 1;
             this.homeButton.Text = "Home";
             this.homeButton.UseVisualStyleBackColor = false;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            this.homeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // homeTab
             // 
@@ -258,7 +258,7 @@
             this.yesButton.TabIndex = 2;
             this.yesButton.Text = "YES";
             this.yesButton.UseVisualStyleBackColor = false;
-            this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
+            this.yesButton.Click += new System.EventHandler(this.YesButton_Click);
             // 
             // noButton
             // 
@@ -273,7 +273,7 @@
             this.noButton.TabIndex = 3;
             this.noButton.Text = "NO";
             this.noButton.UseVisualStyleBackColor = false;
-            this.noButton.Click += new System.EventHandler(this.noButton_Click);
+            this.noButton.Click += new System.EventHandler(this.NoButton_Click);
             // 
             // MainForm
             // 

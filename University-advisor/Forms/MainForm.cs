@@ -24,7 +24,7 @@ namespace University_advisor.Forms
         {
                     }
 
-        private void logoButton_Click(object sender, EventArgs e)
+        private void LogoButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(homeTab);
         }
@@ -34,32 +34,32 @@ namespace University_advisor.Forms
 
         }
 
-        private void homeButton_Click(object sender, EventArgs e)
+        private void HomeButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(homeTab);
         }
 
-        private void settingsButton_Click(object sender, EventArgs e)
+        private void SettingsButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(settingsTab);
         }
 
-        private void aboutButton_Click(object sender, EventArgs e)
+        private void AboutButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(aboutTab);
         }
 
-        private void logoutButton_Click(object sender, EventArgs e)
+        private void LogoutButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(logOutTab);
         }
 
-        private void yesButton_Click(object sender, EventArgs e)
+        private void YesButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void noButton_Click(object sender, EventArgs e)
+        private void NoButton_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(homeTab);
         }
