@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using University_advisor.Tools;
 
 namespace University_advisor.Forms
 {
@@ -23,6 +24,7 @@ namespace University_advisor.Forms
                 return;
             }
 
+            Logger.Log("Logged in");
             // Validate username and password here by sending request to DB to check if user exists.
             var mainForm = new MainForm();
 
