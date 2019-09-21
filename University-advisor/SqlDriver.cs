@@ -15,7 +15,7 @@ namespace University_advisor
         {
             try
             {
-                SQLiteConnection dbConnection = new SQLiteConnection("Data Source=Database.sqlite;Version=3;");
+                SQLiteConnection dbConnection = new SQLiteConnection("Data Source=../../Database.sqlite;Version=3;");
                 dbConnection.Open();
                 return dbConnection;
             }
