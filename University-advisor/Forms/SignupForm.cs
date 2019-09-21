@@ -1,20 +1,106 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using University_advisor.Models;
+using University_advisor.Tools;
 
 namespace University_advisor.Forms
 {
     public partial class SignupForm : Form
     {
+        ArrayList statusList = new ArrayList() { "Student", "Graduate", "Lecturer" };
         public SignupForm()
         {
             InitializeComponent();
+            SetValues();
+        }
+        private void SetValues()
+        {
+            var universityResult = SqlDriver.Fetch("SELECT name FROM highSchool");
+            var universityList = new List<string>();
+            foreach (Object[] row in universityResult)
+            {
+                foreach (object column in row)
+                {
+                    universityList.Add(column.ToString());
+                }
+            }
+            universityBox.DataSource = universityList;
+            statusBox.DataSource = statusList;
+        }
+
+        private void CreateAccountButton_Click(object sender, EventArgs e)
+        {
+            if (ValidateFields())
+            {
+                var newUser = new UserModel()
+                {
+                    Username = usernameText.Text,
+                    FirstName = firstNameText.Text,
+                    LastName = lastNameText.Text,
+                    Email = emailText.Text,
+                    University = universityBox.SelectedItem.ToString(),
+                    Status = statusBox.SelectedItem.ToString(),
+                    Password = passwordText.Text,
+                };
+                SendUserToDb(newUser);
+            }
+        }
+
+        private void SendUserToDb(UserModel newUser)
+        {
+            string txtSqlQuery = "INSERT INTO userData (username, first_name, last_name, email, university, status, password) VALUES ";
+            txtSqlQuery += "('"+newUser.Username+"', '"+newUser.FirstName+"', '"+newUser.LastName+"', '"+newUser.Email+"', '"+newUser.University+"', '"+newUser.Status+"', '"+newUser.Password+"');";
+            try
+            {
+                if(SqlDriver.Execute(txtSqlQuery))
+                {
+                    MessageBox.Show("New user is successfully created");
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("User cannot be created");
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Log(e.StackTrace);
+            }
+        }
+
+        private bool ValidateFields()
+        {
+            if (String.IsNullOrEmpty(usernameText.Text) || String.IsNullOrEmpty(firstNameText.Text) ||
+                String.IsNullOrEmpty(lastNameText.Text) || String.IsNullOrEmpty(emailText.Text) ||
+                String.IsNullOrEmpty(passwordText.Text) || String.IsNullOrEmpty(confirmPasswordText.Text))
+            {
+                MessageBox.Show("Do not leave empty fields");
+                return false;
+            }
+
+            var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (!regex.Match(emailText.Text).Success)
+            {
+                MessageBox.Show("Wrong email format");
+                return false;
+            }
+
+            if (!passwordText.Text.Equals(confirmPasswordText.Text))
+            {
+                MessageBox.Show("Passwords do not match");
+                return false;
+            }
+            return true;
         }
     }
 }
