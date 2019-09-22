@@ -50,6 +50,38 @@ namespace University_advisor
             return true;
         }
 
+        public static ArrayList FetchNew(string sql)
+        {
+            SQLiteConnection dbConnection = Connect();
+            if (dbConnection == null)
+            {
+                Console.WriteLine("Failed to connect to database. Aborting query");
+                return null;
+            }
+            try
+            {
+                ArrayList al = new ArrayList();
+                SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+                SQLiteDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Dictionary<string, object> dictionary = new Dictionary<string, object>();
+                    for(int i = 0; i < reader.FieldCount; i++)
+                    {
+                        dictionary[reader.GetName(i)]=reader.GetValue(i);
+                    }
+                    al.Add(dictionary);
+                }
+                reader.Close();
+                dbConnection.Close();
+                return al;
+            }
+            catch (SQLiteException e)
+            {
+                Debug.WriteLine(e.StackTrace);
+                return null;
+            }
+        }
         public static ArrayList Fetch(string sql)
         {
             SQLiteConnection dbConnection = Connect();
