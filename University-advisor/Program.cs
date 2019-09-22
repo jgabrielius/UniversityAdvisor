@@ -19,14 +19,10 @@ namespace University_advisor
         static void Main()
         {
             SetProcessDPIAware();
-            /*ArrayList result = SqlDriver.Fetch("SELECT * FROM test");
-            Debug.WriteLine("the result is: ");
-            foreach (Object[] row in result)
+            /*ArrayList result = SqlDriver.Fetch("SELECT id,name FROM highSchool");
+            foreach (Dictionary<string,object> row in result)
             {
-                foreach (object column in row)
-                {
-                    Debug.Write(column.ToString());
-                }
+                Debug.WriteLine("Id is " + row["id"] + " Name is " + row["name"]);
             }*/
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -62,9 +62,12 @@ namespace University_advisor
                 SQLiteDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    Object[] temp = new object[reader.FieldCount];
-                    reader.GetValues(temp);
-                    al.Add(temp);
+                    Dictionary<string, object> dictionary = new Dictionary<string, object>();
+                    for(int i = 0; i < reader.FieldCount; i++)
+                    {
+                        dictionary[reader.GetName(i)]=reader.GetValue(i);
+                    }
+                    al.Add(dictionary);
                 }
                 reader.Close();
                 dbConnection.Close();
