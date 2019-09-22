@@ -105,6 +105,12 @@ namespace University_advisor.Forms
                 MessageBox.Show("Passwords do not match");
                 return false;
             }
+            
+            if(passwordText.Text.Length<6)
+            {
+                MessageBox.Show("Passwords needs to be at least 6 characters long");
+                return false;
+            }
             return true;
         }
     }
