@@ -28,7 +28,7 @@ namespace University_advisor.Forms
             if (ValidateFields(usernameTextBox.Text, passwordTextBox.Text))
             {
                 Logger.Log("User logged in");
-                var mainForm = new MainForm();
+                var mainForm = new MainForm(usernameTextBox.Text);
                 Hide();
                 mainForm.Show();
             }
