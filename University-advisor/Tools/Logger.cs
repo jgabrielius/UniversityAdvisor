@@ -9,7 +9,7 @@ namespace University_advisor.Tools
 {
     public class Logger
     {
-        private static readonly string path = Path.Combine(Directory.GetCurrentDirectory(), "logs.log");
+        private static readonly string path = "../../logs.log";
 
         private static bool VerifyDirectory()
         {
@@ -36,9 +36,10 @@ namespace University_advisor.Tools
             else
             {
                 var timestamp = DateTime.Now;
-                using(StreamWriter sw = new StreamWriter(path))
+                using(StreamWriter sw = new StreamWriter(path, true))
                 {
                     sw.WriteLine("Timestamp: " + timestamp.ToString("yyyy-MM-dd HH:mm:ss") + " Message: " + message);
+                    sw.Flush();
                 }
             }
         }
