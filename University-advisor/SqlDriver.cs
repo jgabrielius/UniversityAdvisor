@@ -40,14 +40,14 @@ namespace University_advisor
                 SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
                 Logger.Log("Query executed successfully");
-                return true;
             }
             catch (SQLiteException e)
             {
-                Logger.Log(e.StackTrace);
+                Logger.Log(e.Message);
                 return false;
             }
             dbConnection.Close();
+            return true;
         }
 
         public static ArrayList Fetch(string sql)
@@ -71,11 +71,12 @@ namespace University_advisor
                 }
                 reader.Close();
                 dbConnection.Close();
+                Logger.Log("Query executed successfully");
                 return al;
             }
             catch (SQLiteException e)
             {
-                Logger.Log(e.StackTrace);
+                Logger.Log(e.Message);
                 return null;
             }
         }

@@ -26,16 +26,19 @@ namespace University_advisor.Forms
         private void SetValues()
         {
             var universityResult = SqlDriver.Fetch("SELECT name FROM highSchool");
-            var universityList = new List<string>();
-            foreach (Object[] row in universityResult)
+            if (universityResult.Count != 0)
             {
-                foreach (object column in row)
+                var universityList = new List<string>();
+                foreach (Object[] row in universityResult)
                 {
-                    universityList.Add(column.ToString());
+                    foreach (object column in row)
+                    {
+                        universityList.Add(column.ToString());
+                    }
                 }
+                universityBox.DataSource = universityList;
+                statusBox.DataSource = statusList;
             }
-            universityBox.DataSource = universityList;
-            statusBox.DataSource = statusList;
         }
 
         private void CreateAccountButton_Click(object sender, EventArgs e)
@@ -59,22 +62,24 @@ namespace University_advisor.Forms
         private void SendUserToDb(UserModel newUser)
         {
             string txtSqlQuery = "INSERT INTO userData (username, first_name, last_name, email, university, status, password) VALUES ";
-            txtSqlQuery += "('"+newUser.Username+"', '"+newUser.FirstName+"', '"+newUser.LastName+"', '"+newUser.Email+"', '"+newUser.University+"', '"+newUser.Status+"', '"+newUser.Password+"');";
+            txtSqlQuery += "('" + newUser.Username + "', '" + newUser.FirstName + "', '" + newUser.LastName + "', '" + newUser.Email + "', '" + newUser.University + "', '" + newUser.Status + "', '" + newUser.Password + "');";
             try
             {
-                if(SqlDriver.Execute(txtSqlQuery))
+                if (SqlDriver.Execute(txtSqlQuery))
                 {
                     MessageBox.Show("New user is successfully created");
+                    Logger.Log("New user is successfully created");
                     Hide();
                 }
                 else
                 {
                     MessageBox.Show("User cannot be created");
+                    Logger.Log("User cannot be created");
                 }
             }
             catch (Exception e)
             {
-                Logger.Log(e.StackTrace);
+                Logger.Log(e.Message);
             }
         }
 
