@@ -49,22 +49,8 @@ namespace University_advisor.Forms
 
         private bool ValidateFields(string username, string password)
         {
-            var credentialResult = SqlDriver.Fetch($"SELECT username, password FROM userData WHERE username='{username}' AND password='{password}';");
-            if (credentialResult.Count == 1)
-            {
-                foreach (Object[] row in credentialResult)
-                {
-                    if (username.Equals(row[0].ToString()) && password.Equals(row[1].ToString()))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            return false;
+            var credentialResult = SqlDriver.Fetch($"SELECT username, password FROM users WHERE username='{username}' AND password='{password}';");
+            return (credentialResult != null && credentialResult.Count == 1);
         }
     }
 }

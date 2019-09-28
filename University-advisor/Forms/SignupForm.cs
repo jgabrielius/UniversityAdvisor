@@ -25,16 +25,13 @@ namespace University_advisor.Forms
         }
         private void SetValues()
         {
-            var universityResult = SqlDriver.Fetch("SELECT name FROM highSchool");
+            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
             if (universityResult.Count != 0)
             {
                 var universityList = new List<string>();
-                foreach (Object[] row in universityResult)
+                foreach(Dictionary<string,object> row in universityResult)
                 {
-                    foreach (object column in row)
-                    {
-                        universityList.Add(column.ToString());
-                    }
+                    universityList.Add(row["name"].ToString());
                 }
                 universityBox.DataSource = universityList;
                 statusBox.DataSource = statusList;
@@ -61,8 +58,8 @@ namespace University_advisor.Forms
 
         private void SendUserToDb(UserModel newUser)
         {
-            string txtSqlQuery = "INSERT INTO userData (username, first_name, last_name, email, university, status, password) VALUES ";
-            txtSqlQuery += "('" + newUser.Username + "', '" + newUser.FirstName + "', '" + newUser.LastName + "', '" + newUser.Email + "', '" + newUser.University + "', '" + newUser.Status + "', '" + newUser.Password + "');";
+            string txtSqlQuery = "INSERT INTO users (username, first_name, last_name, email, universityId, status, password) VALUES ";
+            txtSqlQuery += $"('{newUser.Username}', '{newUser.FirstName}', '{newUser.LastName}', '{newUser.Email}', (SELECT universityId FROM universities WHERE name = '{newUser.University}'), '{newUser.Status}', '{newUser.Password}');";
             try
             {
                 if (SqlDriver.Execute(txtSqlQuery))

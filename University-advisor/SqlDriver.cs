@@ -50,7 +50,7 @@ namespace University_advisor
             return true;
         }
 
-        public static ArrayList FetchNew(string sql)
+        public static ArrayList Fetch(string sql)
         {
             SQLiteConnection dbConnection = Connect();
             if (dbConnection == null)
@@ -79,36 +79,6 @@ namespace University_advisor
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.StackTrace);
-                return null;
-            }
-        }
-        public static ArrayList Fetch(string sql)
-        {
-            SQLiteConnection dbConnection = Connect();
-            if (dbConnection == null)
-            {
-                Logger.Log("Failed to connect to database. Aborting query");
-                return null;
-            }
-            try
-            {
-                ArrayList al = new ArrayList();
-                SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
-                SQLiteDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    Object[] temp = new object[reader.FieldCount];
-                    reader.GetValues(temp);
-                    al.Add(temp);
-                }
-                reader.Close();
-                dbConnection.Close();
-                Logger.Log("Query executed successfully");
-                return al;
-            }
-            catch (SQLiteException e)
-            {
-                Logger.Log(e.Message);
                 return null;
             }
         }
