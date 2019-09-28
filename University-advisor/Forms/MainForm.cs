@@ -15,9 +15,12 @@ namespace University_advisor.Forms
     public partial class MainForm : Form
     {
         string currentUser;
+        ArrayList statusList = new ArrayList() { "Student", "Graduate", "Lecturer" };
+
         public MainForm(string username)
         {
             InitializeComponent();
+            SetValues();
             currentUser = username;
             tabControl1.Appearance = TabAppearance.FlatButtons;
             tabControl1.ItemSize = new Size(0, 1);
@@ -92,8 +95,9 @@ namespace University_advisor.Forms
                 {
                     errorMessagePass.Text = "New password cannot be the same as old one.";
                     errorMessagePass.Show();
+                    Logger.Log("New password cannot be the same as old one.");
                 }
-                if (newPassword.Text.Equals(newPassword2.Text))
+                else if (newPassword.Text.Equals(newPassword2.Text))
                 {
                     string sqlUpdatePassword = "UPDATE users SET password='" + newPassword.Text + "' WHERE username='"+currentUser+"';";
                     try
@@ -101,11 +105,13 @@ namespace University_advisor.Forms
                         if (SqlDriver.Execute(sqlUpdatePassword))
                         {
                             errorMessagePass.Text = "Password updated successfully.";
+                            errorMessagePass.Show();
                             Logger.Log("Password updated successfully.");
                         }
                         else
                         {
-                            MessageBox.Show("Error changing password");
+                            errorMessagePass.Text = "Error changing password";
+                            errorMessagePass.Show();
                             Logger.Log("Error changing password");
                         }
                     }
@@ -118,6 +124,7 @@ namespace University_advisor.Forms
                 {
                     errorMessagePass.Text = "Passwords doesn't match.";
                     errorMessagePass.Show();
+                    Logger.Log("Passwords doesn't match.");
                 }
 
             }
@@ -137,8 +144,10 @@ namespace University_advisor.Forms
                 {
                     errorMessageEmail.Text = "New email cannot be the same as old one.";
                     errorMessageEmail.Show();
+                    Logger.Log("New email cannot be the same as old one.");
+
                 }
-                if (newEmail.Text.Equals(newEmail2.Text))
+                else if (newEmail.Text.Equals(newEmail2.Text))
                 {
                     string sqlUpdateEmail = "UPDATE users SET email='" + newEmail.Text + "' WHERE username='" + currentUser + "';";
 
@@ -146,12 +155,14 @@ namespace University_advisor.Forms
                     {
                         if (SqlDriver.Execute(sqlUpdateEmail))
                         {
-                            errorMessagePass.Text = "Email updated successfully.";
+                            errorMessageEmail.Text = "Email updated successfully.";
+                            errorMessageEmail.Show();
                             Logger.Log("Email updated successfully.");
                         }
                         else
                         {
-                            MessageBox.Show("Error changing email");
+                            errorMessageEmail.Text = "Error changing email.";
+                            errorMessageEmail.Show();
                             Logger.Log("Error changing email");
                         }
                     }
@@ -164,6 +175,8 @@ namespace University_advisor.Forms
                 {
                     errorMessageEmail.Text = "Emails doesn't match.";
                     errorMessageEmail.Show();
+                    Logger.Log("Emails doesn't match.");
+
                 }
             }
         }
@@ -171,27 +184,92 @@ namespace University_advisor.Forms
         private void ChangeUniversity_Click(object sender, EventArgs e)
         {
             errorMessageUniversity.Hide();
-            if (!universityBox.SelectedItem.Equals("Current university in DB"))
+            string sqlGetCurrentUniversity = "select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';";
+            ArrayList universityIdFromDB = SqlDriver.Fetch(sqlGetCurrentUniversity);
+            string currentUniversity = ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
+
+            if (!universityBox.SelectedItem.Equals(currentUniversity))
             {
-                //Change university in DB
-            } else
+                string sqlGetNewUniversityID = "select universityid from universities where name ='" + universityBox.SelectedItem+"';";
+                ArrayList newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
+                string newUniversityId = ((Dictionary<string, object>)newUniversityIdFromDB[0])["universityId"].ToString();
+
+                string sqlUpdateUniversityID = "update users set universityid =" + newUniversityId + " where username ='" + currentUser + "';";
+                try
+                {
+                    if (SqlDriver.Execute(sqlUpdateUniversityID))
+                    {
+                        MessageBox.Show("University updated successfully.");
+                        Logger.Log("University updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error changing university");
+                        Logger.Log("Error changing university");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log(ex.Message);
+                }
+
+            }
+            else
             {
                 errorMessageUniversity.Text = "New university cannot be the same as old one.";
                 errorMessageUniversity.Show();
+                Logger.Log("New university cannot be the same as old one.");
             }
         }
 
         private void ChangeStatus_Click(object sender, EventArgs e)
         {
             errorMessageStatus.Hide();
-            if (!statusBox.SelectedItem.Equals("Current status in DB"))
+
+            string sqlGetCurrentStatus = "SELECT status from users where username='" + currentUser + "';";
+            ArrayList statusFromDB = SqlDriver.Fetch(sqlGetCurrentStatus);
+            string currentStatus = ((Dictionary<string, object>)statusFromDB[0])["status"].ToString();
+
+            if (!statusBox.SelectedItem.Equals(currentStatus))
             {
-                //Change status in DB
+                string sqlUpdateStatus = "UPDATE users SET status='" + statusBox.SelectedItem + "' WHERE username='" + currentUser + "';";
+
+                try
+                {
+                    if (SqlDriver.Execute(sqlUpdateStatus))
+                    {
+                        MessageBox.Show("Status updated successfully.");
+                        Logger.Log("Status updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error changing status.");
+                        Logger.Log("Error changing status");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log(ex.Message);
+                }
             }
             else
             {
-                errorMessageStatus.Text = "New status cannot be the same as old one.";
-                errorMessageStatus.Show();
+                Logger.Log("New status cannot be the same as old one.");
+            }
+        }
+
+        private void SetValues()
+        {
+            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
+            if (universityResult.Count != 0)
+            {
+                var universityList = new List<string>();
+                foreach (Dictionary<string, object> row in universityResult)
+                {
+                    universityList.Add(row["name"].ToString());
+                }
+                universityBox.DataSource = universityList;
+                statusBox.DataSource = statusList;
             }
         }
     }
