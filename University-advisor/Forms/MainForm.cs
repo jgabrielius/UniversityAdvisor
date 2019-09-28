@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using University_advisor.Tools;
 
 namespace University_advisor.Forms
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        string currentUser;
+        public MainForm(string username)
         {
             InitializeComponent();
+            currentUser = username;
             tabControl1.Appearance = TabAppearance.FlatButtons;
             tabControl1.ItemSize = new Size(0, 1);
             tabControl1.SizeMode = TabSizeMode.Fixed;
@@ -22,6 +26,7 @@ namespace University_advisor.Forms
             errorMessageEmail.Hide();
             errorMessageUniversity.Hide();
             errorMessageStatus.Hide();
+            
         }
 
         private void menuPanel_Paint(object sender, PaintEventArgs e)
@@ -76,7 +81,12 @@ namespace University_advisor.Forms
         private void ChangePassword_Click(object sender, EventArgs e)
         {
             errorMessagePass.Hide();
-            if(currentPassword.Text.Equals("passwordFromDB"))
+
+            string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
+            ArrayList passwordFromDB = SqlDriver.Fetch(sqlGetCurrentPassword);
+            string password = ((Dictionary<string, object>)passwordFromDB[0])["password"].ToString();
+
+            if (currentPassword.Text.Equals(password))
             {
                 if (newPassword.Text.Equals(currentPassword.Text))
                 {
@@ -85,7 +95,25 @@ namespace University_advisor.Forms
                 }
                 if (newPassword.Text.Equals(newPassword2.Text))
                 {
-                    //Update password in DB
+                    string sqlUpdatePassword = "UPDATE users SET password='" + newPassword.Text + "' WHERE username='"+currentUser+"';";
+                    try
+                    {
+                        if (SqlDriver.Execute(sqlUpdatePassword))
+                        {
+                            errorMessagePass.Text = "Password updated successfully.";
+                            Logger.Log("Password updated successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error changing password");
+                            Logger.Log("Error changing password");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Log(ex.Message);
+                    }
+                    
                 } else
                 {
                     errorMessagePass.Text = "Passwords doesn't match.";
@@ -98,7 +126,12 @@ namespace University_advisor.Forms
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
             errorMessageEmail.Hide();
-            if (currentEmail.Text.Equals("emailFromDB"))
+
+            string sqlGetCurrentEmail = "SELECT email from users where username='" + currentUser + "';";
+            ArrayList emailFromDB = SqlDriver.Fetch(sqlGetCurrentEmail);
+            string email = ((Dictionary<string, object>)emailFromDB[0])["email"].ToString();
+
+            if (currentEmail.Text.Equals(email))
             {
                 if (newEmail.Text.Equals(currentEmail.Text))
                 {
@@ -107,7 +140,25 @@ namespace University_advisor.Forms
                 }
                 if (newEmail.Text.Equals(newEmail2.Text))
                 {
-                    //Update emails in DB
+                    string sqlUpdateEmail = "UPDATE users SET email='" + newEmail.Text + "' WHERE username='" + currentUser + "';";
+
+                    try
+                    {
+                        if (SqlDriver.Execute(sqlUpdateEmail))
+                        {
+                            errorMessagePass.Text = "Email updated successfully.";
+                            Logger.Log("Email updated successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error changing email");
+                            Logger.Log("Error changing email");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.Log(ex.Message);
+                    }
                 }
                 else
                 {
