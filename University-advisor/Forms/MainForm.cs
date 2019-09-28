@@ -82,8 +82,8 @@ namespace University_advisor.Forms
         {
             errorMessagePass.Hide();
 
-            string sqlGetCurrentPassword = "SELECT password from userData where username='" + currentUser + "';";
-            ArrayList passwordFromDB = SqlDriver.FetchNew(sqlGetCurrentPassword);
+            string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
+            ArrayList passwordFromDB = SqlDriver.Fetch(sqlGetCurrentPassword);
             string password = ((Dictionary<string, object>)passwordFromDB[0])["password"].ToString();
 
             if (currentPassword.Text.Equals(password))
@@ -95,7 +95,7 @@ namespace University_advisor.Forms
                 }
                 if (newPassword.Text.Equals(newPassword2.Text))
                 {
-                    string sqlUpdatePassword = "UPDATE userData SET password='" + newPassword.Text + "' WHERE username='"+currentUser+"';";
+                    string sqlUpdatePassword = "UPDATE users SET password='" + newPassword.Text + "' WHERE username='"+currentUser+"';";
                     try
                     {
                         if (SqlDriver.Execute(sqlUpdatePassword))
@@ -127,8 +127,8 @@ namespace University_advisor.Forms
         {
             errorMessageEmail.Hide();
 
-            string sqlGetCurrentEmail = "SELECT email from userData where username='" + currentUser + "';";
-            ArrayList emailFromDB = SqlDriver.FetchNew(sqlGetCurrentEmail);
+            string sqlGetCurrentEmail = "SELECT email from users where username='" + currentUser + "';";
+            ArrayList emailFromDB = SqlDriver.Fetch(sqlGetCurrentEmail);
             string email = ((Dictionary<string, object>)emailFromDB[0])["email"].ToString();
 
             if (currentEmail.Text.Equals(email))
@@ -140,7 +140,7 @@ namespace University_advisor.Forms
                 }
                 if (newEmail.Text.Equals(newEmail2.Text))
                 {
-                    string sqlUpdateEmail = "UPDATE userData SET email='" + newEmail.Text + "' WHERE username='" + currentUser + "';";
+                    string sqlUpdateEmail = "UPDATE users SET email='" + newEmail.Text + "' WHERE username='" + currentUser + "';";
 
                     try
                     {
