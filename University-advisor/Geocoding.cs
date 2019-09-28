@@ -12,7 +12,7 @@ namespace University_advisor
 {
     class Geocoding
     {
-        string apiKey = "5e66cc9d64db23";
+        string LocationIqApiKey = "5e66cc9d64db23";
         public double ReturnDistance(string urlA, string urlB)
         {
             var jsonA = new ApiCalls().GetLocationJson(urlA);
@@ -21,13 +21,10 @@ namespace University_advisor
             var locationDataA = JsonConvert.DeserializeObject<List<LocationData>>(jsonA);
             var locationDataB = JsonConvert.DeserializeObject<List<LocationData>>(jsonB);
 
-            //Using first member of array because there can be multiple returned locations
             var locationA = new Geocoding().GetCoordinates(locationDataA[0]);
             var locationB = new Geocoding().GetCoordinates(locationDataB[0]);
 
             var distance = new Geocoding().GetDistance(locationA.Item1, locationA.Item2, locationB.Item1, locationB.Item2);
-            //Console.WriteLine(distance);
-            //Console.ReadLine();
 
             return distance;
         }
@@ -45,15 +42,15 @@ namespace University_advisor
             return locA.GetDistanceTo(locB);
         }
         public string ConstructApiUrl(string street, string city, string country) {
-            return $"https://eu1.locationiq.com/v1/search.php?key={apiKey}={street},{city},{country}&q=format=json";
+            return $"https://eu1.locationiq.com/v1/search.php?key={LocationIqApiKey}={street},{city},{country}&q=format=json";
         }
         public string ConstructApiUrl(string street, string city, string state, string country)
         {
-            return $"https://eu1.locationiq.com/v1/search.php?key={apiKey}={street},{city},{state},{country}&q=format=json";
+            return $"https://eu1.locationiq.com/v1/search.php?key={LocationIqApiKey}={street},{city},{state},{country}&q=format=json";
         }
         public string ConstructApiUrl(string street, string city, string state, string country, string postalCode)
         {
-            return $"https://eu1.locationiq.com/v1/search.php?key={apiKey}={street},{city},{state},{country},{postalCode}&q=format=json";
+            return $"https://eu1.locationiq.com/v1/search.php?key={LocationIqApiKey}={street},{city},{state},{country},{postalCode}&q=format=json";
         }
     }
 }
