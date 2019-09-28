@@ -22,9 +22,9 @@ namespace University_advisor.Forms
             InitializeComponent();
             SetValues();
             currentUser = username;
-            tabControl1.Appearance = TabAppearance.FlatButtons;
-            tabControl1.ItemSize = new Size(0, 1);
-            tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabsController.Appearance = TabAppearance.FlatButtons;
+            tabsController.ItemSize = new Size(0, 1);
+            tabsController.SizeMode = TabSizeMode.Fixed;
             errorMessagePass.Hide();
             errorMessageEmail.Hide();
             errorMessageUniversity.Hide();
@@ -38,32 +38,27 @@ namespace University_advisor.Forms
 
         private void LogoButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(homeTab);
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
+            tabsController.SelectTab(homeTab);
         }
 
         private void HomeButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(homeTab);
+            tabsController.SelectTab(homeTab);
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(settingsTab);
+            tabsController.SelectTab(settingsTab);
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(aboutTab);
+            tabsController.SelectTab(aboutTab);
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(logOutTab);
+            tabsController.SelectTab(logOutTab);
         }
 
         private void YesButton_Click(object sender, EventArgs e)
@@ -73,12 +68,7 @@ namespace University_advisor.Forms
 
         private void NoButton_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(homeTab);
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
+            tabsController.SelectTab(homeTab);
         }
 
         private void ChangePassword_Click(object sender, EventArgs e)

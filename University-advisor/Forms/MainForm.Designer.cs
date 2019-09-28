@@ -36,7 +36,7 @@
             this.homeButton = new System.Windows.Forms.Button();
             this.homeTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabsController = new System.Windows.Forms.TabControl();
             this.settingsTab = new System.Windows.Forms.TabPage();
             this.errorMessageStatus = new System.Windows.Forms.Label();
             this.errorMessageUniversity = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.homeTab.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabsController.SuspendLayout();
             this.settingsTab.SuspendLayout();
             this.aboutTab.SuspendLayout();
             this.logOutTab.SuspendLayout();
@@ -190,18 +190,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "HOME TAB";
             // 
-            // tabControl1
+            // tabsController
             // 
-            this.tabControl1.Controls.Add(this.homeTab);
-            this.tabControl1.Controls.Add(this.settingsTab);
-            this.tabControl1.Controls.Add(this.aboutTab);
-            this.tabControl1.Controls.Add(this.logOutTab);
-            this.tabControl1.Location = new System.Drawing.Point(-9, 70);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(896, 461);
-            this.tabControl1.TabIndex = 1;
+            this.tabsController.Controls.Add(this.homeTab);
+            this.tabsController.Controls.Add(this.settingsTab);
+            this.tabsController.Controls.Add(this.aboutTab);
+            this.tabsController.Controls.Add(this.logOutTab);
+            this.tabsController.Location = new System.Drawing.Point(-9, 70);
+            this.tabsController.Margin = new System.Windows.Forms.Padding(0);
+            this.tabsController.Name = "tabsController";
+            this.tabsController.SelectedIndex = 0;
+            this.tabsController.Size = new System.Drawing.Size(896, 461);
+            this.tabsController.TabIndex = 1;
             // 
             // settingsTab
             // 
@@ -639,15 +639,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(881, 526);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabsController);
             this.Controls.Add(this.menuPanel);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuPanel.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
             this.homeTab.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabsController.ResumeLayout(false);
             this.settingsTab.ResumeLayout(false);
             this.settingsTab.PerformLayout();
             this.aboutTab.ResumeLayout(false);
@@ -666,7 +665,7 @@
         private System.Windows.Forms.Button logoutButton;
         private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.TabPage homeTab;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabsController;
         private System.Windows.Forms.TabPage settingsTab;
         private System.Windows.Forms.TabPage aboutTab;
         private System.Windows.Forms.TabPage logOutTab;
