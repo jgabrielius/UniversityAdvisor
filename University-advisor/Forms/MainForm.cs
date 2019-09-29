@@ -34,7 +34,7 @@ namespace University_advisor.Forms
 
         private void menuPanel_Paint(object sender, PaintEventArgs e)
         {
-                    }
+        }
 
         private void LogoButton_Click(object sender, EventArgs e)
         {
@@ -48,6 +48,8 @@ namespace University_advisor.Forms
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
+            tabsController.SelectTab(settingsTab);
+            tabsController.SelectTab(settingsTab);
             tabsController.SelectTab(settingsTab);
         }
 
@@ -84,7 +86,7 @@ namespace University_advisor.Forms
         }
 
         private void ChangeUniversity_Click(object sender, EventArgs e)
-        {        
+        {
             new UserEditingService(currentUser).ChangeUniversity(universityBox.SelectedItem.ToString());
             ClearValues();
         }
@@ -126,9 +128,9 @@ namespace University_advisor.Forms
             table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Name", typeof(string));
             ArrayList universities = SqlDriver.Fetch("SELECT universityId,name FROM universities");
-            foreach (Dictionary<string,object> row in universities)
+            foreach (Dictionary<string, object> row in universities)
             {
-                table.Rows.Add(row["universityId"],row["name"]);
+                table.Rows.Add(row["universityId"], row["name"]);
             }
             universitiesGrid.DataSource = table;
         }
@@ -152,21 +154,25 @@ namespace University_advisor.Forms
             if (veryBadButton.Checked)
             {
                 rating = 1;
-            } else if(badButton.Checked)
+            }
+            else if (badButton.Checked)
             {
                 rating = 2;
-            } else if (goodButton.Checked)
+            }
+            else if (goodButton.Checked)
             {
                 rating = 3;
-            } else if(veryGoodButton.Checked)
+            }
+            else if (veryGoodButton.Checked)
             {
                 rating = 4;
             }
 
-            if(review.Length == 0 || rating == 0)
+            if (review.Length == 0 || rating == 0)
             {
                 MessageBox.Show("Your review or rating is empty", "Error");
-            } else
+            }
+            else
             {
                 MessageBox.Show("Thank you for submitting your review", "Review submitted");
                 universityReview.Clear();
