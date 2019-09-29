@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Forms;
+using University_advisor.Tools;
 
 namespace University_advisor
 {
@@ -27,4 +28,5 @@ namespace University_advisor
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetProcessDPIAware();
     }
+
 }

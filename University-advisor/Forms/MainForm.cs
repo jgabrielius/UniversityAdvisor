@@ -86,7 +86,7 @@ namespace University_advisor.Forms
             ArrayList passwordFromDB = SqlDriver.Fetch(sqlGetCurrentPassword);
             string password = ((Dictionary<string, object>)passwordFromDB[0])["password"].ToString();
 
-            if (currentPassword.Text.Equals(password))
+            if (Helper.CreateMD5(currentPassword.Text).Equals(password))
             {
                 if (newPassword.Text.Equals(currentPassword.Text))
                 {
@@ -95,7 +95,7 @@ namespace University_advisor.Forms
                 }
                 if (newPassword.Text.Equals(newPassword2.Text))
                 {
-                    string sqlUpdatePassword = "UPDATE users SET password='" + newPassword.Text + "' WHERE username='"+currentUser+"';";
+                    string sqlUpdatePassword = "UPDATE users SET password='" + Helper.CreateMD5(newPassword.Text) + "' WHERE username='"+currentUser+"';";
                     try
                     {
                         if (SqlDriver.Execute(sqlUpdatePassword))

@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Tools\Logger.cs" />
+    <Compile Include="Tools\Helper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\LoginForm.resx">
