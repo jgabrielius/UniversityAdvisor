@@ -746,8 +746,10 @@
             this.Controls.Add(this.menuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "University Advisor";
             this.menuPanel.ResumeLayout(false);
             this.homeTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.universitiesGrid)).EndInit();

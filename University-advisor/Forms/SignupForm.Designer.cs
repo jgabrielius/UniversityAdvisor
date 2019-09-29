@@ -46,6 +46,7 @@
             this.confirmPasswordLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.createAccountButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // firstNameText
@@ -228,7 +229,7 @@
             this.createAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createAccountButton.Font = new System.Drawing.Font("Calibri", 15F);
             this.createAccountButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(224)))));
-            this.createAccountButton.Location = new System.Drawing.Point(151, 471);
+            this.createAccountButton.Location = new System.Drawing.Point(273, 468);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(302, 57);
             this.createAccountButton.TabIndex = 26;
@@ -236,12 +237,28 @@
             this.createAccountButton.UseVisualStyleBackColor = false;
             this.createAccountButton.Click += new System.EventHandler(this.CreateAccountButton_Click);
             // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Calibri", 15F);
+            this.backButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(224)))));
+            this.backButton.Location = new System.Drawing.Point(12, 468);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(248, 57);
+            this.backButton.TabIndex = 27;
+            this.backButton.Text = "BACK";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // SignupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(593, 570);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.createAccountButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.confirmPasswordLabel);
@@ -261,8 +278,10 @@
             this.Controls.Add(this.lastNameText);
             this.Controls.Add(this.firstNameText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SignupForm";
-            this.Text = "SignupForm";
+            this.Text = "Create new account";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +306,6 @@
         private System.Windows.Forms.Label confirmPasswordLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button createAccountButton;
+        private System.Windows.Forms.Button backButton;
     }
 }
