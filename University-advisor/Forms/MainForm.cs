@@ -22,6 +22,7 @@ namespace University_advisor.Forms
         {
             Debug.Write("loaded main");
             InitializeComponent();
+            CenterToScreen();
             SetValues();
             InstantiateGrid();
             currentUser = username;
