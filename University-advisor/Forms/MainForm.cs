@@ -74,21 +74,25 @@ namespace University_advisor.Forms
         private void ChangePassword_Click(object sender, EventArgs e)
         {
             new UserEditingService(currentUser).ChangePassword(currentPassword.Text, newPassword.Text, newPassword2.Text);
+            ClearValues();
         }
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
             new UserEditingService(currentUser).ChangeEmail(currentEmail.Text, newEmail.Text, newEmail2.Text);
+            ClearValues();
         }
 
         private void ChangeUniversity_Click(object sender, EventArgs e)
         {        
-            new UserEditingService(currentUser).ChangeUniversity(universityBox.SelectedItem.ToString());    
+            new UserEditingService(currentUser).ChangeUniversity(universityBox.SelectedItem.ToString());
+            ClearValues();
         }
 
         private void ChangeStatus_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).ChangeStatus(statusBox.SelectedItem.ToString());   
+            new UserEditingService(currentUser).ChangeStatus(statusBox.SelectedItem.ToString());
+            ClearValues();
         }
 
         private void SetValues()
@@ -104,6 +108,16 @@ namespace University_advisor.Forms
                 universityBox.DataSource = universityList;
                 statusBox.DataSource = statusList;
             }
+        }
+
+        private void ClearValues()
+        {
+            currentPassword.Clear();
+            newPassword.Clear();
+            newPassword2.Clear();
+            currentEmail.Clear();
+            newEmail.Clear();
+            newEmail2.Clear();
         }
 
         private void InstantiateGrid()
