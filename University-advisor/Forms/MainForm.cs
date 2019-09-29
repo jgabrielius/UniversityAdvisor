@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Tools;
+using System.Diagnostics;
 
 namespace University_advisor.Forms
 {
@@ -19,9 +20,11 @@ namespace University_advisor.Forms
 
         public MainForm(string username)
         {
+            Debug.Write("loaded main");
             InitializeComponent();
             CenterToScreen();
             SetValues();
+            InstantiateGrid();
             currentUser = username;
             tabsController.Appearance = TabAppearance.FlatButtons;
             tabsController.ItemSize = new Size(0, 1);
@@ -261,6 +264,44 @@ namespace University_advisor.Forms
                 }
                 universityBox.DataSource = universityList;
                 statusBox.DataSource = statusList;
+            }
+        }
+
+        private void InstantiateGrid()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Id", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+            ArrayList universities = SqlDriver.Fetch("SELECT universityId,name FROM universities");
+            foreach (Dictionary<string,object> row in universities)
+            {
+                table.Rows.Add(row["universityId"],row["name"]);
+            }
+            universitiesGrid.DataSource = table;
+        }
+
+        private void UniversitiesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv == null)
+                return;
+            int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
+            string selectedName = dgv.CurrentRow.Cells["Name"].Value.ToString();
+            universityName.Text = selectedName;
+            tabsController.SelectTab(universityTab);
+
+        }
+
+        private void ReviewSubmit_Click(object sender, EventArgs e)
+        {
+            string review = universityReview.Text;
+            if(review.Length == 0)
+            {
+                MessageBox.Show("Your review is empty", "Error");
+            } else
+            {
+                MessageBox.Show("Thank you for submitting your review", "Review submitted");
+                universityReview.Text = "";
             }
         }
     }
