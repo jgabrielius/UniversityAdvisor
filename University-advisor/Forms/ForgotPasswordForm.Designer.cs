@@ -33,6 +33,8 @@
             this.usernameText = new System.Windows.Forms.TextBox();
             this.emailText = new System.Windows.Forms.TextBox();
             this.ResetPasswordButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -84,23 +86,55 @@
             this.ResetPasswordButton.Name = "ResetPasswordButton";
             this.ResetPasswordButton.Size = new System.Drawing.Size(238, 51);
             this.ResetPasswordButton.TabIndex = 26;
-            this.ResetPasswordButton.Text = "Reset password";
+            this.ResetPasswordButton.Text = "RESET PASSWORD";
             this.ResetPasswordButton.UseVisualStyleBackColor = false;
             this.ResetPasswordButton.Click += new System.EventHandler(this.ResetPasswordButton_Click);
+            // 
+            // backButton
+            // 
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Calibri", 15F);
+            this.backButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(215)))), ((int)(((byte)(224)))));
+            this.backButton.Location = new System.Drawing.Point(39, 276);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(238, 51);
+            this.backButton.TabIndex = 27;
+            this.backButton.Text = "BACK";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(7, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(270, 31);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "PASSWORD RESET";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForgotPasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(318, 323);
+            this.ClientSize = new System.Drawing.Size(318, 339);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.ResetPasswordButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usernameText);
             this.Controls.Add(this.emailText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ForgotPasswordForm";
-            this.Text = "ForgotPasswordForm";
+            this.Text = "Password reset";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +147,7 @@
         private System.Windows.Forms.TextBox usernameText;
         private System.Windows.Forms.TextBox emailText;
         private System.Windows.Forms.Button ResetPasswordButton;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label label3;
     }
 }

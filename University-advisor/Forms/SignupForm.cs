@@ -55,6 +55,12 @@ namespace University_advisor.Forms
                 };
                 SendUserToDb(newUser);
             }
+
+            Hide();
+            var loginForm = new LoginForm();
+            loginForm.Closed += (s, args) => this.Close();
+            loginForm.ShowDialog();
+
         }
 
         private void SendUserToDb(UserModel newUser)
@@ -110,6 +116,14 @@ namespace University_advisor.Forms
                 return false;
             }
             return true;
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var loginForm = new LoginForm();
+            loginForm.Closed += (s, args) => this.Close();
+            loginForm.ShowDialog();
         }
     }
 }

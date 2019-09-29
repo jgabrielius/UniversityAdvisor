@@ -63,5 +63,13 @@ namespace University_advisor.Forms
             var credentialResult = SqlDriver.Fetch($"SELECT username, email FROM users WHERE username='{username}' AND email='{email}';");
             return (credentialResult != null && credentialResult.Count == 1);
         }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var loginForm = new LoginForm();
+            loginForm.Closed += (s, args) => this.Close();
+            loginForm.ShowDialog();
+        }
     }
 }
