@@ -119,6 +119,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Services\EmailSenderService.cs" />
     <Compile Include="Services\PasswordResetService.cs" />
+    <Compile Include="Services\UserEditingService.cs" />
     <Compile Include="Tools\Logger.cs" />
     <Compile Include="Tools\Helper.cs" />
     <Compile Include="Program.cs" />
