@@ -260,6 +260,7 @@
             this.Controls.Add(this.emailText);
             this.Controls.Add(this.lastNameText);
             this.Controls.Add(this.firstNameText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SignupForm";
             this.Text = "SignupForm";
             this.ResumeLayout(false);

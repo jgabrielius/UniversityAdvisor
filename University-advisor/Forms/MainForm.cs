@@ -20,6 +20,7 @@ namespace University_advisor.Forms
         public MainForm(string username)
         {
             InitializeComponent();
+            CenterToScreen();
             SetValues();
             currentUser = username;
             tabsController.Appearance = TabAppearance.FlatButtons;

@@ -10,6 +10,7 @@ namespace University_advisor.Forms
         public LoginForm()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void SignInButton_Click(object sender, EventArgs e)
@@ -52,6 +53,14 @@ namespace University_advisor.Forms
             string hashedPassword = Helper.CreateMD5(password);
             var credentialResult = SqlDriver.Fetch($"SELECT username, password FROM users WHERE username='{username}' AND password='{hashedPassword}';");
             return (credentialResult != null && credentialResult.Count == 1);
+        }
+
+        private void ForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var forgotPasswordForm = new ForgotPasswordForm();
+
+            Hide();
+            forgotPasswordForm.Show();
         }
     }
 }

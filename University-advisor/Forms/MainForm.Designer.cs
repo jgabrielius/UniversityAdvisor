@@ -641,6 +641,7 @@
             this.ClientSize = new System.Drawing.Size(881, 526);
             this.Controls.Add(this.tabsController);
             this.Controls.Add(this.menuPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.menuPanel.ResumeLayout(false);
