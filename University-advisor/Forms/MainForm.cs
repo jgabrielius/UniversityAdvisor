@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Controls;
 using University_advisor.Tools;
 using System.Diagnostics;
 using University_advisor.Services;
@@ -180,6 +181,61 @@ namespace University_advisor.Forms
                 badButton.Checked = false;
                 goodButton.Checked = false;
                 veryGoodButton.Checked = false;
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add(50);
+            comboBox1.Items.Add(100);
+            comboBox1.Items.Add(250);
+            comboBox1.Items.Add(500);
+            comboBox1.Items.Add(1000);
+            comboBox1.Items.Add(2000);
+
+            tabsController.SelectTab(findSchoolsTab);
+        }
+        private void gMap_Load(object sender, EventArgs e)
+        {
+            gMap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            gMap.ShowCenter = false;
+
+        }
+        GMap.NET.WindowsForms.GMapOverlay markers = new GMap.NET.WindowsForms.GMapOverlay("markers");
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            markers.Markers.Clear();
+            gMap.Overlays.Remove(markers);
+
+            string rangeValue = comboBox1.Text;
+            string address = textBox1.Text.ToString();
+            var geocoding = new Geocoding();
+            //List<GMap.NET.WindowsForms.GMapMarker> uniMarkers = new List<GMap.NET.WindowsForms.GMapMarker>();
+            if (rangeValue != "" && address != "")
+            {
+                var info = geocoding.ShowSchoolsInRange(Convert.ToInt32(rangeValue), address);
+                gMap.Position = new GMap.NET.PointLatLng(info.Item2, info.Item3);
+
+
+                GMap.NET.WindowsForms.GMapMarker userMarker =
+                    new GMap.NET.WindowsForms.Markers.GMarkerGoogle(
+                    new GMap.NET.PointLatLng(info.Item2, info.Item3),
+                    GMap.NET.WindowsForms.Markers.GMarkerGoogleType.red_dot);
+                markers.Markers.Add(userMarker);
+                foreach (var university in info.Item1)
+                {
+                    Console.WriteLine(university.name);
+                    GMap.NET.WindowsForms.GMapMarker marker =
+                    new GMap.NET.WindowsForms.Markers.GMarkerGoogle(
+                        new GMap.NET.PointLatLng(university.latitude, university.longitude),
+                        GMap.NET.WindowsForms.Markers.GMarkerGoogleType.green_dot);
+                    marker.ToolTipText = university.name;
+                    markers.Markers.Add(marker);
+                }
+                Console.WriteLine("\n");
+                Console.ReadLine();
+                gMap.Overlays.Add(markers);
+
             }
         }
     }

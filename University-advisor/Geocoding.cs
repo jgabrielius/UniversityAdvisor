@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 using System.Device.Location;
 using System.Globalization;
 using University_advisor.Models;
+using University_advisor.Forms;
 using Newtonsoft.Json;
 
 namespace University_advisor
@@ -13,27 +15,14 @@ namespace University_advisor
     class Geocoding
     {
         string LocationIqApiKey = "5e66cc9d64db23";
-        public double ReturnDistance(string urlA, string urlB)
+        public (double, double) GetCoordinates(string url)
         {
-            var jsonA = new ApiCalls().GetLocationJson(urlA);
-            var jsonB = new ApiCalls().GetLocationJson(urlB);
+            var jsonRes = new ApiCalls().GetLocationJson(url);
+            var locationData = JsonConvert.DeserializeObject<List<LocationData>>(jsonRes);
+            var firstLocation = locationData[0];
 
-            var locationDataA = JsonConvert.DeserializeObject<List<LocationData>>(jsonA);
-            var locationDataB = JsonConvert.DeserializeObject<List<LocationData>>(jsonB);
-
-            var locationA = new Geocoding().GetCoordinates(locationDataA[0]);
-            var locationB = new Geocoding().GetCoordinates(locationDataB[0]);
-
-            var distance = new Geocoding().GetDistance(locationA.Item1, locationA.Item2, locationB.Item1, locationB.Item2);
-
-            return distance;
+            return (double.Parse(firstLocation.Lat, CultureInfo.InvariantCulture.NumberFormat), double.Parse(firstLocation.Lon, CultureInfo.InvariantCulture.NumberFormat));
         }
-
-        public (double, double) GetCoordinates(LocationData address)
-        {
-            return (double.Parse(address.Lat, CultureInfo.InvariantCulture.NumberFormat), double.Parse(address.Lon, CultureInfo.InvariantCulture.NumberFormat));
-        }
-
         public double GetDistance(double latA, double lonA, double latB, double lonB)
         {
             var locA = new GeoCoordinate(latA, lonA);
@@ -41,16 +30,56 @@ namespace University_advisor
 
             return locA.GetDistanceTo(locB);
         }
-        public string ConstructApiUrl(string street, string city, string country) {
-            return $"https://eu1.locationiq.com/v1/search.php?key={LocationIqApiKey}={street},{city},{country}&q=format=json";
-        }
-        public string ConstructApiUrl(string street, string city, string state, string country)
+        public string ConstructApiUrl(string address)
         {
-            return $"https://eu1.locationiq.com/v1/search.php?key={LocationIqApiKey}={street},{city},{state},{country}&q=format=json";
+            string text = "https://eu1.locationiq.com/v1/search.php?key=" + LocationIqApiKey + "&q=" + address + "&format=json";
+            text = text.Replace(" ", "%20");
+            return text;
         }
-        public string ConstructApiUrl(string street, string city, string state, string country, string postalCode)
+        public (List<UniversityInfo>, double, double) ShowSchoolsInRange(int range, string address)
         {
-            return $"https://eu1.locationiq.com/v1/search.php?key={LocationIqApiKey}={street},{city},{state},{country},{postalCode}&q=format=json";
+            string userAddress = ConstructApiUrl(address);
+            var userCoordinates = GetCoordinates(userAddress);
+            string sqlGetSchoolName = "SELECT name FROM universities";
+            string sqlGetSchoolLatitude = "SELECT latitude FROM universities";
+            string sqlGetSchoolLongitude = "SELECT longitude FROM universities";
+            ArrayList schoolNamesObj = SqlDriver.Fetch(sqlGetSchoolName);
+            ArrayList schoolLatitudeObj = SqlDriver.Fetch(sqlGetSchoolLatitude);
+            ArrayList schoolLongitudeObj = SqlDriver.Fetch(sqlGetSchoolLongitude);
+            List<double> distanceBetween = new List<double>();
+            List<string> schoolNames = new List<string>();
+            var schoolsInRange = new List<UniversityInfo>();
+            var schoolsInRangeNames = new List<string>();
+            var schoolCoordinates = new List<(double, double)>();
+
+            for (int i = 0; i < schoolNamesObj.Count; i++) {
+                string name = ((Dictionary<string, object>)schoolNamesObj[i])["name"].ToString();
+                string lat = ((Dictionary<string, object>)schoolLatitudeObj[i])["latitude"].ToString();
+                string lon = ((Dictionary<string, object>)schoolLongitudeObj[i])["longitude"].ToString();
+
+                schoolNames.Add(name);
+                schoolCoordinates.Add((Convert.ToDouble(lat), Convert.ToDouble(lon)));
+                distanceBetween.Add(GetDistance(userCoordinates.Item1, userCoordinates.Item2, Convert.ToDouble(lat), Convert.ToDouble(lon)));
+
+                if ((int)distanceBetween[i] <= range * 1000)
+                {
+                    var newUniInfo = new UniversityInfo(Convert.ToDouble(lat), Convert.ToDouble(lon), schoolNames[i]);
+                    schoolsInRange.Add(newUniInfo);
+                }
+            }
+            return (schoolsInRange, userCoordinates.Item1, userCoordinates.Item2);
+        }
+    }
+    public class UniversityInfo
+    {
+        public double latitude;
+        public double longitude;
+        public string name;
+
+        public UniversityInfo(double lat, double lon, string name) {
+            this.latitude = lat;
+            this.longitude = lon;
+            this.name = name;
         }
     }
 }

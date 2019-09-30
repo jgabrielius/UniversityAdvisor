@@ -35,6 +35,7 @@
             this.logoutButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
             this.homeTab = new System.Windows.Forms.TabPage();
+            this.FindSchool = new System.Windows.Forms.Button();
             this.universitiesGrid = new System.Windows.Forms.DataGridView();
             this.tabsController = new System.Windows.Forms.TabControl();
             this.settingsTab = new System.Windows.Forms.TabPage();
@@ -69,14 +70,21 @@
             this.yesButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.universityTab = new System.Windows.Forms.TabPage();
+            this.reviewSubmit = new System.Windows.Forms.Button();
+            this.veryGoodButton = new System.Windows.Forms.RadioButton();
+            this.goodButton = new System.Windows.Forms.RadioButton();
+            this.badButton = new System.Windows.Forms.RadioButton();
+            this.veryBadButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.universityReview = new System.Windows.Forms.TextBox();
             this.universityName = new System.Windows.Forms.Label();
-            this.veryBadButton = new System.Windows.Forms.RadioButton();
-            this.badButton = new System.Windows.Forms.RadioButton();
-            this.goodButton = new System.Windows.Forms.RadioButton();
-            this.veryGoodButton = new System.Windows.Forms.RadioButton();
-            this.reviewSubmit = new System.Windows.Forms.Button();
+            this.findSchoolsTab = new System.Windows.Forms.TabPage();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.gMap = new GMap.NET.WindowsForms.GMapControl();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuPanel.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universitiesGrid)).BeginInit();
@@ -85,6 +93,7 @@
             this.aboutTab.SuspendLayout();
             this.logOutTab.SuspendLayout();
             this.universityTab.SuspendLayout();
+            this.findSchoolsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -184,6 +193,7 @@
             // homeTab
             // 
             this.homeTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.homeTab.Controls.Add(this.FindSchool);
             this.homeTab.Controls.Add(this.universitiesGrid);
             this.homeTab.Location = new System.Drawing.Point(4, 25);
             this.homeTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -193,16 +203,28 @@
             this.homeTab.TabIndex = 2;
             this.homeTab.Text = "homeTab";
             // 
+            // FindSchool
+            // 
+            this.FindSchool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.FindSchool.ForeColor = System.Drawing.Color.White;
+            this.FindSchool.Location = new System.Drawing.Point(771, 17);
+            this.FindSchool.Name = "FindSchool";
+            this.FindSchool.Size = new System.Drawing.Size(103, 70);
+            this.FindSchool.TabIndex = 1;
+            this.FindSchool.Text = "Find Universities nearby";
+            this.FindSchool.UseVisualStyleBackColor = false;
+            this.FindSchool.Click += new System.EventHandler(this.button1_Click);
+            // 
             // universitiesGrid
             // 
             this.universitiesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.universitiesGrid.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
+            this.universitiesGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
             this.universitiesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.universitiesGrid.Location = new System.Drawing.Point(20, 17);
-            this.universitiesGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.universitiesGrid.Margin = new System.Windows.Forms.Padding(4);
             this.universitiesGrid.Name = "universitiesGrid";
             this.universitiesGrid.ReadOnly = true;
-            this.universitiesGrid.Size = new System.Drawing.Size(849, 409);
+            this.universitiesGrid.Size = new System.Drawing.Size(744, 409);
             this.universitiesGrid.TabIndex = 0;
             this.universitiesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UniversitiesGrid_CellClick);
             // 
@@ -213,6 +235,7 @@
             this.tabsController.Controls.Add(this.aboutTab);
             this.tabsController.Controls.Add(this.logOutTab);
             this.tabsController.Controls.Add(this.universityTab);
+            this.tabsController.Controls.Add(this.findSchoolsTab);
             this.tabsController.Location = new System.Drawing.Point(-9, 70);
             this.tabsController.Margin = new System.Windows.Forms.Padding(0);
             this.tabsController.Name = "tabsController";
@@ -628,97 +651,12 @@
             this.universityTab.Controls.Add(this.universityReview);
             this.universityTab.Controls.Add(this.universityName);
             this.universityTab.Location = new System.Drawing.Point(4, 25);
-            this.universityTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.universityTab.Margin = new System.Windows.Forms.Padding(4);
             this.universityTab.Name = "universityTab";
-            this.universityTab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.universityTab.Padding = new System.Windows.Forms.Padding(4);
             this.universityTab.Size = new System.Drawing.Size(888, 433);
             this.universityTab.TabIndex = 6;
             this.universityTab.Text = "universityTab";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(348, 169);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "YOUR REVIEW:";
-            // 
-            // universityReview
-            // 
-            this.universityReview.Location = new System.Drawing.Point(18, 202);
-            this.universityReview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.universityReview.Multiline = true;
-            this.universityReview.Name = "universityReview";
-            this.universityReview.Size = new System.Drawing.Size(855, 171);
-            this.universityReview.TabIndex = 1;
-            // 
-            // universityName
-            // 
-            this.universityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.universityName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.universityName.Location = new System.Drawing.Point(18, 0);
-            this.universityName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.universityName.Name = "universityName";
-            this.universityName.Size = new System.Drawing.Size(855, 121);
-            this.universityName.TabIndex = 0;
-            this.universityName.Text = "UNIVERSITY:";
-            this.universityName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // veryBadButton
-            // 
-            this.veryBadButton.AutoSize = true;
-            this.veryBadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.veryBadButton.ForeColor = System.Drawing.Color.Red;
-            this.veryBadButton.Location = new System.Drawing.Point(26, 124);
-            this.veryBadButton.Name = "veryBadButton";
-            this.veryBadButton.Size = new System.Drawing.Size(132, 29);
-            this.veryBadButton.TabIndex = 4;
-            this.veryBadButton.TabStop = true;
-            this.veryBadButton.Text = "VERY BAD";
-            this.veryBadButton.UseVisualStyleBackColor = true;
-            // 
-            // badButton
-            // 
-            this.badButton.AutoSize = true;
-            this.badButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.badButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.badButton.Location = new System.Drawing.Point(278, 124);
-            this.badButton.Name = "badButton";
-            this.badButton.Size = new System.Drawing.Size(74, 29);
-            this.badButton.TabIndex = 5;
-            this.badButton.TabStop = true;
-            this.badButton.Text = "BAD";
-            this.badButton.UseVisualStyleBackColor = true;
-            // 
-            // goodButton
-            // 
-            this.goodButton.AutoSize = true;
-            this.goodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.goodButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.goodButton.Location = new System.Drawing.Point(475, 124);
-            this.goodButton.Name = "goodButton";
-            this.goodButton.Size = new System.Drawing.Size(94, 29);
-            this.goodButton.TabIndex = 6;
-            this.goodButton.TabStop = true;
-            this.goodButton.Text = "GOOD";
-            this.goodButton.UseVisualStyleBackColor = true;
-            // 
-            // veryGoodButton
-            // 
-            this.veryGoodButton.AutoSize = true;
-            this.veryGoodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.veryGoodButton.ForeColor = System.Drawing.Color.Lime;
-            this.veryGoodButton.Location = new System.Drawing.Point(698, 124);
-            this.veryGoodButton.Name = "veryGoodButton";
-            this.veryGoodButton.Size = new System.Drawing.Size(152, 29);
-            this.veryGoodButton.TabIndex = 7;
-            this.veryGoodButton.TabStop = true;
-            this.veryGoodButton.Text = "VERY GOOD";
-            this.veryGoodButton.UseVisualStyleBackColor = true;
             // 
             // reviewSubmit
             // 
@@ -736,6 +674,180 @@
             this.reviewSubmit.UseVisualStyleBackColor = false;
             this.reviewSubmit.Click += new System.EventHandler(this.ReviewSubmit_Click);
             // 
+            // veryGoodButton
+            // 
+            this.veryGoodButton.AutoSize = true;
+            this.veryGoodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.veryGoodButton.ForeColor = System.Drawing.Color.Lime;
+            this.veryGoodButton.Location = new System.Drawing.Point(698, 124);
+            this.veryGoodButton.Name = "veryGoodButton";
+            this.veryGoodButton.Size = new System.Drawing.Size(152, 29);
+            this.veryGoodButton.TabIndex = 7;
+            this.veryGoodButton.TabStop = true;
+            this.veryGoodButton.Text = "VERY GOOD";
+            this.veryGoodButton.UseVisualStyleBackColor = true;
+            // 
+            // goodButton
+            // 
+            this.goodButton.AutoSize = true;
+            this.goodButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.goodButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.goodButton.Location = new System.Drawing.Point(475, 124);
+            this.goodButton.Name = "goodButton";
+            this.goodButton.Size = new System.Drawing.Size(94, 29);
+            this.goodButton.TabIndex = 6;
+            this.goodButton.TabStop = true;
+            this.goodButton.Text = "GOOD";
+            this.goodButton.UseVisualStyleBackColor = true;
+            // 
+            // badButton
+            // 
+            this.badButton.AutoSize = true;
+            this.badButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.badButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.badButton.Location = new System.Drawing.Point(278, 124);
+            this.badButton.Name = "badButton";
+            this.badButton.Size = new System.Drawing.Size(74, 29);
+            this.badButton.TabIndex = 5;
+            this.badButton.TabStop = true;
+            this.badButton.Text = "BAD";
+            this.badButton.UseVisualStyleBackColor = true;
+            // 
+            // veryBadButton
+            // 
+            this.veryBadButton.AutoSize = true;
+            this.veryBadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.veryBadButton.ForeColor = System.Drawing.Color.Red;
+            this.veryBadButton.Location = new System.Drawing.Point(26, 124);
+            this.veryBadButton.Name = "veryBadButton";
+            this.veryBadButton.Size = new System.Drawing.Size(132, 29);
+            this.veryBadButton.TabIndex = 4;
+            this.veryBadButton.TabStop = true;
+            this.veryBadButton.Text = "VERY BAD";
+            this.veryBadButton.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(348, 169);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "YOUR REVIEW:";
+            // 
+            // universityReview
+            // 
+            this.universityReview.Location = new System.Drawing.Point(18, 202);
+            this.universityReview.Margin = new System.Windows.Forms.Padding(4);
+            this.universityReview.Multiline = true;
+            this.universityReview.Name = "universityReview";
+            this.universityReview.Size = new System.Drawing.Size(855, 171);
+            this.universityReview.TabIndex = 1;
+            // 
+            // universityName
+            // 
+            this.universityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.universityName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.universityName.Location = new System.Drawing.Point(18, 0);
+            this.universityName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.universityName.Name = "universityName";
+            this.universityName.Size = new System.Drawing.Size(855, 121);
+            this.universityName.TabIndex = 0;
+            this.universityName.Text = "UNIVERSITY:";
+            this.universityName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // findSchoolsTab
+            // 
+            this.findSchoolsTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.findSchoolsTab.Controls.Add(this.searchButton);
+            this.findSchoolsTab.Controls.Add(this.gMap);
+            this.findSchoolsTab.Controls.Add(this.label17);
+            this.findSchoolsTab.Controls.Add(this.comboBox1);
+            this.findSchoolsTab.Controls.Add(this.label16);
+            this.findSchoolsTab.Controls.Add(this.textBox1);
+            this.findSchoolsTab.Location = new System.Drawing.Point(4, 25);
+            this.findSchoolsTab.Name = "findSchoolsTab";
+            this.findSchoolsTab.Size = new System.Drawing.Size(888, 433);
+            this.findSchoolsTab.TabIndex = 7;
+            this.findSchoolsTab.Text = "schoolLocationTab";
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(142, 115);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 5;
+            this.searchButton.Text = "SEARCH";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // gMap
+            // 
+            this.gMap.Bearing = 0F;
+            this.gMap.CanDragMap = true;
+            this.gMap.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMap.GrayScaleMode = false;
+            this.gMap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMap.LevelsKeepInMemmory = 5;
+            this.gMap.Location = new System.Drawing.Point(284, 28);
+            this.gMap.MarkersEnabled = true;
+            this.gMap.MaxZoom = 18;
+            this.gMap.MinZoom = 0;
+            this.gMap.MouseWheelZoomEnabled = true;
+            this.gMap.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionWithoutCenter;
+            this.gMap.Name = "gMap";
+            this.gMap.NegativeMode = false;
+            this.gMap.PolygonsEnabled = true;
+            this.gMap.RetryLoadTile = 0;
+            this.gMap.RoutesEnabled = true;
+            this.gMap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMap.ShowTileGridLines = false;
+            this.gMap.Size = new System.Drawing.Size(590, 391);
+            this.gMap.TabIndex = 4;
+            this.gMap.Zoom = 12D;
+            this.gMap.Load += new System.EventHandler(this.gMap_Load);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(17, 70);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(94, 18);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "RANGE(KM)";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(142, 70);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 24);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(9, 28);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 18);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "YOUR ADDRESS";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(142, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(136, 22);
+            this.textBox1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -745,7 +857,7 @@
             this.Controls.Add(this.tabsController);
             this.Controls.Add(this.menuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -762,6 +874,8 @@
             this.logOutTab.PerformLayout();
             this.universityTab.ResumeLayout(false);
             this.universityTab.PerformLayout();
+            this.findSchoolsTab.ResumeLayout(false);
+            this.findSchoolsTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -817,5 +931,13 @@
         private System.Windows.Forms.RadioButton goodButton;
         private System.Windows.Forms.RadioButton badButton;
         private System.Windows.Forms.Button reviewSubmit;
+        private System.Windows.Forms.Button FindSchool;
+        private System.Windows.Forms.TabPage findSchoolsTab;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private GMap.NET.WindowsForms.GMapControl gMap;
+        private System.Windows.Forms.Button searchButton;
     }
 }
