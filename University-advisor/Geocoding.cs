@@ -34,7 +34,6 @@ namespace University_advisor
         {
             string text = "https://eu1.locationiq.com/v1/search.php?key=" + LocationIqApiKey + "&q=" + address + "&format=json";
             text = text.Replace(" ", "%20");
-            Console.WriteLine(text);
             return text;
         }
         public (List<UniversityInfo>, double, double) ShowSchoolsInRange(int range, string address)
@@ -53,7 +52,6 @@ namespace University_advisor
             var schoolsInRangeNames = new List<string>();
             var schoolCoordinates = new List<(double, double)>();
 
-            Console.WriteLine("lit\n");
             for (int i = 0; i < schoolNamesObj.Count; i++) {
                 string name = ((Dictionary<string, object>)schoolNamesObj[i])["name"].ToString();
                 string lat = ((Dictionary<string, object>)schoolLatitudeObj[i])["latitude"].ToString();
