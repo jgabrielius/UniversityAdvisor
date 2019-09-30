@@ -183,32 +183,6 @@ namespace University_advisor.Forms
                 veryGoodButton.Checked = false;
             }
         }
-
-        private void FindSchool_Click(object sender, EventArgs e)
-        {
-        }
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label16_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void findSchoolTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Add(50);
@@ -220,22 +194,6 @@ namespace University_advisor.Forms
 
             tabsController.SelectTab(findSchoolsTab);
         }
-
-        private void homeTab_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void gMap_Load(object sender, EventArgs e)
         {
             gMap.MapProvider = GMap.NET.MapProviders.BingMapProvider.Instance;
@@ -279,11 +237,6 @@ namespace University_advisor.Forms
                 gMap.Overlays.Add(markers);
 
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

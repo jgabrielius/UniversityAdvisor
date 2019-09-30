@@ -202,12 +202,12 @@
             this.homeTab.Size = new System.Drawing.Size(888, 433);
             this.homeTab.TabIndex = 2;
             this.homeTab.Text = "homeTab";
-            this.homeTab.Click += new System.EventHandler(this.homeTab_Click);
             // 
             // FindSchool
             // 
             this.FindSchool.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
-            this.FindSchool.Location = new System.Drawing.Point(734, 17);
+            this.FindSchool.ForeColor = System.Drawing.Color.White;
+            this.FindSchool.Location = new System.Drawing.Point(771, 17);
             this.FindSchool.Name = "FindSchool";
             this.FindSchool.Size = new System.Drawing.Size(103, 70);
             this.FindSchool.TabIndex = 1;
@@ -224,7 +224,7 @@
             this.universitiesGrid.Margin = new System.Windows.Forms.Padding(4);
             this.universitiesGrid.Name = "universitiesGrid";
             this.universitiesGrid.ReadOnly = true;
-            this.universitiesGrid.Size = new System.Drawing.Size(849, 409);
+            this.universitiesGrid.Size = new System.Drawing.Size(744, 409);
             this.universitiesGrid.TabIndex = 0;
             this.universitiesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UniversitiesGrid_CellClick);
             // 
@@ -821,7 +821,6 @@
             this.label17.Size = new System.Drawing.Size(94, 18);
             this.label17.TabIndex = 3;
             this.label17.Text = "RANGE(KM)";
-            this.label17.Click += new System.EventHandler(this.label17_Click_1);
             // 
             // comboBox1
             // 
@@ -841,7 +840,6 @@
             this.label16.Size = new System.Drawing.Size(127, 18);
             this.label16.TabIndex = 1;
             this.label16.Text = "YOUR ADDRESS";
-            this.label16.Click += new System.EventHandler(this.label16_Click_2);
             // 
             // textBox1
             // 
@@ -849,7 +847,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(136, 22);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // MainForm
             // 
