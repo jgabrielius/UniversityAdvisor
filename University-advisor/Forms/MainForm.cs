@@ -279,6 +279,21 @@ namespace University_advisor.Forms
             universitiesGrid.DataSource = table;
         }
 
+        private void InstantiateProgramsGrid(int universityId)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Group", typeof(string));
+            table.Columns.Add("Direction", typeof(string));
+            table.Columns.Add("Program", typeof(string));
+            table.Columns.Add("City", typeof(string));
+            ArrayList programmes = SqlDriver.Fetch($"SELECT [group],direction,program,city FROM studyProgrammes WHERE universityId = {universityId}");
+            foreach (Dictionary<string, object> row in programmes)
+            {
+                table.Rows.Add(row["group"], row["direction"],row["program"],row["city"]);
+            }
+            programsGrid.DataSource = table;
+        }
+
         private void UniversitiesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -287,21 +302,19 @@ namespace University_advisor.Forms
             int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
             string selectedName = dgv.CurrentRow.Cells["Name"].Value.ToString();
             universityName.Text = selectedName;
+            InstantiateProgramsGrid(selectedId);
             tabsController.SelectTab(universityTab);
 
         }
 
         private void ReviewSubmit_Click(object sender, EventArgs e)
         {
-            string review = universityReview.Text;
-            if(review.Length == 0)
-            {
-                MessageBox.Show("Your review is empty", "Error");
-            } else
-            {
-                MessageBox.Show("Thank you for submitting your review", "Review submitted");
-                universityReview.Text = "";
-            }
+            //TODO: add review form for university
+        }
+
+        private void ProgramsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //TODO show review form for specific program
         }
     }
 }

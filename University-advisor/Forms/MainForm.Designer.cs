@@ -73,10 +73,10 @@
             this.yesButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.universityTab = new System.Windows.Forms.TabPage();
-            this.universityName = new System.Windows.Forms.Label();
-            this.universityReview = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.reviewSubmit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.universityName = new System.Windows.Forms.Label();
+            this.programsGrid = new System.Windows.Forms.DataGridView();
             this.menuPanel.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universitiesGrid)).BeginInit();
@@ -85,6 +85,7 @@
             this.aboutTab.SuspendLayout();
             this.logOutTab.SuspendLayout();
             this.universityTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programsGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -687,9 +688,9 @@
             // universityTab
             // 
             this.universityTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.universityTab.Controls.Add(this.programsGrid);
             this.universityTab.Controls.Add(this.reviewSubmit);
             this.universityTab.Controls.Add(this.label1);
-            this.universityTab.Controls.Add(this.universityReview);
             this.universityTab.Controls.Add(this.universityName);
             this.universityTab.Location = new System.Drawing.Point(4, 22);
             this.universityTab.Name = "universityTab";
@@ -698,48 +699,52 @@
             this.universityTab.TabIndex = 6;
             this.universityTab.Text = "universityTab";
             // 
-            // universityName
+            // reviewSubmit
             // 
-            this.universityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.universityName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.universityName.Location = new System.Drawing.Point(3, 0);
-            this.universityName.Name = "universityName";
-            this.universityName.Size = new System.Drawing.Size(661, 98);
-            this.universityName.TabIndex = 0;
-            this.universityName.Text = "UNIVERSITY:";
-            this.universityName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // universityReview
-            // 
-            this.universityReview.Location = new System.Drawing.Point(16, 151);
-            this.universityReview.Multiline = true;
-            this.universityReview.Name = "universityReview";
-            this.universityReview.Size = new System.Drawing.Size(636, 146);
-            this.universityReview.TabIndex = 1;
+            this.reviewSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.reviewSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reviewSubmit.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.reviewSubmit.Location = new System.Drawing.Point(174, 58);
+            this.reviewSubmit.Name = "reviewSubmit";
+            this.reviewSubmit.Size = new System.Drawing.Size(323, 39);
+            this.reviewSubmit.TabIndex = 3;
+            this.reviewSubmit.Text = "Write a review for university";
+            this.reviewSubmit.UseVisualStyleBackColor = false;
+            this.reviewSubmit.Click += new System.EventHandler(this.ReviewSubmit_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(258, 113);
+            this.label1.Location = new System.Drawing.Point(185, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 25);
+            this.label1.Size = new System.Drawing.Size(312, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Write a review";
+            this.label1.Text = "Or write a review for study program";
             // 
-            // reviewSubmit
+            // universityName
             // 
-            this.reviewSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.reviewSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reviewSubmit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.reviewSubmit.Location = new System.Drawing.Point(253, 303);
-            this.reviewSubmit.Name = "reviewSubmit";
-            this.reviewSubmit.Size = new System.Drawing.Size(156, 39);
-            this.reviewSubmit.TabIndex = 3;
-            this.reviewSubmit.Text = "Submit";
-            this.reviewSubmit.UseVisualStyleBackColor = false;
-            this.reviewSubmit.Click += new System.EventHandler(this.ReviewSubmit_Click);
+            this.universityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.universityName.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.universityName.Location = new System.Drawing.Point(3, -11);
+            this.universityName.Name = "universityName";
+            this.universityName.Size = new System.Drawing.Size(661, 98);
+            this.universityName.TabIndex = 0;
+            this.universityName.Text = "UNIVERSITY:";
+            this.universityName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // programsGrid
+            // 
+            this.programsGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.programsGrid.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
+            this.programsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.programsGrid.Location = new System.Drawing.Point(14, 128);
+            this.programsGrid.Name = "programsGrid";
+            this.programsGrid.ReadOnly = true;
+            this.programsGrid.Size = new System.Drawing.Size(637, 212);
+            this.programsGrid.TabIndex = 4;
+            this.programsGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProgramsGrid_CellContentClick);
             // 
             // MainForm
             // 
@@ -764,6 +769,7 @@
             this.logOutTab.PerformLayout();
             this.universityTab.ResumeLayout(false);
             this.universityTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programsGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -818,6 +824,6 @@
         private System.Windows.Forms.Label universityName;
         private System.Windows.Forms.Button reviewSubmit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox universityReview;
+        private System.Windows.Forms.DataGridView programsGrid;
     }
 }
