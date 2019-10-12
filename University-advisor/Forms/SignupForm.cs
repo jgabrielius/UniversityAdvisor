@@ -21,6 +21,7 @@ namespace University_advisor.Forms
         public SignupForm()
         {
             InitializeComponent();
+            CenterToScreen();
             SetValues();
         }
         private void SetValues()
@@ -29,7 +30,7 @@ namespace University_advisor.Forms
             if (universityResult.Count != 0)
             {
                 var universityList = new List<string>();
-                foreach(Dictionary<string,object> row in universityResult)
+                foreach (Dictionary<string, object> row in universityResult)
                 {
                     universityList.Add(row["name"].ToString());
                 }
@@ -54,6 +55,12 @@ namespace University_advisor.Forms
                 };
                 SendUserToDb(newUser);
             }
+
+            Hide();
+            var loginForm = new LoginForm();
+            loginForm.Closed += (s, args) => this.Close();
+            loginForm.ShowDialog();
+
         }
 
         private void SendUserToDb(UserModel newUser)
@@ -102,13 +109,21 @@ namespace University_advisor.Forms
                 MessageBox.Show("Passwords do not match");
                 return false;
             }
-            
-            if(passwordText.Text.Length<6)
+
+            if (passwordText.Text.Length < 6)
             {
                 MessageBox.Show("Passwords needs to be at least 6 characters long");
                 return false;
             }
             return true;
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var loginForm = new LoginForm();
+            loginForm.Closed += (s, args) => this.Close();
+            loginForm.ShowDialog();
         }
     }
 }

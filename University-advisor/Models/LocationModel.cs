@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University_advisor.Models
 {
-    public class LocationData
+    public class LocationModel
     {
         public string Place_id { get; set; }
         public string Licence { get; set; }

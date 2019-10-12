@@ -10,6 +10,7 @@ namespace University_advisor.Forms
         public LoginForm()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void SignInButton_Click(object sender, EventArgs e)
@@ -28,9 +29,10 @@ namespace University_advisor.Forms
             if (ValidateFields(usernameTextBox.Text, passwordTextBox.Text))
             {
                 Logger.Log("User logged in");
-                var mainForm = new MainForm(usernameTextBox.Text);
                 Hide();
-                mainForm.Show();
+                var mainForm = new MainForm(usernameTextBox.Text);
+                mainForm.Closed += (s, args) => this.Close();
+                mainForm.ShowDialog();
             }
             else
             {
@@ -41,10 +43,10 @@ namespace University_advisor.Forms
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            var signupForm = new SignupForm();
-
             Hide();
-            signupForm.Show();
+            var signupForm = new SignupForm();
+            signupForm.Closed += (s, args) => this.Close();
+            signupForm.ShowDialog();
         }
 
         private bool ValidateFields(string username, string password)
@@ -52,6 +54,14 @@ namespace University_advisor.Forms
             string hashedPassword = Helper.CreateMD5(password);
             var credentialResult = SqlDriver.Fetch($"SELECT username, password FROM users WHERE username='{username}' AND password='{hashedPassword}';");
             return (credentialResult != null && credentialResult.Count == 1);
+        }
+
+        private void ForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            var forgotPasswordForm = new ForgotPasswordForm();
+            forgotPasswordForm.Closed += (s, args) => this.Close();
+            forgotPasswordForm.ShowDialog();
         }
     }
 }

@@ -34,6 +34,7 @@
             this.SignInButton = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
+            this.forgotPassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // usernameTextBox
@@ -105,20 +106,38 @@
             this.passwordLabel.Text = "PASSWORD: ";
             this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // forgotPassword
+            // 
+            this.forgotPassword.ActiveLinkColor = System.Drawing.Color.White;
+            this.forgotPassword.AutoSize = true;
+            this.forgotPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotPassword.LinkColor = System.Drawing.Color.White;
+            this.forgotPassword.Location = new System.Drawing.Point(150, 219);
+            this.forgotPassword.Name = "forgotPassword";
+            this.forgotPassword.Size = new System.Drawing.Size(201, 24);
+            this.forgotPassword.TabIndex = 10;
+            this.forgotPassword.TabStop = true;
+            this.forgotPassword.Text = "Forgot your password?";
+            this.forgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ForgotPassword_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(505, 215);
+            this.ClientSize = new System.Drawing.Size(505, 258);
+            this.Controls.Add(this.forgotPassword);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.SignInButton);
             this.Controls.Add(this.signUpButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "University advisor";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +150,6 @@
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.LinkLabel forgotPassword;
     }
 }

@@ -8,8 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Controls;
 using University_advisor.Tools;
 using System.Diagnostics;
+using University_advisor.Services;
+using University_advisor.Models;
 
 namespace University_advisor.Forms
 {
@@ -17,27 +20,24 @@ namespace University_advisor.Forms
     {
         string currentUser;
         ArrayList statusList = new ArrayList() { "Student", "Graduate", "Lecturer" };
+        ControlGMap map;
 
         public MainForm(string username)
         {
             Debug.Write("loaded main");
             InitializeComponent();
-            SetValues();
+            CenterToScreen();
             InstantiateGrid();
             currentUser = username;
+            SetValues();
             tabsController.Appearance = TabAppearance.FlatButtons;
             tabsController.ItemSize = new Size(0, 1);
             tabsController.SizeMode = TabSizeMode.Fixed;
-            errorMessagePass.Hide();
-            errorMessageEmail.Hide();
-            errorMessageUniversity.Hide();
-            errorMessageStatus.Hide();
-            
         }
 
         private void menuPanel_Paint(object sender, PaintEventArgs e)
         {
-                    }
+        }
 
         private void LogoButton_Click(object sender, EventArgs e)
         {
@@ -52,6 +52,7 @@ namespace University_advisor.Forms
         private void SettingsButton_Click(object sender, EventArgs e)
         {
             tabsController.SelectTab(settingsTab);
+            SetValues();
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
@@ -76,194 +77,45 @@ namespace University_advisor.Forms
 
         private void ChangePassword_Click(object sender, EventArgs e)
         {
-            errorMessagePass.Hide();
-
-            string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
-            ArrayList passwordFromDB = SqlDriver.Fetch(sqlGetCurrentPassword);
-            string password = ((Dictionary<string, object>)passwordFromDB[0])["password"].ToString();
-
-            if (Helper.CreateMD5(currentPassword.Text).Equals(password))
-            {
-                if (newPassword.Text.Equals(currentPassword.Text))
-                {
-                    errorMessagePass.Text = "New password cannot be the same as old one.";
-                    errorMessagePass.Show();
-                    Logger.Log("New password cannot be the same as old one.");
-                }
-                else if (newPassword.Text.Equals(newPassword2.Text))
-                {
-                    string sqlUpdatePassword = "UPDATE users SET password='" + Helper.CreateMD5(newPassword.Text) + "' WHERE username='"+currentUser+"';";
-                    try
-                    {
-                        if (SqlDriver.Execute(sqlUpdatePassword))
-                        {
-                            errorMessagePass.Text = "Password updated successfully.";
-                            errorMessagePass.Show();
-                            Logger.Log("Password updated successfully.");
-                        }
-                        else
-                        {
-                            errorMessagePass.Text = "Error changing password";
-                            errorMessagePass.Show();
-                            Logger.Log("Error changing password");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.Log(ex.Message);
-                    }
-                    
-                } else
-                {
-                    errorMessagePass.Text = "Passwords doesn't match.";
-                    errorMessagePass.Show();
-                    Logger.Log("Passwords doesn't match.");
-                }
-
-            }
+            new UserEditingService(currentUser).ChangePassword(currentPassword.Text, newPassword.Text, newPassword2.Text);
+            ClearValues();
         }
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
-            errorMessageEmail.Hide();
-
-            string sqlGetCurrentEmail = "SELECT email from users where username='" + currentUser + "';";
-            ArrayList emailFromDB = SqlDriver.Fetch(sqlGetCurrentEmail);
-            string email = ((Dictionary<string, object>)emailFromDB[0])["email"].ToString();
-
-            if (currentEmail.Text.Equals(email))
-            {
-                if (newEmail.Text.Equals(currentEmail.Text))
-                {
-                    errorMessageEmail.Text = "New email cannot be the same as old one.";
-                    errorMessageEmail.Show();
-                    Logger.Log("New email cannot be the same as old one.");
-
-                }
-                else if (newEmail.Text.Equals(newEmail2.Text))
-                {
-                    string sqlUpdateEmail = "UPDATE users SET email='" + newEmail.Text + "' WHERE username='" + currentUser + "';";
-
-                    try
-                    {
-                        if (SqlDriver.Execute(sqlUpdateEmail))
-                        {
-                            errorMessageEmail.Text = "Email updated successfully.";
-                            errorMessageEmail.Show();
-                            Logger.Log("Email updated successfully.");
-                        }
-                        else
-                        {
-                            errorMessageEmail.Text = "Error changing email.";
-                            errorMessageEmail.Show();
-                            Logger.Log("Error changing email");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.Log(ex.Message);
-                    }
-                }
-                else
-                {
-                    errorMessageEmail.Text = "Emails doesn't match.";
-                    errorMessageEmail.Show();
-                    Logger.Log("Emails doesn't match.");
-
-                }
-            }
+            new UserEditingService(currentUser).ChangeEmail(currentEmail.Text, newEmail.Text, newEmail2.Text);
+            ClearValues();
         }
 
         private void ChangeUniversity_Click(object sender, EventArgs e)
         {
-            errorMessageUniversity.Hide();
-            string sqlGetCurrentUniversity = "select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';";
-            ArrayList universityIdFromDB = SqlDriver.Fetch(sqlGetCurrentUniversity);
-            string currentUniversity = ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
-
-            if (!universityBox.SelectedItem.Equals(currentUniversity))
-            {
-                string sqlGetNewUniversityID = "select universityid from universities where name ='" + universityBox.SelectedItem+"';";
-                ArrayList newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
-                string newUniversityId = ((Dictionary<string, object>)newUniversityIdFromDB[0])["universityId"].ToString();
-
-                string sqlUpdateUniversityID = "update users set universityid =" + newUniversityId + " where username ='" + currentUser + "';";
-                try
-                {
-                    if (SqlDriver.Execute(sqlUpdateUniversityID))
-                    {
-                        MessageBox.Show("University updated successfully.");
-                        Logger.Log("University updated successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error changing university");
-                        Logger.Log("Error changing university");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log(ex.Message);
-                }
-
-            }
-            else
-            {
-                errorMessageUniversity.Text = "New university cannot be the same as old one.";
-                errorMessageUniversity.Show();
-                Logger.Log("New university cannot be the same as old one.");
-            }
+            new UserEditingService(currentUser).ChangeUniversity(universityBox.SelectedItem.ToString());
+            ClearValues();
         }
 
         private void ChangeStatus_Click(object sender, EventArgs e)
         {
-            errorMessageStatus.Hide();
-
-            string sqlGetCurrentStatus = "SELECT status from users where username='" + currentUser + "';";
-            ArrayList statusFromDB = SqlDriver.Fetch(sqlGetCurrentStatus);
-            string currentStatus = ((Dictionary<string, object>)statusFromDB[0])["status"].ToString();
-
-            if (!statusBox.SelectedItem.Equals(currentStatus))
-            {
-                string sqlUpdateStatus = "UPDATE users SET status='" + statusBox.SelectedItem + "' WHERE username='" + currentUser + "';";
-
-                try
-                {
-                    if (SqlDriver.Execute(sqlUpdateStatus))
-                    {
-                        MessageBox.Show("Status updated successfully.");
-                        Logger.Log("Status updated successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error changing status.");
-                        Logger.Log("Error changing status");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Logger.Log(ex.Message);
-                }
-            }
-            else
-            {
-                Logger.Log("New status cannot be the same as old one.");
-            }
+            new UserEditingService(currentUser).ChangeStatus(statusBox.SelectedItem.ToString());
+            ClearValues();
         }
 
         private void SetValues()
         {
-            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
-            if (universityResult.Count != 0)
-            {
-                var universityList = new List<string>();
-                foreach (Dictionary<string, object> row in universityResult)
-                {
-                    universityList.Add(row["name"].ToString());
-                }
-                universityBox.DataSource = universityList;
-                statusBox.DataSource = statusList;
-            }
+            UserEditingService service = new UserEditingService(currentUser);
+            universityBox.DataSource = service.GetAllUniversities();
+            universityBox.SelectedItem = service.GetCurrentUniversity();
+            statusBox.DataSource = statusList;
+            statusBox.SelectedItem = service.GetCurrentStatus();
+        }
+
+        private void ClearValues()
+        {
+            currentPassword.Clear();
+            newPassword.Clear();
+            newPassword2.Clear();
+            currentEmail.Clear();
+            newEmail.Clear();
+            newEmail2.Clear();
         }
 
         private void InstantiateGrid()
@@ -272,9 +124,9 @@ namespace University_advisor.Forms
             table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Name", typeof(string));
             ArrayList universities = SqlDriver.Fetch("SELECT universityId,name FROM universities");
-            foreach (Dictionary<string,object> row in universities)
+            foreach (Dictionary<string, object> row in universities)
             {
-                table.Rows.Add(row["universityId"],row["name"]);
+                table.Rows.Add(row["universityId"], row["name"]);
             }
             universitiesGrid.DataSource = table;
         }
@@ -315,6 +167,30 @@ namespace University_advisor.Forms
         private void ProgramsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //TODO show review form for specific program
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add(50);
+            comboBox1.Items.Add(100);
+            comboBox1.Items.Add(250);
+            comboBox1.Items.Add(500);
+            comboBox1.Items.Add(1000);
+            comboBox1.Items.Add(2000);
+
+            searchButton.TabStop = false;
+            searchButton.FlatStyle = FlatStyle.Flat;
+            searchButton.FlatAppearance.BorderSize = 0;
+
+            tabsController.SelectTab(findSchoolsTab);
+        }
+        private void gMap_Load(object sender, EventArgs e)
+        {
+            map = new ControlGMap(gMap);
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            map.UpdateMap(comboBox1.Text, textBox1.Text);
         }
     }
 }
