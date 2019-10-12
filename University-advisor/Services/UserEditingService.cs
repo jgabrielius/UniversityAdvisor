@@ -17,10 +17,11 @@ namespace University_advisor.Services
             this.currentUser = currentUser;
         }
 
+        public UserEditingService() { }
+
         public void ChangePassword(string currentPassword, string newPassword, string newPassword2)
         {
-            string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
-            ArrayList passwordFromDB = SqlDriver.Fetch(sqlGetCurrentPassword);
+            ArrayList passwordFromDB = SqlDriver.Fetch("SELECT password from users where username='" + currentUser + "';");
             string password = ((Dictionary<string, object>)passwordFromDB[0])["password"].ToString();
 
             if (Helper.CreateMD5(currentPassword).Equals(password))
@@ -63,8 +64,7 @@ namespace University_advisor.Services
 
         public void ChangeEmail(string currentEmail, string newEmail, string newEmail2)
         {
-            string sqlGetCurrentEmail = "SELECT email from users where username='" + currentUser + "';";
-            ArrayList emailFromDB = SqlDriver.Fetch(sqlGetCurrentEmail);
+            ArrayList emailFromDB = SqlDriver.Fetch("SELECT email from users where username='" + currentUser + "';");
             string email = ((Dictionary<string, object>)emailFromDB[0])["email"].ToString();
 
             if (currentEmail.Equals(email))
@@ -178,15 +178,13 @@ namespace University_advisor.Services
 
         public string GetCurrentUniversity()
         {
-            string sqlGetCurrentUniversity = "select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';";
-            ArrayList universityIdFromDB = SqlDriver.Fetch(sqlGetCurrentUniversity);
+            ArrayList universityIdFromDB = SqlDriver.Fetch("select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';");
             return ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
         }
 
         public string GetCurrentStatus()
         {
-            string sqlGetCurrentStatus = "select status from users where username = '" + currentUser + "';";
-            ArrayList statusFromDB = SqlDriver.Fetch(sqlGetCurrentStatus);
+            ArrayList statusFromDB = SqlDriver.Fetch("select status from users where username = '" + currentUser + "';");
             return ((Dictionary<string, object>)statusFromDB[0])["status"].ToString();
         }
 
@@ -195,13 +193,28 @@ namespace University_advisor.Services
             var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
             var universityList = new List<string>();
 
-            foreach (Dictionary<string, object> row in universityResult)
+            if (universityResult.Count != 0)
             {
-                universityList.Add(row["name"].ToString());
+                foreach (Dictionary<string, object> row in universityResult)
+                {
+                    universityList.Add(row["name"].ToString());
+                }
             }
-
             return universityList;
         }
 
+        public List<String> GetUserInfo()
+        {
+            var sqlUserInfo = SqlDriver.Fetch("select email, first_name, last_name, universities.name, status from universities, users where users.universityid = universities.universityId and username = '" + currentUser + "';");
+            var userInfo = new List<string>();
+
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["email"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["first_name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["last_name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["status"].ToString());
+            return userInfo;
+        }
     }
+
 }

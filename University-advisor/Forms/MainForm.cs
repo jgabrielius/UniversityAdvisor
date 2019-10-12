@@ -58,6 +58,15 @@ namespace University_advisor.Forms
         private void AboutButton_Click(object sender, EventArgs e)
         {
             tabsController.SelectTab(aboutTab);
+            UserEditingService service = new UserEditingService(currentUser);
+            var userInfo = service.GetUserInfo();
+
+            usernameLabel.Text = currentUser;
+            emailLabel.Text = userInfo[0];
+            firstnameLabel.Text = userInfo[1];
+            lastnameLabel.Text = userInfo[2];
+            universityLabel.Text = userInfo[3];
+            statusLabel.Text = userInfo[4];
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
