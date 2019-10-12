@@ -109,11 +109,7 @@ namespace University_advisor.Services
 
         public void ChangeUniversity(string selectedUniversity)
         {
-            string sqlGetCurrentUniversity = "select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';";
-            ArrayList universityIdFromDB = SqlDriver.Fetch(sqlGetCurrentUniversity);
-            string currentUniversity = ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
-
-            if (!selectedUniversity.Equals(currentUniversity))
+            if (!selectedUniversity.Equals(GetCurrentUniversity()))
             {
                 string sqlGetNewUniversityID = "select universityid from universities where name ='" + selectedUniversity + "';";
                 ArrayList newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
@@ -180,7 +176,32 @@ namespace University_advisor.Services
             }
         }
 
+        public string GetCurrentUniversity()
+        {
+            string sqlGetCurrentUniversity = "select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';";
+            ArrayList universityIdFromDB = SqlDriver.Fetch(sqlGetCurrentUniversity);
+            return ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
+        }
 
+        public string GetCurrentStatus()
+        {
+            string sqlGetCurrentStatus = "select status from users where username = '" + currentUser + "';";
+            ArrayList statusFromDB = SqlDriver.Fetch(sqlGetCurrentStatus);
+            return ((Dictionary<string, object>)statusFromDB[0])["status"].ToString();
+        }
+
+        public List<String> GetAllUniversities()
+        {
+            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
+            var universityList = new List<string>();
+
+            foreach (Dictionary<string, object> row in universityResult)
+            {
+                universityList.Add(row["name"].ToString());
+            }
+
+            return universityList;
+        }
 
     }
 }
