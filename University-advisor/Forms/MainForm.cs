@@ -27,9 +27,9 @@ namespace University_advisor.Forms
             Debug.Write("loaded main");
             InitializeComponent();
             CenterToScreen();
-            SetValues();
             InstantiateGrid();
             currentUser = username;
+            SetValues();
             tabsController.Appearance = TabAppearance.FlatButtons;
             tabsController.ItemSize = new Size(0, 1);
             tabsController.SizeMode = TabSizeMode.Fixed;
@@ -52,8 +52,7 @@ namespace University_advisor.Forms
         private void SettingsButton_Click(object sender, EventArgs e)
         {
             tabsController.SelectTab(settingsTab);
-            tabsController.SelectTab(settingsTab);
-            tabsController.SelectTab(settingsTab);
+            SetValues();
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
@@ -102,17 +101,11 @@ namespace University_advisor.Forms
 
         private void SetValues()
         {
-            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
-            if (universityResult.Count != 0)
-            {
-                var universityList = new List<string>();
-                foreach (Dictionary<string, object> row in universityResult)
-                {
-                    universityList.Add(row["name"].ToString());
-                }
-                universityBox.DataSource = universityList;
-                statusBox.DataSource = statusList;
-            }
+            UserEditingService service = new UserEditingService(currentUser);
+            universityBox.DataSource = service.GetAllUniversities();
+            universityBox.SelectedItem = service.GetCurrentUniversity();
+            statusBox.DataSource = statusList;
+            statusBox.SelectedItem = service.GetCurrentStatus();
         }
 
         private void ClearValues()
