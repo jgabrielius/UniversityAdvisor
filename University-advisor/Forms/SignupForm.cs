@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Models;
+using University_advisor.Services;
 using University_advisor.Tools;
 
 namespace University_advisor.Forms
@@ -26,17 +27,9 @@ namespace University_advisor.Forms
         }
         private void SetValues()
         {
-            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
-            if (universityResult.Count != 0)
-            {
-                var universityList = new List<string>();
-                foreach (Dictionary<string, object> row in universityResult)
-                {
-                    universityList.Add(row["name"].ToString());
-                }
-                universityBox.DataSource = universityList;
-                statusBox.DataSource = statusList;
-            }
+            UserEditingService service = new UserEditingService();
+            universityBox.DataSource = service.GetAllUniversities();
+            statusBox.DataSource = statusList;
         }
 
         private void CreateAccountButton_Click(object sender, EventArgs e)

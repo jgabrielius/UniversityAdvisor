@@ -17,6 +17,8 @@ namespace University_advisor.Services
             this.currentUser = currentUser;
         }
 
+        public UserEditingService() { }
+
         public void ChangePassword(string currentPassword, string newPassword, string newPassword2)
         {
             string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
@@ -194,13 +196,27 @@ namespace University_advisor.Services
         {
             var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
             var universityList = new List<string>();
-
-            foreach (Dictionary<string, object> row in universityResult)
+            if (universityResult.Count != 0)
             {
-                universityList.Add(row["name"].ToString());
+                foreach (Dictionary<string, object> row in universityResult)
+                {
+                    universityList.Add(row["name"].ToString());
+                }
             }
-
             return universityList;
+        } 
+
+        public List<String> GetUserInfo()
+        {
+            var sqlUserInfo = SqlDriver.Fetch("select email, first_name, last_name, universities.name, status from universities, users where users.universityid = universities.universityId and username = '" + currentUser + "';");
+            var userInfo = new List<string>();
+
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["email"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["first_name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["last_name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["status"].ToString());
+            return userInfo;
         }
 
     }

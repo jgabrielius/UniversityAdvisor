@@ -64,6 +64,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.aboutTab = new System.Windows.Forms.TabPage();
+            this.currentStatusLabel = new System.Windows.Forms.Label();
+            this.currentUniversityLabel = new System.Windows.Forms.Label();
+            this.currentLastnameLabel = new System.Windows.Forms.Label();
+            this.currentFirstnameLabel = new System.Windows.Forms.Label();
+            this.currentEmailLabel = new System.Windows.Forms.Label();
+            this.currentUserLabel = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.logOutTab = new System.Windows.Forms.TabPage();
             this.noButton = new System.Windows.Forms.Button();
@@ -82,50 +94,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.universityReview = new System.Windows.Forms.TabPage();
-            this.evaluationLabel = new System.Windows.Forms.Label();
-            this.universityLabel = new System.Windows.Forms.Label();
-            this.courseReview = new System.Windows.Forms.TabPage();
-            this.courseSelection55 = new System.Windows.Forms.RadioButton();
-            this.courseSelection54 = new System.Windows.Forms.RadioButton();
-            this.courseSelection53 = new System.Windows.Forms.RadioButton();
-            this.courseSelection52 = new System.Windows.Forms.RadioButton();
-            this.courseSelection51 = new System.Windows.Forms.RadioButton();
-            this.effectivenessLabel = new System.Windows.Forms.Label();
-            this.courseSelection45 = new System.Windows.Forms.RadioButton();
-            this.courseSelection44 = new System.Windows.Forms.RadioButton();
-            this.courseSelection43 = new System.Windows.Forms.RadioButton();
-            this.courseSelection42 = new System.Windows.Forms.RadioButton();
-            this.courseSelection41 = new System.Windows.Forms.RadioButton();
-            this.encouragmentLabel = new System.Windows.Forms.Label();
-            this.courseSelection35 = new System.Windows.Forms.RadioButton();
-            this.courseSelection34 = new System.Windows.Forms.RadioButton();
-            this.courseSelection33 = new System.Windows.Forms.RadioButton();
-            this.courseSelection32 = new System.Windows.Forms.RadioButton();
-            this.courseSelection31 = new System.Windows.Forms.RadioButton();
-            this.feedbackLabel = new System.Windows.Forms.Label();
-            this.courseSelection25 = new System.Windows.Forms.RadioButton();
-            this.courseSelection24 = new System.Windows.Forms.RadioButton();
-            this.courseSelection23 = new System.Windows.Forms.RadioButton();
-            this.courseSelection22 = new System.Windows.Forms.RadioButton();
-            this.courseSelection21 = new System.Windows.Forms.RadioButton();
-            this.expectationsLabel = new System.Windows.Forms.Label();
-            this.courseSelection15 = new System.Windows.Forms.RadioButton();
-            this.courseSelection14 = new System.Windows.Forms.RadioButton();
-            this.courseSelection13 = new System.Windows.Forms.RadioButton();
-            this.courseSelection12 = new System.Windows.Forms.RadioButton();
-            this.courseSelection11 = new System.Windows.Forms.RadioButton();
-            this.contentLabel = new System.Windows.Forms.Label();
-            this.courseEvaluationLabel = new System.Windows.Forms.Label();
-            this.courseLabel = new System.Windows.Forms.Label();
-            this.courseSelection65 = new System.Windows.Forms.RadioButton();
-            this.courseSelection64 = new System.Windows.Forms.RadioButton();
-            this.courseSelection63 = new System.Windows.Forms.RadioButton();
-            this.courseSelection62 = new System.Windows.Forms.RadioButton();
-            this.courseSelection61 = new System.Windows.Forms.RadioButton();
-            this.satisfactionLabel = new System.Windows.Forms.Label();
-            this.courseCommentsLabel = new System.Windows.Forms.Label();
-            this.courseComments = new System.Windows.Forms.TextBox();
-            this.submitCourseReview = new System.Windows.Forms.Button();
             this.submitUniversityReview = new System.Windows.Forms.Button();
             this.universityComments = new System.Windows.Forms.TextBox();
             this.commentsLabel = new System.Windows.Forms.Label();
@@ -165,6 +133,50 @@
             this.uniSelection12 = new System.Windows.Forms.RadioButton();
             this.uniSelection11 = new System.Windows.Forms.RadioButton();
             this.varietyLabel = new System.Windows.Forms.Label();
+            this.evaluationLabel = new System.Windows.Forms.Label();
+            this.universityLabel = new System.Windows.Forms.Label();
+            this.courseReview = new System.Windows.Forms.TabPage();
+            this.submitCourseReview = new System.Windows.Forms.Button();
+            this.courseComments = new System.Windows.Forms.TextBox();
+            this.courseCommentsLabel = new System.Windows.Forms.Label();
+            this.courseSelection65 = new System.Windows.Forms.RadioButton();
+            this.courseSelection64 = new System.Windows.Forms.RadioButton();
+            this.courseSelection63 = new System.Windows.Forms.RadioButton();
+            this.courseSelection62 = new System.Windows.Forms.RadioButton();
+            this.courseSelection61 = new System.Windows.Forms.RadioButton();
+            this.satisfactionLabel = new System.Windows.Forms.Label();
+            this.courseSelection55 = new System.Windows.Forms.RadioButton();
+            this.courseSelection54 = new System.Windows.Forms.RadioButton();
+            this.courseSelection53 = new System.Windows.Forms.RadioButton();
+            this.courseSelection52 = new System.Windows.Forms.RadioButton();
+            this.courseSelection51 = new System.Windows.Forms.RadioButton();
+            this.effectivenessLabel = new System.Windows.Forms.Label();
+            this.courseSelection45 = new System.Windows.Forms.RadioButton();
+            this.courseSelection44 = new System.Windows.Forms.RadioButton();
+            this.courseSelection43 = new System.Windows.Forms.RadioButton();
+            this.courseSelection42 = new System.Windows.Forms.RadioButton();
+            this.courseSelection41 = new System.Windows.Forms.RadioButton();
+            this.encouragmentLabel = new System.Windows.Forms.Label();
+            this.courseSelection35 = new System.Windows.Forms.RadioButton();
+            this.courseSelection34 = new System.Windows.Forms.RadioButton();
+            this.courseSelection33 = new System.Windows.Forms.RadioButton();
+            this.courseSelection32 = new System.Windows.Forms.RadioButton();
+            this.courseSelection31 = new System.Windows.Forms.RadioButton();
+            this.feedbackLabel = new System.Windows.Forms.Label();
+            this.courseSelection25 = new System.Windows.Forms.RadioButton();
+            this.courseSelection24 = new System.Windows.Forms.RadioButton();
+            this.courseSelection23 = new System.Windows.Forms.RadioButton();
+            this.courseSelection22 = new System.Windows.Forms.RadioButton();
+            this.courseSelection21 = new System.Windows.Forms.RadioButton();
+            this.expectationsLabel = new System.Windows.Forms.Label();
+            this.courseSelection15 = new System.Windows.Forms.RadioButton();
+            this.courseSelection14 = new System.Windows.Forms.RadioButton();
+            this.courseSelection13 = new System.Windows.Forms.RadioButton();
+            this.courseSelection12 = new System.Windows.Forms.RadioButton();
+            this.courseSelection11 = new System.Windows.Forms.RadioButton();
+            this.contentLabel = new System.Windows.Forms.Label();
+            this.courseEvaluationLabel = new System.Windows.Forms.Label();
+            this.courseLabel = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universitiesGrid)).BeginInit();
@@ -647,6 +659,18 @@
             // aboutTab
             // 
             this.aboutTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.aboutTab.Controls.Add(this.currentStatusLabel);
+            this.aboutTab.Controls.Add(this.currentUniversityLabel);
+            this.aboutTab.Controls.Add(this.currentLastnameLabel);
+            this.aboutTab.Controls.Add(this.currentFirstnameLabel);
+            this.aboutTab.Controls.Add(this.currentEmailLabel);
+            this.aboutTab.Controls.Add(this.currentUserLabel);
+            this.aboutTab.Controls.Add(this.label23);
+            this.aboutTab.Controls.Add(this.label22);
+            this.aboutTab.Controls.Add(this.label21);
+            this.aboutTab.Controls.Add(this.label20);
+            this.aboutTab.Controls.Add(this.label19);
+            this.aboutTab.Controls.Add(this.label18);
             this.aboutTab.Controls.Add(this.label3);
             this.aboutTab.Location = new System.Drawing.Point(4, 25);
             this.aboutTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -656,16 +680,148 @@
             this.aboutTab.TabIndex = 4;
             this.aboutTab.Text = "aboutTab";
             // 
+            // currentStatusLabel
+            // 
+            this.currentStatusLabel.AutoSize = true;
+            this.currentStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentStatusLabel.Location = new System.Drawing.Point(204, 343);
+            this.currentStatusLabel.Name = "currentStatusLabel";
+            this.currentStatusLabel.Size = new System.Drawing.Size(93, 33);
+            this.currentStatusLabel.TabIndex = 13;
+            this.currentStatusLabel.Text = "status";
+            // 
+            // currentUniversityLabel
+            // 
+            this.currentUniversityLabel.AutoSize = true;
+            this.currentUniversityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentUniversityLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentUniversityLabel.Location = new System.Drawing.Point(206, 299);
+            this.currentUniversityLabel.Name = "currentUniversityLabel";
+            this.currentUniversityLabel.Size = new System.Drawing.Size(140, 33);
+            this.currentUniversityLabel.TabIndex = 12;
+            this.currentUniversityLabel.Text = "university";
+            // 
+            // currentLastnameLabel
+            // 
+            this.currentLastnameLabel.AutoSize = true;
+            this.currentLastnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentLastnameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentLastnameLabel.Location = new System.Drawing.Point(206, 253);
+            this.currentLastnameLabel.Name = "currentLastnameLabel";
+            this.currentLastnameLabel.Size = new System.Drawing.Size(134, 33);
+            this.currentLastnameLabel.TabIndex = 11;
+            this.currentLastnameLabel.Text = "lastname";
+            // 
+            // currentFirstnameLabel
+            // 
+            this.currentFirstnameLabel.AutoSize = true;
+            this.currentFirstnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentFirstnameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentFirstnameLabel.Location = new System.Drawing.Point(204, 207);
+            this.currentFirstnameLabel.Name = "currentFirstnameLabel";
+            this.currentFirstnameLabel.Size = new System.Drawing.Size(136, 33);
+            this.currentFirstnameLabel.TabIndex = 10;
+            this.currentFirstnameLabel.Text = "firstname";
+            // 
+            // currentEmailLabel
+            // 
+            this.currentEmailLabel.AutoSize = true;
+            this.currentEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentEmailLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentEmailLabel.Location = new System.Drawing.Point(204, 162);
+            this.currentEmailLabel.Name = "currentEmailLabel";
+            this.currentEmailLabel.Size = new System.Drawing.Size(86, 33);
+            this.currentEmailLabel.TabIndex = 9;
+            this.currentEmailLabel.Text = "email";
+            // 
+            // currentUserLabel
+            // 
+            this.currentUserLabel.AutoSize = true;
+            this.currentUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentUserLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentUserLabel.Location = new System.Drawing.Point(204, 118);
+            this.currentUserLabel.Name = "currentUserLabel";
+            this.currentUserLabel.Size = new System.Drawing.Size(145, 33);
+            this.currentUserLabel.TabIndex = 8;
+            this.currentUserLabel.Text = "username";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label23.Location = new System.Drawing.Point(86, 343);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(112, 33);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Status:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label22.Location = new System.Drawing.Point(36, 299);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(164, 33);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "University:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label21.Location = new System.Drawing.Point(31, 253);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(169, 33);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Last name:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label20.Location = new System.Drawing.Point(25, 207);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(173, 33);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "First name:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label19.Location = new System.Drawing.Point(95, 162);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(103, 33);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Email:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label18.Location = new System.Drawing.Point(31, 118);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(167, 33);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Username:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.8F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(300, 135);
+            this.label3.Location = new System.Drawing.Point(286, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(288, 54);
+            this.label3.Size = new System.Drawing.Size(280, 39);
             this.label3.TabIndex = 1;
-            this.label3.Text = "ABOUT TAB";
+            this.label3.Text = "YOUR PROFILE:";
             // 
             // logOutTab
             // 
@@ -944,521 +1100,6 @@
             this.universityReview.Size = new System.Drawing.Size(888, 433);
             this.universityReview.TabIndex = 8;
             this.universityReview.Text = "universityReview";
-            // 
-            // evaluationLabel
-            // 
-            this.evaluationLabel.AutoSize = true;
-            this.evaluationLabel.ForeColor = System.Drawing.Color.White;
-            this.evaluationLabel.Location = new System.Drawing.Point(192, 51);
-            this.evaluationLabel.Name = "evaluationLabel";
-            this.evaluationLabel.Size = new System.Drawing.Size(512, 17);
-            this.evaluationLabel.TabIndex = 1;
-            this.evaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
-    "atisfied";
-            // 
-            // universityLabel
-            // 
-            this.universityLabel.AutoSize = true;
-            this.universityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.universityLabel.ForeColor = System.Drawing.Color.White;
-            this.universityLabel.Location = new System.Drawing.Point(369, 16);
-            this.universityLabel.Name = "universityLabel";
-            this.universityLabel.Size = new System.Drawing.Size(158, 25);
-            this.universityLabel.TabIndex = 0;
-            this.universityLabel.Text = "University review";
-            // 
-            // courseReview
-            // 
-            this.courseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
-            this.courseReview.Controls.Add(this.submitCourseReview);
-            this.courseReview.Controls.Add(this.courseComments);
-            this.courseReview.Controls.Add(this.courseCommentsLabel);
-            this.courseReview.Controls.Add(this.courseSelection65);
-            this.courseReview.Controls.Add(this.courseSelection64);
-            this.courseReview.Controls.Add(this.courseSelection63);
-            this.courseReview.Controls.Add(this.courseSelection62);
-            this.courseReview.Controls.Add(this.courseSelection61);
-            this.courseReview.Controls.Add(this.satisfactionLabel);
-            this.courseReview.Controls.Add(this.courseSelection55);
-            this.courseReview.Controls.Add(this.courseSelection54);
-            this.courseReview.Controls.Add(this.courseSelection53);
-            this.courseReview.Controls.Add(this.courseSelection52);
-            this.courseReview.Controls.Add(this.courseSelection51);
-            this.courseReview.Controls.Add(this.effectivenessLabel);
-            this.courseReview.Controls.Add(this.courseSelection45);
-            this.courseReview.Controls.Add(this.courseSelection44);
-            this.courseReview.Controls.Add(this.courseSelection43);
-            this.courseReview.Controls.Add(this.courseSelection42);
-            this.courseReview.Controls.Add(this.courseSelection41);
-            this.courseReview.Controls.Add(this.encouragmentLabel);
-            this.courseReview.Controls.Add(this.courseSelection35);
-            this.courseReview.Controls.Add(this.courseSelection34);
-            this.courseReview.Controls.Add(this.courseSelection33);
-            this.courseReview.Controls.Add(this.courseSelection32);
-            this.courseReview.Controls.Add(this.courseSelection31);
-            this.courseReview.Controls.Add(this.feedbackLabel);
-            this.courseReview.Controls.Add(this.courseSelection25);
-            this.courseReview.Controls.Add(this.courseSelection24);
-            this.courseReview.Controls.Add(this.courseSelection23);
-            this.courseReview.Controls.Add(this.courseSelection22);
-            this.courseReview.Controls.Add(this.courseSelection21);
-            this.courseReview.Controls.Add(this.expectationsLabel);
-            this.courseReview.Controls.Add(this.courseSelection15);
-            this.courseReview.Controls.Add(this.courseSelection14);
-            this.courseReview.Controls.Add(this.courseSelection13);
-            this.courseReview.Controls.Add(this.courseSelection12);
-            this.courseReview.Controls.Add(this.courseSelection11);
-            this.courseReview.Controls.Add(this.contentLabel);
-            this.courseReview.Controls.Add(this.courseEvaluationLabel);
-            this.courseReview.Controls.Add(this.courseLabel);
-            this.courseReview.ForeColor = System.Drawing.Color.White;
-            this.courseReview.Location = new System.Drawing.Point(4, 25);
-            this.courseReview.Name = "courseReview";
-            this.courseReview.Padding = new System.Windows.Forms.Padding(3);
-            this.courseReview.Size = new System.Drawing.Size(888, 433);
-            this.courseReview.TabIndex = 9;
-            this.courseReview.Text = "courseReview";
-            // 
-            // courseSelection55
-            // 
-            this.courseSelection55.AutoSize = true;
-            this.courseSelection55.Location = new System.Drawing.Point(733, 225);
-            this.courseSelection55.Name = "courseSelection55";
-            this.courseSelection55.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection55.TabIndex = 40;
-            this.courseSelection55.TabStop = true;
-            this.courseSelection55.Text = "5";
-            this.courseSelection55.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection54
-            // 
-            this.courseSelection54.AutoSize = true;
-            this.courseSelection54.Location = new System.Drawing.Point(634, 225);
-            this.courseSelection54.Name = "courseSelection54";
-            this.courseSelection54.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection54.TabIndex = 39;
-            this.courseSelection54.TabStop = true;
-            this.courseSelection54.Text = "4";
-            this.courseSelection54.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection53
-            // 
-            this.courseSelection53.AutoSize = true;
-            this.courseSelection53.Location = new System.Drawing.Point(535, 225);
-            this.courseSelection53.Name = "courseSelection53";
-            this.courseSelection53.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection53.TabIndex = 38;
-            this.courseSelection53.TabStop = true;
-            this.courseSelection53.Text = "3";
-            this.courseSelection53.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection52
-            // 
-            this.courseSelection52.AutoSize = true;
-            this.courseSelection52.Location = new System.Drawing.Point(436, 225);
-            this.courseSelection52.Name = "courseSelection52";
-            this.courseSelection52.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection52.TabIndex = 37;
-            this.courseSelection52.TabStop = true;
-            this.courseSelection52.Text = "2";
-            this.courseSelection52.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection51
-            // 
-            this.courseSelection51.AutoSize = true;
-            this.courseSelection51.Location = new System.Drawing.Point(337, 225);
-            this.courseSelection51.Name = "courseSelection51";
-            this.courseSelection51.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection51.TabIndex = 36;
-            this.courseSelection51.TabStop = true;
-            this.courseSelection51.Text = "1";
-            this.courseSelection51.UseVisualStyleBackColor = true;
-            // 
-            // effectivenessLabel
-            // 
-            this.effectivenessLabel.AutoSize = true;
-            this.effectivenessLabel.ForeColor = System.Drawing.Color.White;
-            this.effectivenessLabel.Location = new System.Drawing.Point(29, 227);
-            this.effectivenessLabel.Name = "effectivenessLabel";
-            this.effectivenessLabel.Size = new System.Drawing.Size(198, 17);
-            this.effectivenessLabel.TabIndex = 35;
-            this.effectivenessLabel.Text = "Overall teaching effectiveness";
-            // 
-            // courseSelection45
-            // 
-            this.courseSelection45.AutoSize = true;
-            this.courseSelection45.Location = new System.Drawing.Point(733, 191);
-            this.courseSelection45.Name = "courseSelection45";
-            this.courseSelection45.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection45.TabIndex = 34;
-            this.courseSelection45.TabStop = true;
-            this.courseSelection45.Text = "5";
-            this.courseSelection45.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection44
-            // 
-            this.courseSelection44.AutoSize = true;
-            this.courseSelection44.Location = new System.Drawing.Point(634, 191);
-            this.courseSelection44.Name = "courseSelection44";
-            this.courseSelection44.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection44.TabIndex = 33;
-            this.courseSelection44.TabStop = true;
-            this.courseSelection44.Text = "4";
-            this.courseSelection44.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection43
-            // 
-            this.courseSelection43.AutoSize = true;
-            this.courseSelection43.Location = new System.Drawing.Point(535, 191);
-            this.courseSelection43.Name = "courseSelection43";
-            this.courseSelection43.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection43.TabIndex = 32;
-            this.courseSelection43.TabStop = true;
-            this.courseSelection43.Text = "3";
-            this.courseSelection43.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection42
-            // 
-            this.courseSelection42.AutoSize = true;
-            this.courseSelection42.Location = new System.Drawing.Point(436, 191);
-            this.courseSelection42.Name = "courseSelection42";
-            this.courseSelection42.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection42.TabIndex = 31;
-            this.courseSelection42.TabStop = true;
-            this.courseSelection42.Text = "2";
-            this.courseSelection42.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection41
-            // 
-            this.courseSelection41.AutoSize = true;
-            this.courseSelection41.Location = new System.Drawing.Point(337, 191);
-            this.courseSelection41.Name = "courseSelection41";
-            this.courseSelection41.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection41.TabIndex = 30;
-            this.courseSelection41.TabStop = true;
-            this.courseSelection41.Text = "1";
-            this.courseSelection41.UseVisualStyleBackColor = true;
-            // 
-            // encouragmentLabel
-            // 
-            this.encouragmentLabel.AutoSize = true;
-            this.encouragmentLabel.ForeColor = System.Drawing.Color.White;
-            this.encouragmentLabel.Location = new System.Drawing.Point(29, 193);
-            this.encouragmentLabel.Name = "encouragmentLabel";
-            this.encouragmentLabel.Size = new System.Drawing.Size(267, 17);
-            this.encouragmentLabel.TabIndex = 29;
-            this.encouragmentLabel.Text = "Encouragment of participation/discussion";
-            // 
-            // courseSelection35
-            // 
-            this.courseSelection35.AutoSize = true;
-            this.courseSelection35.Location = new System.Drawing.Point(733, 157);
-            this.courseSelection35.Name = "courseSelection35";
-            this.courseSelection35.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection35.TabIndex = 28;
-            this.courseSelection35.TabStop = true;
-            this.courseSelection35.Text = "5";
-            this.courseSelection35.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection34
-            // 
-            this.courseSelection34.AutoSize = true;
-            this.courseSelection34.Location = new System.Drawing.Point(634, 157);
-            this.courseSelection34.Name = "courseSelection34";
-            this.courseSelection34.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection34.TabIndex = 27;
-            this.courseSelection34.TabStop = true;
-            this.courseSelection34.Text = "4";
-            this.courseSelection34.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection33
-            // 
-            this.courseSelection33.AutoSize = true;
-            this.courseSelection33.Location = new System.Drawing.Point(535, 157);
-            this.courseSelection33.Name = "courseSelection33";
-            this.courseSelection33.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection33.TabIndex = 26;
-            this.courseSelection33.TabStop = true;
-            this.courseSelection33.Text = "3";
-            this.courseSelection33.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection32
-            // 
-            this.courseSelection32.AutoSize = true;
-            this.courseSelection32.Location = new System.Drawing.Point(436, 157);
-            this.courseSelection32.Name = "courseSelection32";
-            this.courseSelection32.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection32.TabIndex = 25;
-            this.courseSelection32.TabStop = true;
-            this.courseSelection32.Text = "2";
-            this.courseSelection32.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection31
-            // 
-            this.courseSelection31.AutoSize = true;
-            this.courseSelection31.Location = new System.Drawing.Point(337, 157);
-            this.courseSelection31.Name = "courseSelection31";
-            this.courseSelection31.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection31.TabIndex = 24;
-            this.courseSelection31.TabStop = true;
-            this.courseSelection31.Text = "1";
-            this.courseSelection31.UseVisualStyleBackColor = true;
-            // 
-            // feedbackLabel
-            // 
-            this.feedbackLabel.AutoSize = true;
-            this.feedbackLabel.ForeColor = System.Drawing.Color.White;
-            this.feedbackLabel.Location = new System.Drawing.Point(29, 159);
-            this.feedbackLabel.Name = "feedbackLabel";
-            this.feedbackLabel.Size = new System.Drawing.Size(207, 17);
-            this.feedbackLabel.TabIndex = 23;
-            this.feedbackLabel.Text = "Clear feedback on performance";
-            // 
-            // courseSelection25
-            // 
-            this.courseSelection25.AutoSize = true;
-            this.courseSelection25.Location = new System.Drawing.Point(733, 123);
-            this.courseSelection25.Name = "courseSelection25";
-            this.courseSelection25.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection25.TabIndex = 22;
-            this.courseSelection25.TabStop = true;
-            this.courseSelection25.Text = "5";
-            this.courseSelection25.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection24
-            // 
-            this.courseSelection24.AutoSize = true;
-            this.courseSelection24.Location = new System.Drawing.Point(634, 123);
-            this.courseSelection24.Name = "courseSelection24";
-            this.courseSelection24.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection24.TabIndex = 21;
-            this.courseSelection24.TabStop = true;
-            this.courseSelection24.Text = "4";
-            this.courseSelection24.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection23
-            // 
-            this.courseSelection23.AutoSize = true;
-            this.courseSelection23.Location = new System.Drawing.Point(535, 123);
-            this.courseSelection23.Name = "courseSelection23";
-            this.courseSelection23.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection23.TabIndex = 20;
-            this.courseSelection23.TabStop = true;
-            this.courseSelection23.Text = "3";
-            this.courseSelection23.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection22
-            // 
-            this.courseSelection22.AutoSize = true;
-            this.courseSelection22.Location = new System.Drawing.Point(436, 123);
-            this.courseSelection22.Name = "courseSelection22";
-            this.courseSelection22.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection22.TabIndex = 19;
-            this.courseSelection22.TabStop = true;
-            this.courseSelection22.Text = "2";
-            this.courseSelection22.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection21
-            // 
-            this.courseSelection21.AutoSize = true;
-            this.courseSelection21.Location = new System.Drawing.Point(337, 123);
-            this.courseSelection21.Name = "courseSelection21";
-            this.courseSelection21.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection21.TabIndex = 18;
-            this.courseSelection21.TabStop = true;
-            this.courseSelection21.Text = "1";
-            this.courseSelection21.UseVisualStyleBackColor = true;
-            // 
-            // expectationsLabel
-            // 
-            this.expectationsLabel.AutoSize = true;
-            this.expectationsLabel.ForeColor = System.Drawing.Color.White;
-            this.expectationsLabel.Location = new System.Drawing.Point(29, 125);
-            this.expectationsLabel.Name = "expectationsLabel";
-            this.expectationsLabel.Size = new System.Drawing.Size(146, 17);
-            this.expectationsLabel.TabIndex = 17;
-            this.expectationsLabel.Text = "Clarity of expectations";
-            // 
-            // courseSelection15
-            // 
-            this.courseSelection15.AutoSize = true;
-            this.courseSelection15.Location = new System.Drawing.Point(733, 89);
-            this.courseSelection15.Name = "courseSelection15";
-            this.courseSelection15.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection15.TabIndex = 16;
-            this.courseSelection15.TabStop = true;
-            this.courseSelection15.Text = "5";
-            this.courseSelection15.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection14
-            // 
-            this.courseSelection14.AutoSize = true;
-            this.courseSelection14.Location = new System.Drawing.Point(634, 89);
-            this.courseSelection14.Name = "courseSelection14";
-            this.courseSelection14.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection14.TabIndex = 15;
-            this.courseSelection14.TabStop = true;
-            this.courseSelection14.Text = "4";
-            this.courseSelection14.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection13
-            // 
-            this.courseSelection13.AutoSize = true;
-            this.courseSelection13.Location = new System.Drawing.Point(535, 89);
-            this.courseSelection13.Name = "courseSelection13";
-            this.courseSelection13.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection13.TabIndex = 14;
-            this.courseSelection13.TabStop = true;
-            this.courseSelection13.Text = "3";
-            this.courseSelection13.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection12
-            // 
-            this.courseSelection12.AutoSize = true;
-            this.courseSelection12.Location = new System.Drawing.Point(436, 89);
-            this.courseSelection12.Name = "courseSelection12";
-            this.courseSelection12.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection12.TabIndex = 13;
-            this.courseSelection12.TabStop = true;
-            this.courseSelection12.Text = "2";
-            this.courseSelection12.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection11
-            // 
-            this.courseSelection11.AutoSize = true;
-            this.courseSelection11.Location = new System.Drawing.Point(337, 89);
-            this.courseSelection11.Name = "courseSelection11";
-            this.courseSelection11.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection11.TabIndex = 12;
-            this.courseSelection11.TabStop = true;
-            this.courseSelection11.Text = "1";
-            this.courseSelection11.UseVisualStyleBackColor = true;
-            // 
-            // contentLabel
-            // 
-            this.contentLabel.AutoSize = true;
-            this.contentLabel.ForeColor = System.Drawing.Color.White;
-            this.contentLabel.Location = new System.Drawing.Point(29, 91);
-            this.contentLabel.Name = "contentLabel";
-            this.contentLabel.Size = new System.Drawing.Size(155, 17);
-            this.contentLabel.TabIndex = 7;
-            this.contentLabel.Text = "Presentation of content";
-            // 
-            // courseEvaluationLabel
-            // 
-            this.courseEvaluationLabel.AutoSize = true;
-            this.courseEvaluationLabel.ForeColor = System.Drawing.Color.White;
-            this.courseEvaluationLabel.Location = new System.Drawing.Point(192, 51);
-            this.courseEvaluationLabel.Name = "courseEvaluationLabel";
-            this.courseEvaluationLabel.Size = new System.Drawing.Size(512, 17);
-            this.courseEvaluationLabel.TabIndex = 3;
-            this.courseEvaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
-    "atisfied";
-            // 
-            // courseLabel
-            // 
-            this.courseLabel.AutoSize = true;
-            this.courseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.courseLabel.ForeColor = System.Drawing.Color.White;
-            this.courseLabel.Location = new System.Drawing.Point(380, 16);
-            this.courseLabel.Name = "courseLabel";
-            this.courseLabel.Size = new System.Drawing.Size(137, 25);
-            this.courseLabel.TabIndex = 2;
-            this.courseLabel.Text = "Course review";
-            // 
-            // courseSelection65
-            // 
-            this.courseSelection65.AutoSize = true;
-            this.courseSelection65.Location = new System.Drawing.Point(733, 259);
-            this.courseSelection65.Name = "courseSelection65";
-            this.courseSelection65.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection65.TabIndex = 46;
-            this.courseSelection65.TabStop = true;
-            this.courseSelection65.Text = "5";
-            this.courseSelection65.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection64
-            // 
-            this.courseSelection64.AutoSize = true;
-            this.courseSelection64.Location = new System.Drawing.Point(634, 259);
-            this.courseSelection64.Name = "courseSelection64";
-            this.courseSelection64.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection64.TabIndex = 45;
-            this.courseSelection64.TabStop = true;
-            this.courseSelection64.Text = "4";
-            this.courseSelection64.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection63
-            // 
-            this.courseSelection63.AutoSize = true;
-            this.courseSelection63.Location = new System.Drawing.Point(535, 259);
-            this.courseSelection63.Name = "courseSelection63";
-            this.courseSelection63.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection63.TabIndex = 44;
-            this.courseSelection63.TabStop = true;
-            this.courseSelection63.Text = "3";
-            this.courseSelection63.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection62
-            // 
-            this.courseSelection62.AutoSize = true;
-            this.courseSelection62.Location = new System.Drawing.Point(436, 259);
-            this.courseSelection62.Name = "courseSelection62";
-            this.courseSelection62.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection62.TabIndex = 43;
-            this.courseSelection62.TabStop = true;
-            this.courseSelection62.Text = "2";
-            this.courseSelection62.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection61
-            // 
-            this.courseSelection61.AutoSize = true;
-            this.courseSelection61.Location = new System.Drawing.Point(337, 259);
-            this.courseSelection61.Name = "courseSelection61";
-            this.courseSelection61.Size = new System.Drawing.Size(37, 21);
-            this.courseSelection61.TabIndex = 42;
-            this.courseSelection61.TabStop = true;
-            this.courseSelection61.Text = "1";
-            this.courseSelection61.UseVisualStyleBackColor = true;
-            // 
-            // satisfactionLabel
-            // 
-            this.satisfactionLabel.AutoSize = true;
-            this.satisfactionLabel.ForeColor = System.Drawing.Color.White;
-            this.satisfactionLabel.Location = new System.Drawing.Point(29, 261);
-            this.satisfactionLabel.Name = "satisfactionLabel";
-            this.satisfactionLabel.Size = new System.Drawing.Size(253, 17);
-            this.satisfactionLabel.TabIndex = 41;
-            this.satisfactionLabel.Text = "How satisfied were you with this course";
-            // 
-            // courseCommentsLabel
-            // 
-            this.courseCommentsLabel.AutoSize = true;
-            this.courseCommentsLabel.ForeColor = System.Drawing.Color.White;
-            this.courseCommentsLabel.Location = new System.Drawing.Point(29, 293);
-            this.courseCommentsLabel.Name = "courseCommentsLabel";
-            this.courseCommentsLabel.Size = new System.Drawing.Size(138, 17);
-            this.courseCommentsLabel.TabIndex = 47;
-            this.courseCommentsLabel.Text = "Additional comments";
-            // 
-            // courseComments
-            // 
-            this.courseComments.Location = new System.Drawing.Point(337, 293);
-            this.courseComments.Multiline = true;
-            this.courseComments.Name = "courseComments";
-            this.courseComments.Size = new System.Drawing.Size(433, 63);
-            this.courseComments.TabIndex = 48;
-            // 
-            // submitCourseReview
-            // 
-            this.submitCourseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
-            this.submitCourseReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitCourseReview.Location = new System.Drawing.Point(634, 373);
-            this.submitCourseReview.Name = "submitCourseReview";
-            this.submitCourseReview.Size = new System.Drawing.Size(136, 36);
-            this.submitCourseReview.TabIndex = 49;
-            this.submitCourseReview.Text = "Submit";
-            this.submitCourseReview.UseVisualStyleBackColor = false;
             // 
             // submitUniversityReview
             // 
@@ -1879,6 +1520,521 @@
             this.varietyLabel.TabIndex = 50;
             this.varietyLabel.Text = "Variety of courses";
             // 
+            // evaluationLabel
+            // 
+            this.evaluationLabel.AutoSize = true;
+            this.evaluationLabel.ForeColor = System.Drawing.Color.White;
+            this.evaluationLabel.Location = new System.Drawing.Point(192, 51);
+            this.evaluationLabel.Name = "evaluationLabel";
+            this.evaluationLabel.Size = new System.Drawing.Size(512, 17);
+            this.evaluationLabel.TabIndex = 1;
+            this.evaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
+    "atisfied";
+            // 
+            // universityLabel
+            // 
+            this.universityLabel.AutoSize = true;
+            this.universityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.universityLabel.ForeColor = System.Drawing.Color.White;
+            this.universityLabel.Location = new System.Drawing.Point(369, 16);
+            this.universityLabel.Name = "universityLabel";
+            this.universityLabel.Size = new System.Drawing.Size(158, 25);
+            this.universityLabel.TabIndex = 0;
+            this.universityLabel.Text = "University review";
+            // 
+            // courseReview
+            // 
+            this.courseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.courseReview.Controls.Add(this.submitCourseReview);
+            this.courseReview.Controls.Add(this.courseComments);
+            this.courseReview.Controls.Add(this.courseCommentsLabel);
+            this.courseReview.Controls.Add(this.courseSelection65);
+            this.courseReview.Controls.Add(this.courseSelection64);
+            this.courseReview.Controls.Add(this.courseSelection63);
+            this.courseReview.Controls.Add(this.courseSelection62);
+            this.courseReview.Controls.Add(this.courseSelection61);
+            this.courseReview.Controls.Add(this.satisfactionLabel);
+            this.courseReview.Controls.Add(this.courseSelection55);
+            this.courseReview.Controls.Add(this.courseSelection54);
+            this.courseReview.Controls.Add(this.courseSelection53);
+            this.courseReview.Controls.Add(this.courseSelection52);
+            this.courseReview.Controls.Add(this.courseSelection51);
+            this.courseReview.Controls.Add(this.effectivenessLabel);
+            this.courseReview.Controls.Add(this.courseSelection45);
+            this.courseReview.Controls.Add(this.courseSelection44);
+            this.courseReview.Controls.Add(this.courseSelection43);
+            this.courseReview.Controls.Add(this.courseSelection42);
+            this.courseReview.Controls.Add(this.courseSelection41);
+            this.courseReview.Controls.Add(this.encouragmentLabel);
+            this.courseReview.Controls.Add(this.courseSelection35);
+            this.courseReview.Controls.Add(this.courseSelection34);
+            this.courseReview.Controls.Add(this.courseSelection33);
+            this.courseReview.Controls.Add(this.courseSelection32);
+            this.courseReview.Controls.Add(this.courseSelection31);
+            this.courseReview.Controls.Add(this.feedbackLabel);
+            this.courseReview.Controls.Add(this.courseSelection25);
+            this.courseReview.Controls.Add(this.courseSelection24);
+            this.courseReview.Controls.Add(this.courseSelection23);
+            this.courseReview.Controls.Add(this.courseSelection22);
+            this.courseReview.Controls.Add(this.courseSelection21);
+            this.courseReview.Controls.Add(this.expectationsLabel);
+            this.courseReview.Controls.Add(this.courseSelection15);
+            this.courseReview.Controls.Add(this.courseSelection14);
+            this.courseReview.Controls.Add(this.courseSelection13);
+            this.courseReview.Controls.Add(this.courseSelection12);
+            this.courseReview.Controls.Add(this.courseSelection11);
+            this.courseReview.Controls.Add(this.contentLabel);
+            this.courseReview.Controls.Add(this.courseEvaluationLabel);
+            this.courseReview.Controls.Add(this.courseLabel);
+            this.courseReview.ForeColor = System.Drawing.Color.White;
+            this.courseReview.Location = new System.Drawing.Point(4, 25);
+            this.courseReview.Name = "courseReview";
+            this.courseReview.Padding = new System.Windows.Forms.Padding(3);
+            this.courseReview.Size = new System.Drawing.Size(888, 433);
+            this.courseReview.TabIndex = 9;
+            this.courseReview.Text = "courseReview";
+            // 
+            // submitCourseReview
+            // 
+            this.submitCourseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
+            this.submitCourseReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submitCourseReview.Location = new System.Drawing.Point(634, 373);
+            this.submitCourseReview.Name = "submitCourseReview";
+            this.submitCourseReview.Size = new System.Drawing.Size(136, 36);
+            this.submitCourseReview.TabIndex = 49;
+            this.submitCourseReview.Text = "Submit";
+            this.submitCourseReview.UseVisualStyleBackColor = false;
+            // 
+            // courseComments
+            // 
+            this.courseComments.Location = new System.Drawing.Point(337, 293);
+            this.courseComments.Multiline = true;
+            this.courseComments.Name = "courseComments";
+            this.courseComments.Size = new System.Drawing.Size(433, 63);
+            this.courseComments.TabIndex = 48;
+            // 
+            // courseCommentsLabel
+            // 
+            this.courseCommentsLabel.AutoSize = true;
+            this.courseCommentsLabel.ForeColor = System.Drawing.Color.White;
+            this.courseCommentsLabel.Location = new System.Drawing.Point(29, 293);
+            this.courseCommentsLabel.Name = "courseCommentsLabel";
+            this.courseCommentsLabel.Size = new System.Drawing.Size(138, 17);
+            this.courseCommentsLabel.TabIndex = 47;
+            this.courseCommentsLabel.Text = "Additional comments";
+            // 
+            // courseSelection65
+            // 
+            this.courseSelection65.AutoSize = true;
+            this.courseSelection65.Location = new System.Drawing.Point(733, 259);
+            this.courseSelection65.Name = "courseSelection65";
+            this.courseSelection65.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection65.TabIndex = 46;
+            this.courseSelection65.TabStop = true;
+            this.courseSelection65.Text = "5";
+            this.courseSelection65.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection64
+            // 
+            this.courseSelection64.AutoSize = true;
+            this.courseSelection64.Location = new System.Drawing.Point(634, 259);
+            this.courseSelection64.Name = "courseSelection64";
+            this.courseSelection64.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection64.TabIndex = 45;
+            this.courseSelection64.TabStop = true;
+            this.courseSelection64.Text = "4";
+            this.courseSelection64.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection63
+            // 
+            this.courseSelection63.AutoSize = true;
+            this.courseSelection63.Location = new System.Drawing.Point(535, 259);
+            this.courseSelection63.Name = "courseSelection63";
+            this.courseSelection63.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection63.TabIndex = 44;
+            this.courseSelection63.TabStop = true;
+            this.courseSelection63.Text = "3";
+            this.courseSelection63.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection62
+            // 
+            this.courseSelection62.AutoSize = true;
+            this.courseSelection62.Location = new System.Drawing.Point(436, 259);
+            this.courseSelection62.Name = "courseSelection62";
+            this.courseSelection62.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection62.TabIndex = 43;
+            this.courseSelection62.TabStop = true;
+            this.courseSelection62.Text = "2";
+            this.courseSelection62.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection61
+            // 
+            this.courseSelection61.AutoSize = true;
+            this.courseSelection61.Location = new System.Drawing.Point(337, 259);
+            this.courseSelection61.Name = "courseSelection61";
+            this.courseSelection61.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection61.TabIndex = 42;
+            this.courseSelection61.TabStop = true;
+            this.courseSelection61.Text = "1";
+            this.courseSelection61.UseVisualStyleBackColor = true;
+            // 
+            // satisfactionLabel
+            // 
+            this.satisfactionLabel.AutoSize = true;
+            this.satisfactionLabel.ForeColor = System.Drawing.Color.White;
+            this.satisfactionLabel.Location = new System.Drawing.Point(29, 261);
+            this.satisfactionLabel.Name = "satisfactionLabel";
+            this.satisfactionLabel.Size = new System.Drawing.Size(253, 17);
+            this.satisfactionLabel.TabIndex = 41;
+            this.satisfactionLabel.Text = "How satisfied were you with this course";
+            // 
+            // courseSelection55
+            // 
+            this.courseSelection55.AutoSize = true;
+            this.courseSelection55.Location = new System.Drawing.Point(733, 225);
+            this.courseSelection55.Name = "courseSelection55";
+            this.courseSelection55.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection55.TabIndex = 40;
+            this.courseSelection55.TabStop = true;
+            this.courseSelection55.Text = "5";
+            this.courseSelection55.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection54
+            // 
+            this.courseSelection54.AutoSize = true;
+            this.courseSelection54.Location = new System.Drawing.Point(634, 225);
+            this.courseSelection54.Name = "courseSelection54";
+            this.courseSelection54.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection54.TabIndex = 39;
+            this.courseSelection54.TabStop = true;
+            this.courseSelection54.Text = "4";
+            this.courseSelection54.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection53
+            // 
+            this.courseSelection53.AutoSize = true;
+            this.courseSelection53.Location = new System.Drawing.Point(535, 225);
+            this.courseSelection53.Name = "courseSelection53";
+            this.courseSelection53.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection53.TabIndex = 38;
+            this.courseSelection53.TabStop = true;
+            this.courseSelection53.Text = "3";
+            this.courseSelection53.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection52
+            // 
+            this.courseSelection52.AutoSize = true;
+            this.courseSelection52.Location = new System.Drawing.Point(436, 225);
+            this.courseSelection52.Name = "courseSelection52";
+            this.courseSelection52.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection52.TabIndex = 37;
+            this.courseSelection52.TabStop = true;
+            this.courseSelection52.Text = "2";
+            this.courseSelection52.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection51
+            // 
+            this.courseSelection51.AutoSize = true;
+            this.courseSelection51.Location = new System.Drawing.Point(337, 225);
+            this.courseSelection51.Name = "courseSelection51";
+            this.courseSelection51.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection51.TabIndex = 36;
+            this.courseSelection51.TabStop = true;
+            this.courseSelection51.Text = "1";
+            this.courseSelection51.UseVisualStyleBackColor = true;
+            // 
+            // effectivenessLabel
+            // 
+            this.effectivenessLabel.AutoSize = true;
+            this.effectivenessLabel.ForeColor = System.Drawing.Color.White;
+            this.effectivenessLabel.Location = new System.Drawing.Point(29, 227);
+            this.effectivenessLabel.Name = "effectivenessLabel";
+            this.effectivenessLabel.Size = new System.Drawing.Size(198, 17);
+            this.effectivenessLabel.TabIndex = 35;
+            this.effectivenessLabel.Text = "Overall teaching effectiveness";
+            // 
+            // courseSelection45
+            // 
+            this.courseSelection45.AutoSize = true;
+            this.courseSelection45.Location = new System.Drawing.Point(733, 191);
+            this.courseSelection45.Name = "courseSelection45";
+            this.courseSelection45.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection45.TabIndex = 34;
+            this.courseSelection45.TabStop = true;
+            this.courseSelection45.Text = "5";
+            this.courseSelection45.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection44
+            // 
+            this.courseSelection44.AutoSize = true;
+            this.courseSelection44.Location = new System.Drawing.Point(634, 191);
+            this.courseSelection44.Name = "courseSelection44";
+            this.courseSelection44.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection44.TabIndex = 33;
+            this.courseSelection44.TabStop = true;
+            this.courseSelection44.Text = "4";
+            this.courseSelection44.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection43
+            // 
+            this.courseSelection43.AutoSize = true;
+            this.courseSelection43.Location = new System.Drawing.Point(535, 191);
+            this.courseSelection43.Name = "courseSelection43";
+            this.courseSelection43.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection43.TabIndex = 32;
+            this.courseSelection43.TabStop = true;
+            this.courseSelection43.Text = "3";
+            this.courseSelection43.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection42
+            // 
+            this.courseSelection42.AutoSize = true;
+            this.courseSelection42.Location = new System.Drawing.Point(436, 191);
+            this.courseSelection42.Name = "courseSelection42";
+            this.courseSelection42.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection42.TabIndex = 31;
+            this.courseSelection42.TabStop = true;
+            this.courseSelection42.Text = "2";
+            this.courseSelection42.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection41
+            // 
+            this.courseSelection41.AutoSize = true;
+            this.courseSelection41.Location = new System.Drawing.Point(337, 191);
+            this.courseSelection41.Name = "courseSelection41";
+            this.courseSelection41.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection41.TabIndex = 30;
+            this.courseSelection41.TabStop = true;
+            this.courseSelection41.Text = "1";
+            this.courseSelection41.UseVisualStyleBackColor = true;
+            // 
+            // encouragmentLabel
+            // 
+            this.encouragmentLabel.AutoSize = true;
+            this.encouragmentLabel.ForeColor = System.Drawing.Color.White;
+            this.encouragmentLabel.Location = new System.Drawing.Point(29, 193);
+            this.encouragmentLabel.Name = "encouragmentLabel";
+            this.encouragmentLabel.Size = new System.Drawing.Size(267, 17);
+            this.encouragmentLabel.TabIndex = 29;
+            this.encouragmentLabel.Text = "Encouragment of participation/discussion";
+            // 
+            // courseSelection35
+            // 
+            this.courseSelection35.AutoSize = true;
+            this.courseSelection35.Location = new System.Drawing.Point(733, 157);
+            this.courseSelection35.Name = "courseSelection35";
+            this.courseSelection35.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection35.TabIndex = 28;
+            this.courseSelection35.TabStop = true;
+            this.courseSelection35.Text = "5";
+            this.courseSelection35.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection34
+            // 
+            this.courseSelection34.AutoSize = true;
+            this.courseSelection34.Location = new System.Drawing.Point(634, 157);
+            this.courseSelection34.Name = "courseSelection34";
+            this.courseSelection34.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection34.TabIndex = 27;
+            this.courseSelection34.TabStop = true;
+            this.courseSelection34.Text = "4";
+            this.courseSelection34.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection33
+            // 
+            this.courseSelection33.AutoSize = true;
+            this.courseSelection33.Location = new System.Drawing.Point(535, 157);
+            this.courseSelection33.Name = "courseSelection33";
+            this.courseSelection33.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection33.TabIndex = 26;
+            this.courseSelection33.TabStop = true;
+            this.courseSelection33.Text = "3";
+            this.courseSelection33.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection32
+            // 
+            this.courseSelection32.AutoSize = true;
+            this.courseSelection32.Location = new System.Drawing.Point(436, 157);
+            this.courseSelection32.Name = "courseSelection32";
+            this.courseSelection32.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection32.TabIndex = 25;
+            this.courseSelection32.TabStop = true;
+            this.courseSelection32.Text = "2";
+            this.courseSelection32.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection31
+            // 
+            this.courseSelection31.AutoSize = true;
+            this.courseSelection31.Location = new System.Drawing.Point(337, 157);
+            this.courseSelection31.Name = "courseSelection31";
+            this.courseSelection31.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection31.TabIndex = 24;
+            this.courseSelection31.TabStop = true;
+            this.courseSelection31.Text = "1";
+            this.courseSelection31.UseVisualStyleBackColor = true;
+            // 
+            // feedbackLabel
+            // 
+            this.feedbackLabel.AutoSize = true;
+            this.feedbackLabel.ForeColor = System.Drawing.Color.White;
+            this.feedbackLabel.Location = new System.Drawing.Point(29, 159);
+            this.feedbackLabel.Name = "feedbackLabel";
+            this.feedbackLabel.Size = new System.Drawing.Size(207, 17);
+            this.feedbackLabel.TabIndex = 23;
+            this.feedbackLabel.Text = "Clear feedback on performance";
+            // 
+            // courseSelection25
+            // 
+            this.courseSelection25.AutoSize = true;
+            this.courseSelection25.Location = new System.Drawing.Point(733, 123);
+            this.courseSelection25.Name = "courseSelection25";
+            this.courseSelection25.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection25.TabIndex = 22;
+            this.courseSelection25.TabStop = true;
+            this.courseSelection25.Text = "5";
+            this.courseSelection25.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection24
+            // 
+            this.courseSelection24.AutoSize = true;
+            this.courseSelection24.Location = new System.Drawing.Point(634, 123);
+            this.courseSelection24.Name = "courseSelection24";
+            this.courseSelection24.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection24.TabIndex = 21;
+            this.courseSelection24.TabStop = true;
+            this.courseSelection24.Text = "4";
+            this.courseSelection24.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection23
+            // 
+            this.courseSelection23.AutoSize = true;
+            this.courseSelection23.Location = new System.Drawing.Point(535, 123);
+            this.courseSelection23.Name = "courseSelection23";
+            this.courseSelection23.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection23.TabIndex = 20;
+            this.courseSelection23.TabStop = true;
+            this.courseSelection23.Text = "3";
+            this.courseSelection23.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection22
+            // 
+            this.courseSelection22.AutoSize = true;
+            this.courseSelection22.Location = new System.Drawing.Point(436, 123);
+            this.courseSelection22.Name = "courseSelection22";
+            this.courseSelection22.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection22.TabIndex = 19;
+            this.courseSelection22.TabStop = true;
+            this.courseSelection22.Text = "2";
+            this.courseSelection22.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection21
+            // 
+            this.courseSelection21.AutoSize = true;
+            this.courseSelection21.Location = new System.Drawing.Point(337, 123);
+            this.courseSelection21.Name = "courseSelection21";
+            this.courseSelection21.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection21.TabIndex = 18;
+            this.courseSelection21.TabStop = true;
+            this.courseSelection21.Text = "1";
+            this.courseSelection21.UseVisualStyleBackColor = true;
+            // 
+            // expectationsLabel
+            // 
+            this.expectationsLabel.AutoSize = true;
+            this.expectationsLabel.ForeColor = System.Drawing.Color.White;
+            this.expectationsLabel.Location = new System.Drawing.Point(29, 125);
+            this.expectationsLabel.Name = "expectationsLabel";
+            this.expectationsLabel.Size = new System.Drawing.Size(146, 17);
+            this.expectationsLabel.TabIndex = 17;
+            this.expectationsLabel.Text = "Clarity of expectations";
+            // 
+            // courseSelection15
+            // 
+            this.courseSelection15.AutoSize = true;
+            this.courseSelection15.Location = new System.Drawing.Point(733, 89);
+            this.courseSelection15.Name = "courseSelection15";
+            this.courseSelection15.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection15.TabIndex = 16;
+            this.courseSelection15.TabStop = true;
+            this.courseSelection15.Text = "5";
+            this.courseSelection15.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection14
+            // 
+            this.courseSelection14.AutoSize = true;
+            this.courseSelection14.Location = new System.Drawing.Point(634, 89);
+            this.courseSelection14.Name = "courseSelection14";
+            this.courseSelection14.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection14.TabIndex = 15;
+            this.courseSelection14.TabStop = true;
+            this.courseSelection14.Text = "4";
+            this.courseSelection14.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection13
+            // 
+            this.courseSelection13.AutoSize = true;
+            this.courseSelection13.Location = new System.Drawing.Point(535, 89);
+            this.courseSelection13.Name = "courseSelection13";
+            this.courseSelection13.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection13.TabIndex = 14;
+            this.courseSelection13.TabStop = true;
+            this.courseSelection13.Text = "3";
+            this.courseSelection13.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection12
+            // 
+            this.courseSelection12.AutoSize = true;
+            this.courseSelection12.Location = new System.Drawing.Point(436, 89);
+            this.courseSelection12.Name = "courseSelection12";
+            this.courseSelection12.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection12.TabIndex = 13;
+            this.courseSelection12.TabStop = true;
+            this.courseSelection12.Text = "2";
+            this.courseSelection12.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection11
+            // 
+            this.courseSelection11.AutoSize = true;
+            this.courseSelection11.Location = new System.Drawing.Point(337, 89);
+            this.courseSelection11.Name = "courseSelection11";
+            this.courseSelection11.Size = new System.Drawing.Size(37, 21);
+            this.courseSelection11.TabIndex = 12;
+            this.courseSelection11.TabStop = true;
+            this.courseSelection11.Text = "1";
+            this.courseSelection11.UseVisualStyleBackColor = true;
+            // 
+            // contentLabel
+            // 
+            this.contentLabel.AutoSize = true;
+            this.contentLabel.ForeColor = System.Drawing.Color.White;
+            this.contentLabel.Location = new System.Drawing.Point(29, 91);
+            this.contentLabel.Name = "contentLabel";
+            this.contentLabel.Size = new System.Drawing.Size(155, 17);
+            this.contentLabel.TabIndex = 7;
+            this.contentLabel.Text = "Presentation of content";
+            // 
+            // courseEvaluationLabel
+            // 
+            this.courseEvaluationLabel.AutoSize = true;
+            this.courseEvaluationLabel.ForeColor = System.Drawing.Color.White;
+            this.courseEvaluationLabel.Location = new System.Drawing.Point(192, 51);
+            this.courseEvaluationLabel.Name = "courseEvaluationLabel";
+            this.courseEvaluationLabel.Size = new System.Drawing.Size(512, 17);
+            this.courseEvaluationLabel.TabIndex = 3;
+            this.courseEvaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
+    "atisfied";
+            // 
+            // courseLabel
+            // 
+            this.courseLabel.AutoSize = true;
+            this.courseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.courseLabel.ForeColor = System.Drawing.Color.White;
+            this.courseLabel.Location = new System.Drawing.Point(380, 16);
+            this.courseLabel.Name = "courseLabel";
+            this.courseLabel.Size = new System.Drawing.Size(137, 25);
+            this.courseLabel.TabIndex = 2;
+            this.courseLabel.Text = "Course review";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2055,5 +2211,17 @@
         private System.Windows.Forms.RadioButton uniSelection12;
         private System.Windows.Forms.RadioButton uniSelection11;
         private System.Windows.Forms.Label varietyLabel;
+        private System.Windows.Forms.Label currentStatusLabel;
+        private System.Windows.Forms.Label currentUniversityLabel;
+        private System.Windows.Forms.Label currentLastnameLabel;
+        private System.Windows.Forms.Label currentFirstnameLabel;
+        private System.Windows.Forms.Label currentEmailLabel;
+        private System.Windows.Forms.Label currentUserLabel;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }

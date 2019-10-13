@@ -58,6 +58,15 @@ namespace University_advisor.Forms
         private void AboutButton_Click(object sender, EventArgs e)
         {
             tabsController.SelectTab(aboutTab);
+            UserEditingService service = new UserEditingService(currentUser);
+            var userInfo = service.GetUserInfo();
+
+            currentUserLabel.Text = currentUser;
+            currentEmailLabel.Text = userInfo[0];
+            currentFirstnameLabel.Text = userInfo[1];
+            currentLastnameLabel.Text = userInfo[2];
+            currentUniversityLabel.Text = userInfo[3];
+            currentStatusLabel.Text = userInfo[4];
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
@@ -194,5 +203,6 @@ namespace University_advisor.Forms
             //TODO show form for submitting a review for university
             tabsController.SelectTab(universityReview);
         }
+
     }
 }
