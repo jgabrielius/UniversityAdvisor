@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Services;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Forms
 {
@@ -24,12 +25,12 @@ namespace University_advisor.Forms
         {
             if (String.IsNullOrEmpty(usernameText.Text))
             {
-                MessageBox.Show("User is not specified");
+                MessageBox.Show(Messages.userNotSpecified);
                 return;
             }
             if (String.IsNullOrEmpty(emailText.Text))
             {
-                MessageBox.Show("Email is not specified");
+                MessageBox.Show(Messages.emailNotSpecified);
                 return;
             }
 
@@ -38,8 +39,8 @@ namespace University_advisor.Forms
                 try
                 {
                     new PasswordResetService(usernameText.Text, emailText.Text).Reset();
-                    Logger.Log("Password successfully changed.");
-                    MessageBox.Show("Password successfully changed. Check your inbox. ");
+                    Logger.Log(Messages.passwordUpdateSuccess);
+                    MessageBox.Show(Messages.passwordUpdateSuccessInbox);
 
                     var loginForm = new LoginForm();
                     Hide();
@@ -47,14 +48,14 @@ namespace University_advisor.Forms
                 }
                 catch
                 {
-                    Logger.Log("Password cannot be changed.");
-                    MessageBox.Show("Password cannot be changed.");
+                    Logger.Log(Messages.passwordUpdateFailed);
+                    MessageBox.Show(Messages.passwordUpdateFailed);
                 }
             }
             else
             {
-                Logger.Log("User attempted to change password");
-                MessageBox.Show("User with provided information does not exist.");
+                Logger.Log(Messages.userAttemptedToChangePassword);
+                MessageBox.Show(Messages.userDontExist);
             }
         }
 

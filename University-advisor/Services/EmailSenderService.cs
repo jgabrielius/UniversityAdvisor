@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Services
 {
@@ -31,11 +32,11 @@ namespace University_advisor.Services
                 msg.Subject = subject;
                 msg.Body = message;
                 SendThroughSmtp(msg);
-                Logger.Log("Email was successfully sent.");
+                Logger.Log(Messages.sendEmailSuccess);
             }
             catch
             {
-                Logger.Log("Email could not be sent.");
+                Logger.Log(Messages.sendEmailFailed);
             }
         }
     }

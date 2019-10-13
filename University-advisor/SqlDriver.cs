@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor
 {
@@ -32,14 +33,14 @@ namespace University_advisor
             SQLiteConnection dbConnection = Connect();
             if(dbConnection == null)
             {
-                Logger.Log("Failed to connect to database. Aborting query");
+                Logger.Log(Messages.dbConnectFailed);
                 return false;
             }
             try
             {
                 SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
-                Logger.Log("Query executed successfully");
+                Logger.Log(Messages.queryExecuteSuccess);
             }
             catch (SQLiteException e)
             {
@@ -55,7 +56,7 @@ namespace University_advisor
             SQLiteConnection dbConnection = Connect();
             if (dbConnection == null)
             {
-                Console.WriteLine("Failed to connect to database. Aborting query");
+                Console.WriteLine(Messages.dbConnectFailed);
                 return null;
             }
             try
