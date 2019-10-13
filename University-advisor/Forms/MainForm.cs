@@ -13,6 +13,9 @@ using University_advisor.Tools;
 using System.Diagnostics;
 using University_advisor.Services;
 using University_advisor.Models;
+using Control = System.Windows.Forms.Control;
+using RadioButton = System.Windows.Forms.RadioButton;
+using Panel = System.Windows.Forms.Panel;
 
 namespace University_advisor.Forms
 {
@@ -21,6 +24,8 @@ namespace University_advisor.Forms
         string currentUser;
         ArrayList statusList = new ArrayList() { "Student", "Graduate", "Lecturer" };
         ControlGMap map;
+        int selectedCourse;
+        int selectedUniversity;
 
         public MainForm(string username)
         {
@@ -133,14 +138,15 @@ namespace University_advisor.Forms
         private void InstantiateProgramsGrid(int universityId)
         {
             DataTable table = new DataTable();
+            table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Group", typeof(string));
             table.Columns.Add("Direction", typeof(string));
             table.Columns.Add("Program", typeof(string));
             table.Columns.Add("City", typeof(string));
-            ArrayList programmes = SqlDriver.Fetch($"SELECT [group],direction,program,city FROM studyProgrammes WHERE universityId = {universityId}");
+            ArrayList programmes = SqlDriver.Fetch($"SELECT studyProgramId,[group],direction,program,city FROM studyProgrammes WHERE universityId = {universityId}");
             foreach (Dictionary<string, object> row in programmes)
             {
-                table.Rows.Add(row["group"], row["direction"], row["program"], row["city"]);
+                table.Rows.Add(row["studyProgramId"],row["group"], row["direction"], row["program"], row["city"]);
             }
             programmesGrid.DataSource = table;
         }
@@ -154,6 +160,7 @@ namespace University_advisor.Forms
             string selectedName = dgv.CurrentRow.Cells["Name"].Value.ToString();
             universityName.Text = selectedName;
             InstantiateProgramsGrid(selectedId);
+            selectedUniversity = selectedId;
             tabsController.SelectTab(universityTab);
         }
 
@@ -183,16 +190,60 @@ namespace University_advisor.Forms
             map.UpdateMap(comboBox1.Text, textBox1.Text);
         }
 
-        private void ProgrammesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ProgrammesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //TODO show review form for specific program
+            DataGridView dgv = sender as DataGridView;
+            if (dgv == null)
+                return;
+            int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
+            selectedCourse = selectedId;
             tabsController.SelectTab(courseReview);
         }
 
         private void ReviewSubmit_Click(object sender, EventArgs e)
         {
-            //TODO show form for submitting a review for university
             tabsController.SelectTab(universityReview);
+        }
+
+        private void SubmitCourseReview_Click(object sender, EventArgs e)
+        {
+            List<Panel> panels = new List<Panel> { presentation, clarity, feedback, encouragement, effectiveness, satisfaction };
+            Dictionary<string, string> result = ExtractReviews(panels);
+            string insert = "INSER INTO coursereviews (";
+            string values = "VALUES (";
+            foreach(var item in result)
+            {
+                insert += item.Key+",";
+                values += item.Value + ",";
+            }
+            insert += "courseId)";
+            values += selectedCourse+")";
+            SqlDriver.Execute(insert + values);
+        }
+
+        private void SubmitUniversityReview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private Dictionary<string,string> ExtractReviews(List<Panel> panels)
+        {
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            foreach(Panel p in panels)
+            {
+                foreach(Control c in p.Controls)
+                {
+                    if (c.GetType() == typeof(RadioButton))
+                    {
+                        RadioButton btn = (RadioButton)c;
+                        if (btn.Checked == true)
+                        {
+                            result.Add(p.Name,btn.Text);
+                        }
+                    }
+                }
+            }
+            return result;
         }
     }
 }
