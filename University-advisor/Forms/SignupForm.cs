@@ -54,12 +54,12 @@ namespace University_advisor.Forms
                     Password = Helper.CreateMD5(passwordText.Text),
                 };
                 SendUserToDb(newUser);
-            }
 
-            Hide();
-            var loginForm = new LoginForm();
-            loginForm.Closed += (s, args) => this.Close();
-            loginForm.ShowDialog();
+                Hide();
+                var loginForm = new LoginForm();
+                loginForm.Closed += (s, args) => this.Close();
+                loginForm.ShowDialog();
+            }
 
         }
 
