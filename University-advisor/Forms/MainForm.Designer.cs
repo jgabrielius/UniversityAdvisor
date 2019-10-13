@@ -123,39 +123,13 @@
             this.varietyLabel = new System.Windows.Forms.Label();
             this.evaluationLabel = new System.Windows.Forms.Label();
             this.universityLabel = new System.Windows.Forms.Label();
-            this.courseLabel = new System.Windows.Forms.Label();
-            this.courseEvaluationLabel = new System.Windows.Forms.Label();
-            this.contentLabel = new System.Windows.Forms.Label();
-            this.expectationsLabel = new System.Windows.Forms.Label();
-            this.courseSelection23 = new System.Windows.Forms.RadioButton();
-            this.courseSelection24 = new System.Windows.Forms.RadioButton();
-            this.courseSelection25 = new System.Windows.Forms.RadioButton();
-            this.feedbackLabel = new System.Windows.Forms.Label();
-            this.encouragmentLabel = new System.Windows.Forms.Label();
-            this.effectivenessLabel = new System.Windows.Forms.Label();
-            this.satisfactionLabel = new System.Windows.Forms.Label();
-            this.courseCommentsLabel = new System.Windows.Forms.Label();
-            this.courseComments = new System.Windows.Forms.TextBox();
-            this.submitCourseReview = new System.Windows.Forms.Button();
-            this.clarity = new System.Windows.Forms.Panel();
-            this.clarity5 = new System.Windows.Forms.RadioButton();
-            this.clarity4 = new System.Windows.Forms.RadioButton();
-            this.clarity3 = new System.Windows.Forms.RadioButton();
-            this.clarity2 = new System.Windows.Forms.RadioButton();
-            this.clarity1 = new System.Windows.Forms.RadioButton();
-            this.presentation = new System.Windows.Forms.Panel();
-            this.presentation5 = new System.Windows.Forms.RadioButton();
-            this.presentation4 = new System.Windows.Forms.RadioButton();
-            this.presentation3 = new System.Windows.Forms.RadioButton();
-            this.presentation2 = new System.Windows.Forms.RadioButton();
-            this.presentation1 = new System.Windows.Forms.RadioButton();
             this.courseReview = new System.Windows.Forms.TabPage();
-            this.feedback = new System.Windows.Forms.Panel();
-            this.feedback1 = new System.Windows.Forms.RadioButton();
-            this.feedback2 = new System.Windows.Forms.RadioButton();
-            this.feedback3 = new System.Windows.Forms.RadioButton();
-            this.feedback4 = new System.Windows.Forms.RadioButton();
-            this.feedback5 = new System.Windows.Forms.RadioButton();
+            this.encouragement = new System.Windows.Forms.Panel();
+            this.encouragement1 = new System.Windows.Forms.RadioButton();
+            this.encouragement2 = new System.Windows.Forms.RadioButton();
+            this.encouragement3 = new System.Windows.Forms.RadioButton();
+            this.encouragement4 = new System.Windows.Forms.RadioButton();
+            this.encouragement5 = new System.Windows.Forms.RadioButton();
             this.effectiveness = new System.Windows.Forms.Panel();
             this.effectiveness1 = new System.Windows.Forms.RadioButton();
             this.effectiveness2 = new System.Windows.Forms.RadioButton();
@@ -168,12 +142,38 @@
             this.satisfaction3 = new System.Windows.Forms.RadioButton();
             this.satisfaction4 = new System.Windows.Forms.RadioButton();
             this.satisfaction5 = new System.Windows.Forms.RadioButton();
-            this.encouragement = new System.Windows.Forms.Panel();
-            this.encouragement1 = new System.Windows.Forms.RadioButton();
-            this.encouragement2 = new System.Windows.Forms.RadioButton();
-            this.encouragement3 = new System.Windows.Forms.RadioButton();
-            this.encouragement4 = new System.Windows.Forms.RadioButton();
-            this.encouragement5 = new System.Windows.Forms.RadioButton();
+            this.feedback = new System.Windows.Forms.Panel();
+            this.feedback1 = new System.Windows.Forms.RadioButton();
+            this.feedback2 = new System.Windows.Forms.RadioButton();
+            this.feedback3 = new System.Windows.Forms.RadioButton();
+            this.feedback4 = new System.Windows.Forms.RadioButton();
+            this.feedback5 = new System.Windows.Forms.RadioButton();
+            this.presentation = new System.Windows.Forms.Panel();
+            this.presentation1 = new System.Windows.Forms.RadioButton();
+            this.presentation2 = new System.Windows.Forms.RadioButton();
+            this.presentation3 = new System.Windows.Forms.RadioButton();
+            this.presentation4 = new System.Windows.Forms.RadioButton();
+            this.presentation5 = new System.Windows.Forms.RadioButton();
+            this.clarity = new System.Windows.Forms.Panel();
+            this.clarity1 = new System.Windows.Forms.RadioButton();
+            this.clarity2 = new System.Windows.Forms.RadioButton();
+            this.clarity3 = new System.Windows.Forms.RadioButton();
+            this.clarity4 = new System.Windows.Forms.RadioButton();
+            this.clarity5 = new System.Windows.Forms.RadioButton();
+            this.submitCourseReview = new System.Windows.Forms.Button();
+            this.courseComments = new System.Windows.Forms.TextBox();
+            this.courseCommentsLabel = new System.Windows.Forms.Label();
+            this.satisfactionLabel = new System.Windows.Forms.Label();
+            this.effectivenessLabel = new System.Windows.Forms.Label();
+            this.encouragmentLabel = new System.Windows.Forms.Label();
+            this.feedbackLabel = new System.Windows.Forms.Label();
+            this.courseSelection25 = new System.Windows.Forms.RadioButton();
+            this.courseSelection24 = new System.Windows.Forms.RadioButton();
+            this.courseSelection23 = new System.Windows.Forms.RadioButton();
+            this.expectationsLabel = new System.Windows.Forms.Label();
+            this.contentLabel = new System.Windows.Forms.Label();
+            this.courseEvaluationLabel = new System.Windows.Forms.Label();
+            this.courseLabel = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universitiesGrid)).BeginInit();
@@ -185,13 +185,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.programmesGrid)).BeginInit();
             this.findSchoolsTab.SuspendLayout();
             this.universityReview.SuspendLayout();
-            this.clarity.SuspendLayout();
-            this.presentation.SuspendLayout();
             this.courseReview.SuspendLayout();
-            this.feedback.SuspendLayout();
+            this.encouragement.SuspendLayout();
             this.effectiveness.SuspendLayout();
             this.satisfaction.SuspendLayout();
-            this.encouragement.SuspendLayout();
+            this.feedback.SuspendLayout();
+            this.presentation.SuspendLayout();
+            this.clarity.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -1455,303 +1455,6 @@
             this.universityLabel.TabIndex = 0;
             this.universityLabel.Text = "University review";
             // 
-            // courseLabel
-            // 
-            this.courseLabel.AutoSize = true;
-            this.courseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.courseLabel.ForeColor = System.Drawing.Color.White;
-            this.courseLabel.Location = new System.Drawing.Point(285, 13);
-            this.courseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.courseLabel.Name = "courseLabel";
-            this.courseLabel.Size = new System.Drawing.Size(108, 20);
-            this.courseLabel.TabIndex = 2;
-            this.courseLabel.Text = "Course review";
-            // 
-            // courseEvaluationLabel
-            // 
-            this.courseEvaluationLabel.AutoSize = true;
-            this.courseEvaluationLabel.ForeColor = System.Drawing.Color.White;
-            this.courseEvaluationLabel.Location = new System.Drawing.Point(144, 41);
-            this.courseEvaluationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.courseEvaluationLabel.Name = "courseEvaluationLabel";
-            this.courseEvaluationLabel.Size = new System.Drawing.Size(390, 13);
-            this.courseEvaluationLabel.TabIndex = 3;
-            this.courseEvaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
-    "atisfied";
-            // 
-            // contentLabel
-            // 
-            this.contentLabel.AutoSize = true;
-            this.contentLabel.ForeColor = System.Drawing.Color.White;
-            this.contentLabel.Location = new System.Drawing.Point(22, 74);
-            this.contentLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.contentLabel.Name = "contentLabel";
-            this.contentLabel.Size = new System.Drawing.Size(117, 13);
-            this.contentLabel.TabIndex = 7;
-            this.contentLabel.Text = "Presentation of content";
-            // 
-            // expectationsLabel
-            // 
-            this.expectationsLabel.AutoSize = true;
-            this.expectationsLabel.ForeColor = System.Drawing.Color.White;
-            this.expectationsLabel.Location = new System.Drawing.Point(22, 102);
-            this.expectationsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.expectationsLabel.Name = "expectationsLabel";
-            this.expectationsLabel.Size = new System.Drawing.Size(110, 13);
-            this.expectationsLabel.TabIndex = 17;
-            this.expectationsLabel.Text = "Clarity of expectations";
-            // 
-            // courseSelection23
-            // 
-            this.courseSelection23.AutoSize = true;
-            this.courseSelection23.Location = new System.Drawing.Point(401, 100);
-            this.courseSelection23.Margin = new System.Windows.Forms.Padding(2);
-            this.courseSelection23.Name = "courseSelection23";
-            this.courseSelection23.Size = new System.Drawing.Size(31, 17);
-            this.courseSelection23.TabIndex = 20;
-            this.courseSelection23.Text = "3";
-            this.courseSelection23.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection24
-            // 
-            this.courseSelection24.AutoSize = true;
-            this.courseSelection24.Location = new System.Drawing.Point(476, 100);
-            this.courseSelection24.Margin = new System.Windows.Forms.Padding(2);
-            this.courseSelection24.Name = "courseSelection24";
-            this.courseSelection24.Size = new System.Drawing.Size(31, 17);
-            this.courseSelection24.TabIndex = 21;
-            this.courseSelection24.Text = "4";
-            this.courseSelection24.UseVisualStyleBackColor = true;
-            // 
-            // courseSelection25
-            // 
-            this.courseSelection25.AutoSize = true;
-            this.courseSelection25.Location = new System.Drawing.Point(550, 100);
-            this.courseSelection25.Margin = new System.Windows.Forms.Padding(2);
-            this.courseSelection25.Name = "courseSelection25";
-            this.courseSelection25.Size = new System.Drawing.Size(31, 17);
-            this.courseSelection25.TabIndex = 22;
-            this.courseSelection25.Text = "5";
-            this.courseSelection25.UseVisualStyleBackColor = true;
-            // 
-            // feedbackLabel
-            // 
-            this.feedbackLabel.AutoSize = true;
-            this.feedbackLabel.ForeColor = System.Drawing.Color.White;
-            this.feedbackLabel.Location = new System.Drawing.Point(22, 129);
-            this.feedbackLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.feedbackLabel.Name = "feedbackLabel";
-            this.feedbackLabel.Size = new System.Drawing.Size(156, 13);
-            this.feedbackLabel.TabIndex = 23;
-            this.feedbackLabel.Text = "Clear feedback on performance";
-            // 
-            // encouragmentLabel
-            // 
-            this.encouragmentLabel.AutoSize = true;
-            this.encouragmentLabel.ForeColor = System.Drawing.Color.White;
-            this.encouragmentLabel.Location = new System.Drawing.Point(22, 157);
-            this.encouragmentLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.encouragmentLabel.Name = "encouragmentLabel";
-            this.encouragmentLabel.Size = new System.Drawing.Size(202, 13);
-            this.encouragmentLabel.TabIndex = 29;
-            this.encouragmentLabel.Text = "Encouragment of participation/discussion";
-            // 
-            // effectivenessLabel
-            // 
-            this.effectivenessLabel.AutoSize = true;
-            this.effectivenessLabel.ForeColor = System.Drawing.Color.White;
-            this.effectivenessLabel.Location = new System.Drawing.Point(22, 184);
-            this.effectivenessLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.effectivenessLabel.Name = "effectivenessLabel";
-            this.effectivenessLabel.Size = new System.Drawing.Size(150, 13);
-            this.effectivenessLabel.TabIndex = 35;
-            this.effectivenessLabel.Text = "Overall teaching effectiveness";
-            // 
-            // satisfactionLabel
-            // 
-            this.satisfactionLabel.AutoSize = true;
-            this.satisfactionLabel.ForeColor = System.Drawing.Color.White;
-            this.satisfactionLabel.Location = new System.Drawing.Point(22, 212);
-            this.satisfactionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.satisfactionLabel.Name = "satisfactionLabel";
-            this.satisfactionLabel.Size = new System.Drawing.Size(192, 13);
-            this.satisfactionLabel.TabIndex = 41;
-            this.satisfactionLabel.Text = "How satisfied were you with this course";
-            // 
-            // courseCommentsLabel
-            // 
-            this.courseCommentsLabel.AutoSize = true;
-            this.courseCommentsLabel.ForeColor = System.Drawing.Color.White;
-            this.courseCommentsLabel.Location = new System.Drawing.Point(22, 238);
-            this.courseCommentsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.courseCommentsLabel.Name = "courseCommentsLabel";
-            this.courseCommentsLabel.Size = new System.Drawing.Size(104, 13);
-            this.courseCommentsLabel.TabIndex = 47;
-            this.courseCommentsLabel.Text = "Additional comments";
-            // 
-            // courseComments
-            // 
-            this.courseComments.Location = new System.Drawing.Point(253, 238);
-            this.courseComments.Margin = new System.Windows.Forms.Padding(2);
-            this.courseComments.Multiline = true;
-            this.courseComments.Name = "courseComments";
-            this.courseComments.Size = new System.Drawing.Size(326, 52);
-            this.courseComments.TabIndex = 48;
-            // 
-            // submitCourseReview
-            // 
-            this.submitCourseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
-            this.submitCourseReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitCourseReview.Location = new System.Drawing.Point(476, 303);
-            this.submitCourseReview.Margin = new System.Windows.Forms.Padding(2);
-            this.submitCourseReview.Name = "submitCourseReview";
-            this.submitCourseReview.Size = new System.Drawing.Size(102, 29);
-            this.submitCourseReview.TabIndex = 49;
-            this.submitCourseReview.Text = "Submit";
-            this.submitCourseReview.UseVisualStyleBackColor = false;
-            this.submitCourseReview.Click += new System.EventHandler(this.SubmitCourseReview_Click);
-            // 
-            // clarity
-            // 
-            this.clarity.Controls.Add(this.clarity1);
-            this.clarity.Controls.Add(this.clarity2);
-            this.clarity.Controls.Add(this.clarity3);
-            this.clarity.Controls.Add(this.clarity4);
-            this.clarity.Controls.Add(this.clarity5);
-            this.clarity.Location = new System.Drawing.Point(253, 92);
-            this.clarity.Name = "clarity";
-            this.clarity.Size = new System.Drawing.Size(325, 25);
-            this.clarity.TabIndex = 51;
-            // 
-            // clarity5
-            // 
-            this.clarity5.AutoSize = true;
-            this.clarity5.Location = new System.Drawing.Point(297, 6);
-            this.clarity5.Margin = new System.Windows.Forms.Padding(2);
-            this.clarity5.Name = "clarity5";
-            this.clarity5.Size = new System.Drawing.Size(31, 17);
-            this.clarity5.TabIndex = 16;
-            this.clarity5.Text = "5";
-            this.clarity5.UseVisualStyleBackColor = true;
-            // 
-            // clarity4
-            // 
-            this.clarity4.AutoSize = true;
-            this.clarity4.Location = new System.Drawing.Point(223, 6);
-            this.clarity4.Margin = new System.Windows.Forms.Padding(2);
-            this.clarity4.Name = "clarity4";
-            this.clarity4.Size = new System.Drawing.Size(31, 17);
-            this.clarity4.TabIndex = 15;
-            this.clarity4.Text = "4";
-            this.clarity4.UseVisualStyleBackColor = true;
-            // 
-            // clarity3
-            // 
-            this.clarity3.AutoSize = true;
-            this.clarity3.Location = new System.Drawing.Point(148, 6);
-            this.clarity3.Margin = new System.Windows.Forms.Padding(2);
-            this.clarity3.Name = "clarity3";
-            this.clarity3.Size = new System.Drawing.Size(31, 17);
-            this.clarity3.TabIndex = 14;
-            this.clarity3.Tag = "3";
-            this.clarity3.Text = "3";
-            this.clarity3.UseVisualStyleBackColor = true;
-            // 
-            // clarity2
-            // 
-            this.clarity2.AutoSize = true;
-            this.clarity2.Location = new System.Drawing.Point(74, 6);
-            this.clarity2.Margin = new System.Windows.Forms.Padding(2);
-            this.clarity2.Name = "clarity2";
-            this.clarity2.Size = new System.Drawing.Size(31, 17);
-            this.clarity2.TabIndex = 13;
-            this.clarity2.Tag = "2";
-            this.clarity2.Text = "2";
-            this.clarity2.UseVisualStyleBackColor = true;
-            // 
-            // clarity1
-            // 
-            this.clarity1.AutoSize = true;
-            this.clarity1.Location = new System.Drawing.Point(2, 6);
-            this.clarity1.Margin = new System.Windows.Forms.Padding(2);
-            this.clarity1.Name = "clarity1";
-            this.clarity1.Size = new System.Drawing.Size(31, 17);
-            this.clarity1.TabIndex = 12;
-            this.clarity1.Tag = "1";
-            this.clarity1.Text = "1";
-            this.clarity1.UseVisualStyleBackColor = true;
-            // 
-            // presentation
-            // 
-            this.presentation.Controls.Add(this.presentation1);
-            this.presentation.Controls.Add(this.presentation2);
-            this.presentation.Controls.Add(this.presentation3);
-            this.presentation.Controls.Add(this.presentation4);
-            this.presentation.Controls.Add(this.presentation5);
-            this.presentation.Location = new System.Drawing.Point(253, 63);
-            this.presentation.Name = "presentation";
-            this.presentation.Size = new System.Drawing.Size(325, 25);
-            this.presentation.TabIndex = 52;
-            // 
-            // presentation5
-            // 
-            this.presentation5.AutoSize = true;
-            this.presentation5.Location = new System.Drawing.Point(297, 6);
-            this.presentation5.Margin = new System.Windows.Forms.Padding(2);
-            this.presentation5.Name = "presentation5";
-            this.presentation5.Size = new System.Drawing.Size(31, 17);
-            this.presentation5.TabIndex = 16;
-            this.presentation5.Tag = "5";
-            this.presentation5.Text = "5";
-            this.presentation5.UseVisualStyleBackColor = true;
-            // 
-            // presentation4
-            // 
-            this.presentation4.AutoSize = true;
-            this.presentation4.Location = new System.Drawing.Point(223, 6);
-            this.presentation4.Margin = new System.Windows.Forms.Padding(2);
-            this.presentation4.Name = "presentation4";
-            this.presentation4.Size = new System.Drawing.Size(31, 17);
-            this.presentation4.TabIndex = 15;
-            this.presentation4.Tag = "4";
-            this.presentation4.Text = "4";
-            this.presentation4.UseVisualStyleBackColor = true;
-            // 
-            // presentation3
-            // 
-            this.presentation3.AutoSize = true;
-            this.presentation3.Location = new System.Drawing.Point(148, 6);
-            this.presentation3.Margin = new System.Windows.Forms.Padding(2);
-            this.presentation3.Name = "presentation3";
-            this.presentation3.Size = new System.Drawing.Size(31, 17);
-            this.presentation3.TabIndex = 14;
-            this.presentation3.Text = "3";
-            this.presentation3.UseVisualStyleBackColor = true;
-            // 
-            // presentation2
-            // 
-            this.presentation2.AutoSize = true;
-            this.presentation2.Location = new System.Drawing.Point(74, 6);
-            this.presentation2.Margin = new System.Windows.Forms.Padding(2);
-            this.presentation2.Name = "presentation2";
-            this.presentation2.Size = new System.Drawing.Size(31, 17);
-            this.presentation2.TabIndex = 13;
-            this.presentation2.Tag = "2";
-            this.presentation2.Text = "2";
-            this.presentation2.UseVisualStyleBackColor = true;
-            // 
-            // presentation1
-            // 
-            this.presentation1.AutoSize = true;
-            this.presentation1.Location = new System.Drawing.Point(2, 6);
-            this.presentation1.Margin = new System.Windows.Forms.Padding(2);
-            this.presentation1.Name = "presentation1";
-            this.presentation1.Size = new System.Drawing.Size(31, 17);
-            this.presentation1.TabIndex = 12;
-            this.presentation1.Tag = "1";
-            this.presentation1.Text = "1";
-            this.presentation1.UseVisualStyleBackColor = true;
-            // 
             // courseReview
             // 
             this.courseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
@@ -1784,73 +1487,74 @@
             this.courseReview.TabIndex = 9;
             this.courseReview.Text = "courseReview";
             // 
-            // feedback
+            // encouragement
             // 
-            this.feedback.Controls.Add(this.feedback1);
-            this.feedback.Controls.Add(this.feedback2);
-            this.feedback.Controls.Add(this.feedback3);
-            this.feedback.Controls.Add(this.feedback4);
-            this.feedback.Controls.Add(this.feedback5);
-            this.feedback.Location = new System.Drawing.Point(253, 122);
-            this.feedback.Name = "feedback";
-            this.feedback.Size = new System.Drawing.Size(325, 25);
-            this.feedback.TabIndex = 53;
+            this.encouragement.Controls.Add(this.encouragement1);
+            this.encouragement.Controls.Add(this.encouragement2);
+            this.encouragement.Controls.Add(this.encouragement3);
+            this.encouragement.Controls.Add(this.encouragement4);
+            this.encouragement.Controls.Add(this.encouragement5);
+            this.encouragement.Location = new System.Drawing.Point(253, 153);
+            this.encouragement.Name = "encouragement";
+            this.encouragement.Size = new System.Drawing.Size(325, 25);
+            this.encouragement.TabIndex = 53;
             // 
-            // feedback1
+            // encouragement1
             // 
-            this.feedback1.AutoSize = true;
-            this.feedback1.Location = new System.Drawing.Point(2, 6);
-            this.feedback1.Margin = new System.Windows.Forms.Padding(2);
-            this.feedback1.Name = "feedback1";
-            this.feedback1.Size = new System.Drawing.Size(31, 17);
-            this.feedback1.TabIndex = 12;
-            this.feedback1.Text = "1";
-            this.feedback1.UseVisualStyleBackColor = true;
+            this.encouragement1.AutoSize = true;
+            this.encouragement1.Location = new System.Drawing.Point(2, 6);
+            this.encouragement1.Margin = new System.Windows.Forms.Padding(2);
+            this.encouragement1.Name = "encouragement1";
+            this.encouragement1.Size = new System.Drawing.Size(31, 17);
+            this.encouragement1.TabIndex = 12;
+            this.encouragement1.Text = "1";
+            this.encouragement1.UseVisualStyleBackColor = true;
             // 
-            // feedback2
+            // encouragement2
             // 
-            this.feedback2.AutoSize = true;
-            this.feedback2.Location = new System.Drawing.Point(74, 6);
-            this.feedback2.Margin = new System.Windows.Forms.Padding(2);
-            this.feedback2.Name = "feedback2";
-            this.feedback2.Size = new System.Drawing.Size(31, 17);
-            this.feedback2.TabIndex = 13;
-            this.feedback2.Tag = "2";
-            this.feedback2.Text = "2";
-            this.feedback2.UseVisualStyleBackColor = true;
+            this.encouragement2.AutoSize = true;
+            this.encouragement2.Location = new System.Drawing.Point(74, 6);
+            this.encouragement2.Margin = new System.Windows.Forms.Padding(2);
+            this.encouragement2.Name = "encouragement2";
+            this.encouragement2.Size = new System.Drawing.Size(31, 17);
+            this.encouragement2.TabIndex = 13;
+            this.encouragement2.Tag = "2";
+            this.encouragement2.Text = "2";
+            this.encouragement2.UseVisualStyleBackColor = true;
             // 
-            // feedback3
+            // encouragement3
             // 
-            this.feedback3.AutoSize = true;
-            this.feedback3.Location = new System.Drawing.Point(148, 6);
-            this.feedback3.Margin = new System.Windows.Forms.Padding(2);
-            this.feedback3.Name = "feedback3";
-            this.feedback3.Size = new System.Drawing.Size(31, 17);
-            this.feedback3.TabIndex = 14;
-            this.feedback3.Text = "3";
-            this.feedback3.UseVisualStyleBackColor = true;
+            this.encouragement3.AutoSize = true;
+            this.encouragement3.Location = new System.Drawing.Point(148, 6);
+            this.encouragement3.Margin = new System.Windows.Forms.Padding(2);
+            this.encouragement3.Name = "encouragement3";
+            this.encouragement3.Size = new System.Drawing.Size(31, 17);
+            this.encouragement3.TabIndex = 14;
+            this.encouragement3.Tag = "3";
+            this.encouragement3.Text = "3";
+            this.encouragement3.UseVisualStyleBackColor = true;
             // 
-            // feedback4
+            // encouragement4
             // 
-            this.feedback4.AutoSize = true;
-            this.feedback4.Location = new System.Drawing.Point(223, 6);
-            this.feedback4.Margin = new System.Windows.Forms.Padding(2);
-            this.feedback4.Name = "feedback4";
-            this.feedback4.Size = new System.Drawing.Size(31, 17);
-            this.feedback4.TabIndex = 15;
-            this.feedback4.Text = "4";
-            this.feedback4.UseVisualStyleBackColor = true;
+            this.encouragement4.AutoSize = true;
+            this.encouragement4.Location = new System.Drawing.Point(223, 6);
+            this.encouragement4.Margin = new System.Windows.Forms.Padding(2);
+            this.encouragement4.Name = "encouragement4";
+            this.encouragement4.Size = new System.Drawing.Size(31, 17);
+            this.encouragement4.TabIndex = 15;
+            this.encouragement4.Text = "4";
+            this.encouragement4.UseVisualStyleBackColor = true;
             // 
-            // feedback5
+            // encouragement5
             // 
-            this.feedback5.AutoSize = true;
-            this.feedback5.Location = new System.Drawing.Point(297, 6);
-            this.feedback5.Margin = new System.Windows.Forms.Padding(2);
-            this.feedback5.Name = "feedback5";
-            this.feedback5.Size = new System.Drawing.Size(31, 17);
-            this.feedback5.TabIndex = 16;
-            this.feedback5.Text = "5";
-            this.feedback5.UseVisualStyleBackColor = true;
+            this.encouragement5.AutoSize = true;
+            this.encouragement5.Location = new System.Drawing.Point(297, 6);
+            this.encouragement5.Margin = new System.Windows.Forms.Padding(2);
+            this.encouragement5.Name = "encouragement5";
+            this.encouragement5.Size = new System.Drawing.Size(31, 17);
+            this.encouragement5.TabIndex = 16;
+            this.encouragement5.Text = "5";
+            this.encouragement5.UseVisualStyleBackColor = true;
             // 
             // effectiveness
             // 
@@ -1986,74 +1690,370 @@
             this.satisfaction5.Text = "5";
             this.satisfaction5.UseVisualStyleBackColor = true;
             // 
-            // encouragement
+            // feedback
             // 
-            this.encouragement.Controls.Add(this.encouragement1);
-            this.encouragement.Controls.Add(this.encouragement2);
-            this.encouragement.Controls.Add(this.encouragement3);
-            this.encouragement.Controls.Add(this.encouragement4);
-            this.encouragement.Controls.Add(this.encouragement5);
-            this.encouragement.Location = new System.Drawing.Point(253, 153);
-            this.encouragement.Name = "encouragement";
-            this.encouragement.Size = new System.Drawing.Size(325, 25);
-            this.encouragement.TabIndex = 53;
+            this.feedback.Controls.Add(this.feedback1);
+            this.feedback.Controls.Add(this.feedback2);
+            this.feedback.Controls.Add(this.feedback3);
+            this.feedback.Controls.Add(this.feedback4);
+            this.feedback.Controls.Add(this.feedback5);
+            this.feedback.Location = new System.Drawing.Point(253, 122);
+            this.feedback.Name = "feedback";
+            this.feedback.Size = new System.Drawing.Size(325, 25);
+            this.feedback.TabIndex = 53;
             // 
-            // encouragement1
+            // feedback1
             // 
-            this.encouragement1.AutoSize = true;
-            this.encouragement1.Location = new System.Drawing.Point(2, 6);
-            this.encouragement1.Margin = new System.Windows.Forms.Padding(2);
-            this.encouragement1.Name = "encouragement1";
-            this.encouragement1.Size = new System.Drawing.Size(31, 17);
-            this.encouragement1.TabIndex = 12;
-            this.encouragement1.Text = "1";
-            this.encouragement1.UseVisualStyleBackColor = true;
+            this.feedback1.AutoSize = true;
+            this.feedback1.Location = new System.Drawing.Point(2, 6);
+            this.feedback1.Margin = new System.Windows.Forms.Padding(2);
+            this.feedback1.Name = "feedback1";
+            this.feedback1.Size = new System.Drawing.Size(31, 17);
+            this.feedback1.TabIndex = 12;
+            this.feedback1.Text = "1";
+            this.feedback1.UseVisualStyleBackColor = true;
             // 
-            // encouragement2
+            // feedback2
             // 
-            this.encouragement2.AutoSize = true;
-            this.encouragement2.Location = new System.Drawing.Point(74, 6);
-            this.encouragement2.Margin = new System.Windows.Forms.Padding(2);
-            this.encouragement2.Name = "encouragement2";
-            this.encouragement2.Size = new System.Drawing.Size(31, 17);
-            this.encouragement2.TabIndex = 13;
-            this.encouragement2.Tag = "2";
-            this.encouragement2.Text = "2";
-            this.encouragement2.UseVisualStyleBackColor = true;
+            this.feedback2.AutoSize = true;
+            this.feedback2.Location = new System.Drawing.Point(74, 6);
+            this.feedback2.Margin = new System.Windows.Forms.Padding(2);
+            this.feedback2.Name = "feedback2";
+            this.feedback2.Size = new System.Drawing.Size(31, 17);
+            this.feedback2.TabIndex = 13;
+            this.feedback2.Tag = "2";
+            this.feedback2.Text = "2";
+            this.feedback2.UseVisualStyleBackColor = true;
             // 
-            // encouragement3
+            // feedback3
             // 
-            this.encouragement3.AutoSize = true;
-            this.encouragement3.Location = new System.Drawing.Point(148, 6);
-            this.encouragement3.Margin = new System.Windows.Forms.Padding(2);
-            this.encouragement3.Name = "encouragement3";
-            this.encouragement3.Size = new System.Drawing.Size(31, 17);
-            this.encouragement3.TabIndex = 14;
-            this.encouragement3.Tag = "3";
-            this.encouragement3.Text = "3";
-            this.encouragement3.UseVisualStyleBackColor = true;
+            this.feedback3.AutoSize = true;
+            this.feedback3.Location = new System.Drawing.Point(148, 6);
+            this.feedback3.Margin = new System.Windows.Forms.Padding(2);
+            this.feedback3.Name = "feedback3";
+            this.feedback3.Size = new System.Drawing.Size(31, 17);
+            this.feedback3.TabIndex = 14;
+            this.feedback3.Text = "3";
+            this.feedback3.UseVisualStyleBackColor = true;
             // 
-            // encouragement4
+            // feedback4
             // 
-            this.encouragement4.AutoSize = true;
-            this.encouragement4.Location = new System.Drawing.Point(223, 6);
-            this.encouragement4.Margin = new System.Windows.Forms.Padding(2);
-            this.encouragement4.Name = "encouragement4";
-            this.encouragement4.Size = new System.Drawing.Size(31, 17);
-            this.encouragement4.TabIndex = 15;
-            this.encouragement4.Text = "4";
-            this.encouragement4.UseVisualStyleBackColor = true;
+            this.feedback4.AutoSize = true;
+            this.feedback4.Location = new System.Drawing.Point(223, 6);
+            this.feedback4.Margin = new System.Windows.Forms.Padding(2);
+            this.feedback4.Name = "feedback4";
+            this.feedback4.Size = new System.Drawing.Size(31, 17);
+            this.feedback4.TabIndex = 15;
+            this.feedback4.Text = "4";
+            this.feedback4.UseVisualStyleBackColor = true;
             // 
-            // encouragement5
+            // feedback5
             // 
-            this.encouragement5.AutoSize = true;
-            this.encouragement5.Location = new System.Drawing.Point(297, 6);
-            this.encouragement5.Margin = new System.Windows.Forms.Padding(2);
-            this.encouragement5.Name = "encouragement5";
-            this.encouragement5.Size = new System.Drawing.Size(31, 17);
-            this.encouragement5.TabIndex = 16;
-            this.encouragement5.Text = "5";
-            this.encouragement5.UseVisualStyleBackColor = true;
+            this.feedback5.AutoSize = true;
+            this.feedback5.Location = new System.Drawing.Point(297, 6);
+            this.feedback5.Margin = new System.Windows.Forms.Padding(2);
+            this.feedback5.Name = "feedback5";
+            this.feedback5.Size = new System.Drawing.Size(31, 17);
+            this.feedback5.TabIndex = 16;
+            this.feedback5.Text = "5";
+            this.feedback5.UseVisualStyleBackColor = true;
+            // 
+            // presentation
+            // 
+            this.presentation.Controls.Add(this.presentation1);
+            this.presentation.Controls.Add(this.presentation2);
+            this.presentation.Controls.Add(this.presentation3);
+            this.presentation.Controls.Add(this.presentation4);
+            this.presentation.Controls.Add(this.presentation5);
+            this.presentation.Location = new System.Drawing.Point(253, 63);
+            this.presentation.Name = "presentation";
+            this.presentation.Size = new System.Drawing.Size(325, 25);
+            this.presentation.TabIndex = 52;
+            // 
+            // presentation1
+            // 
+            this.presentation1.AutoSize = true;
+            this.presentation1.Location = new System.Drawing.Point(2, 6);
+            this.presentation1.Margin = new System.Windows.Forms.Padding(2);
+            this.presentation1.Name = "presentation1";
+            this.presentation1.Size = new System.Drawing.Size(31, 17);
+            this.presentation1.TabIndex = 12;
+            this.presentation1.Tag = "1";
+            this.presentation1.Text = "1";
+            this.presentation1.UseVisualStyleBackColor = true;
+            // 
+            // presentation2
+            // 
+            this.presentation2.AutoSize = true;
+            this.presentation2.Location = new System.Drawing.Point(74, 6);
+            this.presentation2.Margin = new System.Windows.Forms.Padding(2);
+            this.presentation2.Name = "presentation2";
+            this.presentation2.Size = new System.Drawing.Size(31, 17);
+            this.presentation2.TabIndex = 13;
+            this.presentation2.Tag = "2";
+            this.presentation2.Text = "2";
+            this.presentation2.UseVisualStyleBackColor = true;
+            // 
+            // presentation3
+            // 
+            this.presentation3.AutoSize = true;
+            this.presentation3.Location = new System.Drawing.Point(148, 6);
+            this.presentation3.Margin = new System.Windows.Forms.Padding(2);
+            this.presentation3.Name = "presentation3";
+            this.presentation3.Size = new System.Drawing.Size(31, 17);
+            this.presentation3.TabIndex = 14;
+            this.presentation3.Text = "3";
+            this.presentation3.UseVisualStyleBackColor = true;
+            // 
+            // presentation4
+            // 
+            this.presentation4.AutoSize = true;
+            this.presentation4.Location = new System.Drawing.Point(223, 6);
+            this.presentation4.Margin = new System.Windows.Forms.Padding(2);
+            this.presentation4.Name = "presentation4";
+            this.presentation4.Size = new System.Drawing.Size(31, 17);
+            this.presentation4.TabIndex = 15;
+            this.presentation4.Tag = "4";
+            this.presentation4.Text = "4";
+            this.presentation4.UseVisualStyleBackColor = true;
+            // 
+            // presentation5
+            // 
+            this.presentation5.AutoSize = true;
+            this.presentation5.Location = new System.Drawing.Point(297, 6);
+            this.presentation5.Margin = new System.Windows.Forms.Padding(2);
+            this.presentation5.Name = "presentation5";
+            this.presentation5.Size = new System.Drawing.Size(31, 17);
+            this.presentation5.TabIndex = 16;
+            this.presentation5.Tag = "5";
+            this.presentation5.Text = "5";
+            this.presentation5.UseVisualStyleBackColor = true;
+            // 
+            // clarity
+            // 
+            this.clarity.Controls.Add(this.clarity1);
+            this.clarity.Controls.Add(this.clarity2);
+            this.clarity.Controls.Add(this.clarity3);
+            this.clarity.Controls.Add(this.clarity4);
+            this.clarity.Controls.Add(this.clarity5);
+            this.clarity.Location = new System.Drawing.Point(253, 92);
+            this.clarity.Name = "clarity";
+            this.clarity.Size = new System.Drawing.Size(325, 25);
+            this.clarity.TabIndex = 51;
+            // 
+            // clarity1
+            // 
+            this.clarity1.AutoSize = true;
+            this.clarity1.Location = new System.Drawing.Point(2, 6);
+            this.clarity1.Margin = new System.Windows.Forms.Padding(2);
+            this.clarity1.Name = "clarity1";
+            this.clarity1.Size = new System.Drawing.Size(31, 17);
+            this.clarity1.TabIndex = 12;
+            this.clarity1.Tag = "1";
+            this.clarity1.Text = "1";
+            this.clarity1.UseVisualStyleBackColor = true;
+            // 
+            // clarity2
+            // 
+            this.clarity2.AutoSize = true;
+            this.clarity2.Location = new System.Drawing.Point(74, 6);
+            this.clarity2.Margin = new System.Windows.Forms.Padding(2);
+            this.clarity2.Name = "clarity2";
+            this.clarity2.Size = new System.Drawing.Size(31, 17);
+            this.clarity2.TabIndex = 13;
+            this.clarity2.Tag = "2";
+            this.clarity2.Text = "2";
+            this.clarity2.UseVisualStyleBackColor = true;
+            // 
+            // clarity3
+            // 
+            this.clarity3.AutoSize = true;
+            this.clarity3.Location = new System.Drawing.Point(148, 6);
+            this.clarity3.Margin = new System.Windows.Forms.Padding(2);
+            this.clarity3.Name = "clarity3";
+            this.clarity3.Size = new System.Drawing.Size(31, 17);
+            this.clarity3.TabIndex = 14;
+            this.clarity3.Tag = "3";
+            this.clarity3.Text = "3";
+            this.clarity3.UseVisualStyleBackColor = true;
+            // 
+            // clarity4
+            // 
+            this.clarity4.AutoSize = true;
+            this.clarity4.Location = new System.Drawing.Point(223, 6);
+            this.clarity4.Margin = new System.Windows.Forms.Padding(2);
+            this.clarity4.Name = "clarity4";
+            this.clarity4.Size = new System.Drawing.Size(31, 17);
+            this.clarity4.TabIndex = 15;
+            this.clarity4.Text = "4";
+            this.clarity4.UseVisualStyleBackColor = true;
+            // 
+            // clarity5
+            // 
+            this.clarity5.AutoSize = true;
+            this.clarity5.Location = new System.Drawing.Point(297, 6);
+            this.clarity5.Margin = new System.Windows.Forms.Padding(2);
+            this.clarity5.Name = "clarity5";
+            this.clarity5.Size = new System.Drawing.Size(31, 17);
+            this.clarity5.TabIndex = 16;
+            this.clarity5.Text = "5";
+            this.clarity5.UseVisualStyleBackColor = true;
+            // 
+            // submitCourseReview
+            // 
+            this.submitCourseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
+            this.submitCourseReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submitCourseReview.Location = new System.Drawing.Point(476, 303);
+            this.submitCourseReview.Margin = new System.Windows.Forms.Padding(2);
+            this.submitCourseReview.Name = "submitCourseReview";
+            this.submitCourseReview.Size = new System.Drawing.Size(102, 29);
+            this.submitCourseReview.TabIndex = 49;
+            this.submitCourseReview.Text = "Submit";
+            this.submitCourseReview.UseVisualStyleBackColor = false;
+            this.submitCourseReview.Click += new System.EventHandler(this.SubmitCourseReview_Click);
+            // 
+            // courseComments
+            // 
+            this.courseComments.Location = new System.Drawing.Point(253, 238);
+            this.courseComments.Margin = new System.Windows.Forms.Padding(2);
+            this.courseComments.Multiline = true;
+            this.courseComments.Name = "courseComments";
+            this.courseComments.Size = new System.Drawing.Size(326, 52);
+            this.courseComments.TabIndex = 48;
+            // 
+            // courseCommentsLabel
+            // 
+            this.courseCommentsLabel.AutoSize = true;
+            this.courseCommentsLabel.ForeColor = System.Drawing.Color.White;
+            this.courseCommentsLabel.Location = new System.Drawing.Point(22, 238);
+            this.courseCommentsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.courseCommentsLabel.Name = "courseCommentsLabel";
+            this.courseCommentsLabel.Size = new System.Drawing.Size(104, 13);
+            this.courseCommentsLabel.TabIndex = 47;
+            this.courseCommentsLabel.Text = "Additional comments";
+            // 
+            // satisfactionLabel
+            // 
+            this.satisfactionLabel.AutoSize = true;
+            this.satisfactionLabel.ForeColor = System.Drawing.Color.White;
+            this.satisfactionLabel.Location = new System.Drawing.Point(22, 212);
+            this.satisfactionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.satisfactionLabel.Name = "satisfactionLabel";
+            this.satisfactionLabel.Size = new System.Drawing.Size(192, 13);
+            this.satisfactionLabel.TabIndex = 41;
+            this.satisfactionLabel.Text = "How satisfied were you with this course";
+            // 
+            // effectivenessLabel
+            // 
+            this.effectivenessLabel.AutoSize = true;
+            this.effectivenessLabel.ForeColor = System.Drawing.Color.White;
+            this.effectivenessLabel.Location = new System.Drawing.Point(22, 184);
+            this.effectivenessLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.effectivenessLabel.Name = "effectivenessLabel";
+            this.effectivenessLabel.Size = new System.Drawing.Size(150, 13);
+            this.effectivenessLabel.TabIndex = 35;
+            this.effectivenessLabel.Text = "Overall teaching effectiveness";
+            // 
+            // encouragmentLabel
+            // 
+            this.encouragmentLabel.AutoSize = true;
+            this.encouragmentLabel.ForeColor = System.Drawing.Color.White;
+            this.encouragmentLabel.Location = new System.Drawing.Point(22, 157);
+            this.encouragmentLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.encouragmentLabel.Name = "encouragmentLabel";
+            this.encouragmentLabel.Size = new System.Drawing.Size(202, 13);
+            this.encouragmentLabel.TabIndex = 29;
+            this.encouragmentLabel.Text = "Encouragment of participation/discussion";
+            // 
+            // feedbackLabel
+            // 
+            this.feedbackLabel.AutoSize = true;
+            this.feedbackLabel.ForeColor = System.Drawing.Color.White;
+            this.feedbackLabel.Location = new System.Drawing.Point(22, 129);
+            this.feedbackLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.feedbackLabel.Name = "feedbackLabel";
+            this.feedbackLabel.Size = new System.Drawing.Size(156, 13);
+            this.feedbackLabel.TabIndex = 23;
+            this.feedbackLabel.Text = "Clear feedback on performance";
+            // 
+            // courseSelection25
+            // 
+            this.courseSelection25.AutoSize = true;
+            this.courseSelection25.Location = new System.Drawing.Point(550, 100);
+            this.courseSelection25.Margin = new System.Windows.Forms.Padding(2);
+            this.courseSelection25.Name = "courseSelection25";
+            this.courseSelection25.Size = new System.Drawing.Size(31, 17);
+            this.courseSelection25.TabIndex = 22;
+            this.courseSelection25.Text = "5";
+            this.courseSelection25.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection24
+            // 
+            this.courseSelection24.AutoSize = true;
+            this.courseSelection24.Location = new System.Drawing.Point(476, 100);
+            this.courseSelection24.Margin = new System.Windows.Forms.Padding(2);
+            this.courseSelection24.Name = "courseSelection24";
+            this.courseSelection24.Size = new System.Drawing.Size(31, 17);
+            this.courseSelection24.TabIndex = 21;
+            this.courseSelection24.Text = "4";
+            this.courseSelection24.UseVisualStyleBackColor = true;
+            // 
+            // courseSelection23
+            // 
+            this.courseSelection23.AutoSize = true;
+            this.courseSelection23.Location = new System.Drawing.Point(401, 100);
+            this.courseSelection23.Margin = new System.Windows.Forms.Padding(2);
+            this.courseSelection23.Name = "courseSelection23";
+            this.courseSelection23.Size = new System.Drawing.Size(31, 17);
+            this.courseSelection23.TabIndex = 20;
+            this.courseSelection23.Text = "3";
+            this.courseSelection23.UseVisualStyleBackColor = true;
+            // 
+            // expectationsLabel
+            // 
+            this.expectationsLabel.AutoSize = true;
+            this.expectationsLabel.ForeColor = System.Drawing.Color.White;
+            this.expectationsLabel.Location = new System.Drawing.Point(22, 102);
+            this.expectationsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.expectationsLabel.Name = "expectationsLabel";
+            this.expectationsLabel.Size = new System.Drawing.Size(110, 13);
+            this.expectationsLabel.TabIndex = 17;
+            this.expectationsLabel.Text = "Clarity of expectations";
+            // 
+            // contentLabel
+            // 
+            this.contentLabel.AutoSize = true;
+            this.contentLabel.ForeColor = System.Drawing.Color.White;
+            this.contentLabel.Location = new System.Drawing.Point(22, 74);
+            this.contentLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.contentLabel.Name = "contentLabel";
+            this.contentLabel.Size = new System.Drawing.Size(117, 13);
+            this.contentLabel.TabIndex = 7;
+            this.contentLabel.Text = "Presentation of content";
+            // 
+            // courseEvaluationLabel
+            // 
+            this.courseEvaluationLabel.AutoSize = true;
+            this.courseEvaluationLabel.ForeColor = System.Drawing.Color.White;
+            this.courseEvaluationLabel.Location = new System.Drawing.Point(144, 41);
+            this.courseEvaluationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.courseEvaluationLabel.Name = "courseEvaluationLabel";
+            this.courseEvaluationLabel.Size = new System.Drawing.Size(390, 13);
+            this.courseEvaluationLabel.TabIndex = 3;
+            this.courseEvaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
+    "atisfied";
+            // 
+            // courseLabel
+            // 
+            this.courseLabel.AutoSize = true;
+            this.courseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.courseLabel.ForeColor = System.Drawing.Color.White;
+            this.courseLabel.Location = new System.Drawing.Point(285, 13);
+            this.courseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.courseLabel.Name = "courseLabel";
+            this.courseLabel.Size = new System.Drawing.Size(108, 20);
+            this.courseLabel.TabIndex = 2;
+            this.courseLabel.Text = "Course review";
             // 
             // MainForm
             // 
@@ -2085,20 +2085,20 @@
             this.findSchoolsTab.PerformLayout();
             this.universityReview.ResumeLayout(false);
             this.universityReview.PerformLayout();
-            this.clarity.ResumeLayout(false);
-            this.clarity.PerformLayout();
-            this.presentation.ResumeLayout(false);
-            this.presentation.PerformLayout();
             this.courseReview.ResumeLayout(false);
             this.courseReview.PerformLayout();
-            this.feedback.ResumeLayout(false);
-            this.feedback.PerformLayout();
+            this.encouragement.ResumeLayout(false);
+            this.encouragement.PerformLayout();
             this.effectiveness.ResumeLayout(false);
             this.effectiveness.PerformLayout();
             this.satisfaction.ResumeLayout(false);
             this.satisfaction.PerformLayout();
-            this.encouragement.ResumeLayout(false);
-            this.encouragement.PerformLayout();
+            this.feedback.ResumeLayout(false);
+            this.feedback.PerformLayout();
+            this.presentation.ResumeLayout(false);
+            this.presentation.PerformLayout();
+            this.clarity.ResumeLayout(false);
+            this.clarity.PerformLayout();
             this.ResumeLayout(false);
 
         }

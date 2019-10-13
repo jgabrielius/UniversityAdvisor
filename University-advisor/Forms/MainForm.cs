@@ -142,11 +142,19 @@ namespace University_advisor.Forms
             table.Columns.Add("Group", typeof(string));
             table.Columns.Add("Direction", typeof(string));
             table.Columns.Add("Program", typeof(string));
-            table.Columns.Add("City", typeof(string));
-            ArrayList programmes = SqlDriver.Fetch($"SELECT studyProgramId,[group],direction,program,city FROM studyProgrammes WHERE universityId = {universityId}");
+            table.Columns.Add("Presentation of content", typeof(string));
+            table.Columns.Add("Clarity of expectations", typeof(string));
+            table.Columns.Add("Clear feedback on performance", typeof(string));
+            table.Columns.Add("Encouragment of participation/discussion", typeof(string));
+            table.Columns.Add("Overall teaching effectiveness", typeof(string));
+            table.Columns.Add("How satisfied were you with this course", typeof(string));
+            ArrayList programmes = SqlDriver.Fetch($"SELECT studyProgramId,[group],direction,program,city," +
+                $"avg(presentation) as presentation,avg(clarity) as clarity,avg(feedback) as feedback, avg(encouragement) as encouragement,avg(effectiveness) as effectiveness,avg(satisfaction) as satisfaction " +
+                $"FROM studyProgrammes left join courseReviews on studyProgramId=courseId" +
+                $" WHERE universityId = {universityId} group by studyProgramId,[group], direction, program, city");
             foreach (Dictionary<string, object> row in programmes)
             {
-                table.Rows.Add(row["studyProgramId"],row["group"], row["direction"], row["program"], row["city"]);
+                table.Rows.Add(row["studyProgramId"],row["group"], row["direction"], row["program"], row["presentation"], row["clarity"], row["feedback"], row["encouragement"], row["effectiveness"], row["satisfaction"]);
             }
             programmesGrid.DataSource = table;
         }
@@ -209,7 +217,7 @@ namespace University_advisor.Forms
         {
             List<Panel> panels = new List<Panel> { presentation, clarity, feedback, encouragement, effectiveness, satisfaction };
             Dictionary<string, string> result = ExtractReviews(panels);
-            string insert = "INSER INTO coursereviews (";
+            string insert = "INSERT INTO coursereviews (";
             string values = "VALUES (";
             foreach(var item in result)
             {
@@ -219,6 +227,7 @@ namespace University_advisor.Forms
             insert += "courseId)";
             values += selectedCourse+")";
             SqlDriver.Execute(insert + values);
+            tabsController.SelectTab(courseReview);
         }
 
         private void SubmitUniversityReview_Click(object sender, EventArgs e)
