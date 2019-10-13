@@ -128,11 +128,21 @@ namespace University_advisor.Forms
             DataTable table = new DataTable();
             table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Name", typeof(string));
-            ArrayList universities = SqlDriver.Fetch("SELECT universityId,name FROM universities");
+            table.Columns.Add("Variety of courses", typeof(string));
+            table.Columns.Add("Availability of extracurricular activities ", typeof(string));
+            table.Columns.Add("Access to faculty", typeof(string));
+            table.Columns.Add("Quality of academic facilities (library, PCs, etc.)", typeof(string));
+            table.Columns.Add("Student unions", typeof(string));
+            table.Columns.Add("Cost of studying", typeof(string));
+            ArrayList universities = SqlDriver.Fetch("SELECT u.universityId,name,avg(variety) as variety,avg(availability) as availability,avg(accessability) as accessability,avg(quality) as quality,avg(unions) as unions,avg(cost) as cost " +
+                "FROM universities u LEFT JOIN universityReviews ur ON u.universityId=ur.universityId " +
+                "GROUP BY u.universityId,name");
             foreach (Dictionary<string, object> row in universities)
             {
-                table.Rows.Add(row["universityId"], row["name"]);
+                table.Rows.Add(row["universityId"], row["name"], row["variety"], row["availability"], row["accessability"], row["quality"], row["unions"], row["cost"]);
             }
+            universitiesGrid.DataSource = null;
+            universitiesGrid.Rows.Clear();
             universitiesGrid.DataSource = table;
         }
         private void InstantiateProgramsGrid(int universityId)
@@ -156,6 +166,8 @@ namespace University_advisor.Forms
             {
                 table.Rows.Add(row["studyProgramId"],row["group"], row["direction"], row["program"], row["presentation"], row["clarity"], row["feedback"], row["encouragement"], row["effectiveness"], row["satisfaction"]);
             }
+            programmesGrid.DataSource = null;
+            programmesGrid.Rows.Clear();
             programmesGrid.DataSource = table;
         }
 
@@ -227,12 +239,28 @@ namespace University_advisor.Forms
             insert += "courseId)";
             values += selectedCourse+")";
             SqlDriver.Execute(insert + values);
-            tabsController.SelectTab(courseReview);
+            InstantiateGrid();//Renew grid after submitting a review
+            InstantiateProgramsGrid(selectedUniversity);
+            tabsController.SelectTab(universityTab);
         }
 
         private void SubmitUniversityReview_Click(object sender, EventArgs e)
         {
-
+            List<Panel> panels = new List<Panel> { variety, availability, accessability, quality, unions, cost};
+            Dictionary<string, string> result = ExtractReviews(panels);
+            string insert = "INSERT INTO universityReviews (";
+            string values = "VALUES (";
+            foreach (var item in result)
+            {
+                insert += item.Key + ",";
+                values += item.Value + ",";
+            }
+            insert += "universityId)";
+            values += selectedUniversity + ")";
+            SqlDriver.Execute(insert + values);
+            InstantiateGrid();//Renew grid after submitting a review
+            InstantiateProgramsGrid(selectedUniversity);
+            tabsController.SelectTab(universityTab);
         }
 
         private Dictionary<string,string> ExtractReviews(List<Panel> panels)

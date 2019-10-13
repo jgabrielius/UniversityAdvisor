@@ -81,48 +81,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.universityReview = new System.Windows.Forms.TabPage();
-            this.submitUniversityReview = new System.Windows.Forms.Button();
-            this.universityComments = new System.Windows.Forms.TextBox();
-            this.commentsLabel = new System.Windows.Forms.Label();
-            this.uniSelection65 = new System.Windows.Forms.RadioButton();
-            this.uniSelection64 = new System.Windows.Forms.RadioButton();
-            this.uniSelection63 = new System.Windows.Forms.RadioButton();
-            this.uniSelection62 = new System.Windows.Forms.RadioButton();
-            this.uniSelection61 = new System.Windows.Forms.RadioButton();
-            this.costLabel = new System.Windows.Forms.Label();
-            this.uniSelection55 = new System.Windows.Forms.RadioButton();
-            this.uniSelection54 = new System.Windows.Forms.RadioButton();
-            this.uniSelection53 = new System.Windows.Forms.RadioButton();
-            this.uniSelection52 = new System.Windows.Forms.RadioButton();
-            this.uniSelection51 = new System.Windows.Forms.RadioButton();
-            this.unionsLabel = new System.Windows.Forms.Label();
-            this.uniSelection45 = new System.Windows.Forms.RadioButton();
-            this.uniSelection44 = new System.Windows.Forms.RadioButton();
-            this.uniSelection43 = new System.Windows.Forms.RadioButton();
-            this.uniSelection42 = new System.Windows.Forms.RadioButton();
-            this.uniSelection41 = new System.Windows.Forms.RadioButton();
-            this.facilitiesLabel = new System.Windows.Forms.Label();
-            this.uniSelection35 = new System.Windows.Forms.RadioButton();
-            this.uniSelection34 = new System.Windows.Forms.RadioButton();
-            this.uniSelection33 = new System.Windows.Forms.RadioButton();
-            this.uniSelection32 = new System.Windows.Forms.RadioButton();
-            this.uniSelection31 = new System.Windows.Forms.RadioButton();
-            this.accessLabel = new System.Windows.Forms.Label();
-            this.uniSelection25 = new System.Windows.Forms.RadioButton();
-            this.uniSelection24 = new System.Windows.Forms.RadioButton();
-            this.uniSelection23 = new System.Windows.Forms.RadioButton();
-            this.uniSelection22 = new System.Windows.Forms.RadioButton();
-            this.uniSelection21 = new System.Windows.Forms.RadioButton();
-            this.activitiesLabel = new System.Windows.Forms.Label();
-            this.uniSelection15 = new System.Windows.Forms.RadioButton();
-            this.uniSelection14 = new System.Windows.Forms.RadioButton();
-            this.uniSelection13 = new System.Windows.Forms.RadioButton();
-            this.uniSelection12 = new System.Windows.Forms.RadioButton();
-            this.uniSelection11 = new System.Windows.Forms.RadioButton();
-            this.varietyLabel = new System.Windows.Forms.Label();
-            this.evaluationLabel = new System.Windows.Forms.Label();
-            this.universityLabel = new System.Windows.Forms.Label();
             this.courseReview = new System.Windows.Forms.TabPage();
             this.encouragement = new System.Windows.Forms.Panel();
             this.encouragement1 = new System.Windows.Forms.RadioButton();
@@ -174,6 +132,54 @@
             this.contentLabel = new System.Windows.Forms.Label();
             this.courseEvaluationLabel = new System.Windows.Forms.Label();
             this.courseLabel = new System.Windows.Forms.Label();
+            this.universityLabel = new System.Windows.Forms.Label();
+            this.evaluationLabel = new System.Windows.Forms.Label();
+            this.varietyLabel = new System.Windows.Forms.Label();
+            this.activitiesLabel = new System.Windows.Forms.Label();
+            this.accessLabel = new System.Windows.Forms.Label();
+            this.facilitiesLabel = new System.Windows.Forms.Label();
+            this.unionsLabel = new System.Windows.Forms.Label();
+            this.costLabel = new System.Windows.Forms.Label();
+            this.commentsLabel = new System.Windows.Forms.Label();
+            this.universityComments = new System.Windows.Forms.TextBox();
+            this.submitUniversityReview = new System.Windows.Forms.Button();
+            this.universityReview = new System.Windows.Forms.TabPage();
+            this.quality = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.unions = new System.Windows.Forms.Panel();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.cost = new System.Windows.Forms.Panel();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.radioButton15 = new System.Windows.Forms.RadioButton();
+            this.accessability = new System.Windows.Forms.Panel();
+            this.radioButton16 = new System.Windows.Forms.RadioButton();
+            this.radioButton17 = new System.Windows.Forms.RadioButton();
+            this.radioButton18 = new System.Windows.Forms.RadioButton();
+            this.radioButton19 = new System.Windows.Forms.RadioButton();
+            this.radioButton20 = new System.Windows.Forms.RadioButton();
+            this.variety = new System.Windows.Forms.Panel();
+            this.radioButton21 = new System.Windows.Forms.RadioButton();
+            this.radioButton22 = new System.Windows.Forms.RadioButton();
+            this.radioButton23 = new System.Windows.Forms.RadioButton();
+            this.radioButton24 = new System.Windows.Forms.RadioButton();
+            this.radioButton25 = new System.Windows.Forms.RadioButton();
+            this.availability = new System.Windows.Forms.Panel();
+            this.radioButton26 = new System.Windows.Forms.RadioButton();
+            this.radioButton27 = new System.Windows.Forms.RadioButton();
+            this.radioButton28 = new System.Windows.Forms.RadioButton();
+            this.radioButton29 = new System.Windows.Forms.RadioButton();
+            this.radioButton30 = new System.Windows.Forms.RadioButton();
             this.menuPanel.SuspendLayout();
             this.homeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.universitiesGrid)).BeginInit();
@@ -184,7 +190,6 @@
             this.universityTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.programmesGrid)).BeginInit();
             this.findSchoolsTab.SuspendLayout();
-            this.universityReview.SuspendLayout();
             this.courseReview.SuspendLayout();
             this.encouragement.SuspendLayout();
             this.effectiveness.SuspendLayout();
@@ -192,6 +197,13 @@
             this.feedback.SuspendLayout();
             this.presentation.SuspendLayout();
             this.clarity.SuspendLayout();
+            this.universityReview.SuspendLayout();
+            this.quality.SuspendLayout();
+            this.unions.SuspendLayout();
+            this.cost.SuspendLayout();
+            this.accessability.SuspendLayout();
+            this.variety.SuspendLayout();
+            this.availability.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -919,542 +931,6 @@
             this.textBox1.Size = new System.Drawing.Size(103, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // universityReview
-            // 
-            this.universityReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
-            this.universityReview.Controls.Add(this.submitUniversityReview);
-            this.universityReview.Controls.Add(this.universityComments);
-            this.universityReview.Controls.Add(this.commentsLabel);
-            this.universityReview.Controls.Add(this.uniSelection65);
-            this.universityReview.Controls.Add(this.uniSelection64);
-            this.universityReview.Controls.Add(this.uniSelection63);
-            this.universityReview.Controls.Add(this.uniSelection62);
-            this.universityReview.Controls.Add(this.uniSelection61);
-            this.universityReview.Controls.Add(this.costLabel);
-            this.universityReview.Controls.Add(this.uniSelection55);
-            this.universityReview.Controls.Add(this.uniSelection54);
-            this.universityReview.Controls.Add(this.uniSelection53);
-            this.universityReview.Controls.Add(this.uniSelection52);
-            this.universityReview.Controls.Add(this.uniSelection51);
-            this.universityReview.Controls.Add(this.unionsLabel);
-            this.universityReview.Controls.Add(this.uniSelection45);
-            this.universityReview.Controls.Add(this.uniSelection44);
-            this.universityReview.Controls.Add(this.uniSelection43);
-            this.universityReview.Controls.Add(this.uniSelection42);
-            this.universityReview.Controls.Add(this.uniSelection41);
-            this.universityReview.Controls.Add(this.facilitiesLabel);
-            this.universityReview.Controls.Add(this.uniSelection35);
-            this.universityReview.Controls.Add(this.uniSelection34);
-            this.universityReview.Controls.Add(this.uniSelection33);
-            this.universityReview.Controls.Add(this.uniSelection32);
-            this.universityReview.Controls.Add(this.uniSelection31);
-            this.universityReview.Controls.Add(this.accessLabel);
-            this.universityReview.Controls.Add(this.uniSelection25);
-            this.universityReview.Controls.Add(this.uniSelection24);
-            this.universityReview.Controls.Add(this.uniSelection23);
-            this.universityReview.Controls.Add(this.uniSelection22);
-            this.universityReview.Controls.Add(this.uniSelection21);
-            this.universityReview.Controls.Add(this.activitiesLabel);
-            this.universityReview.Controls.Add(this.uniSelection15);
-            this.universityReview.Controls.Add(this.uniSelection14);
-            this.universityReview.Controls.Add(this.uniSelection13);
-            this.universityReview.Controls.Add(this.uniSelection12);
-            this.universityReview.Controls.Add(this.uniSelection11);
-            this.universityReview.Controls.Add(this.varietyLabel);
-            this.universityReview.Controls.Add(this.evaluationLabel);
-            this.universityReview.Controls.Add(this.universityLabel);
-            this.universityReview.ForeColor = System.Drawing.Color.White;
-            this.universityReview.Location = new System.Drawing.Point(4, 22);
-            this.universityReview.Margin = new System.Windows.Forms.Padding(2);
-            this.universityReview.Name = "universityReview";
-            this.universityReview.Padding = new System.Windows.Forms.Padding(2);
-            this.universityReview.Size = new System.Drawing.Size(664, 349);
-            this.universityReview.TabIndex = 8;
-            this.universityReview.Text = "universityReview";
-            // 
-            // submitUniversityReview
-            // 
-            this.submitUniversityReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
-            this.submitUniversityReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submitUniversityReview.Location = new System.Drawing.Point(476, 303);
-            this.submitUniversityReview.Margin = new System.Windows.Forms.Padding(2);
-            this.submitUniversityReview.Name = "submitUniversityReview";
-            this.submitUniversityReview.Size = new System.Drawing.Size(102, 29);
-            this.submitUniversityReview.TabIndex = 88;
-            this.submitUniversityReview.Text = "Submit";
-            this.submitUniversityReview.UseVisualStyleBackColor = false;
-            this.submitUniversityReview.Click += new System.EventHandler(this.SubmitUniversityReview_Click);
-            // 
-            // universityComments
-            // 
-            this.universityComments.Location = new System.Drawing.Point(253, 238);
-            this.universityComments.Margin = new System.Windows.Forms.Padding(2);
-            this.universityComments.Multiline = true;
-            this.universityComments.Name = "universityComments";
-            this.universityComments.Size = new System.Drawing.Size(326, 52);
-            this.universityComments.TabIndex = 87;
-            // 
-            // commentsLabel
-            // 
-            this.commentsLabel.AutoSize = true;
-            this.commentsLabel.ForeColor = System.Drawing.Color.White;
-            this.commentsLabel.Location = new System.Drawing.Point(22, 238);
-            this.commentsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.commentsLabel.Name = "commentsLabel";
-            this.commentsLabel.Size = new System.Drawing.Size(104, 13);
-            this.commentsLabel.TabIndex = 86;
-            this.commentsLabel.Text = "Additional comments";
-            // 
-            // uniSelection65
-            // 
-            this.uniSelection65.AutoSize = true;
-            this.uniSelection65.Location = new System.Drawing.Point(550, 210);
-            this.uniSelection65.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection65.Name = "uniSelection65";
-            this.uniSelection65.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection65.TabIndex = 85;
-            this.uniSelection65.TabStop = true;
-            this.uniSelection65.Text = "5";
-            this.uniSelection65.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection64
-            // 
-            this.uniSelection64.AutoSize = true;
-            this.uniSelection64.Location = new System.Drawing.Point(476, 210);
-            this.uniSelection64.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection64.Name = "uniSelection64";
-            this.uniSelection64.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection64.TabIndex = 84;
-            this.uniSelection64.TabStop = true;
-            this.uniSelection64.Text = "4";
-            this.uniSelection64.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection63
-            // 
-            this.uniSelection63.AutoSize = true;
-            this.uniSelection63.Location = new System.Drawing.Point(401, 210);
-            this.uniSelection63.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection63.Name = "uniSelection63";
-            this.uniSelection63.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection63.TabIndex = 83;
-            this.uniSelection63.TabStop = true;
-            this.uniSelection63.Text = "3";
-            this.uniSelection63.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection62
-            // 
-            this.uniSelection62.AutoSize = true;
-            this.uniSelection62.Location = new System.Drawing.Point(327, 210);
-            this.uniSelection62.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection62.Name = "uniSelection62";
-            this.uniSelection62.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection62.TabIndex = 82;
-            this.uniSelection62.TabStop = true;
-            this.uniSelection62.Text = "2";
-            this.uniSelection62.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection61
-            // 
-            this.uniSelection61.AutoSize = true;
-            this.uniSelection61.Location = new System.Drawing.Point(253, 210);
-            this.uniSelection61.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection61.Name = "uniSelection61";
-            this.uniSelection61.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection61.TabIndex = 81;
-            this.uniSelection61.TabStop = true;
-            this.uniSelection61.Text = "1";
-            this.uniSelection61.UseVisualStyleBackColor = true;
-            // 
-            // costLabel
-            // 
-            this.costLabel.AutoSize = true;
-            this.costLabel.ForeColor = System.Drawing.Color.White;
-            this.costLabel.Location = new System.Drawing.Point(22, 212);
-            this.costLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.costLabel.Name = "costLabel";
-            this.costLabel.Size = new System.Drawing.Size(82, 13);
-            this.costLabel.TabIndex = 80;
-            this.costLabel.Text = "Cost of studying";
-            // 
-            // uniSelection55
-            // 
-            this.uniSelection55.AutoSize = true;
-            this.uniSelection55.Location = new System.Drawing.Point(550, 183);
-            this.uniSelection55.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection55.Name = "uniSelection55";
-            this.uniSelection55.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection55.TabIndex = 79;
-            this.uniSelection55.TabStop = true;
-            this.uniSelection55.Text = "5";
-            this.uniSelection55.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection54
-            // 
-            this.uniSelection54.AutoSize = true;
-            this.uniSelection54.Location = new System.Drawing.Point(476, 183);
-            this.uniSelection54.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection54.Name = "uniSelection54";
-            this.uniSelection54.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection54.TabIndex = 78;
-            this.uniSelection54.TabStop = true;
-            this.uniSelection54.Text = "4";
-            this.uniSelection54.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection53
-            // 
-            this.uniSelection53.AutoSize = true;
-            this.uniSelection53.Location = new System.Drawing.Point(401, 183);
-            this.uniSelection53.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection53.Name = "uniSelection53";
-            this.uniSelection53.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection53.TabIndex = 77;
-            this.uniSelection53.TabStop = true;
-            this.uniSelection53.Text = "3";
-            this.uniSelection53.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection52
-            // 
-            this.uniSelection52.AutoSize = true;
-            this.uniSelection52.Location = new System.Drawing.Point(327, 183);
-            this.uniSelection52.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection52.Name = "uniSelection52";
-            this.uniSelection52.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection52.TabIndex = 76;
-            this.uniSelection52.TabStop = true;
-            this.uniSelection52.Text = "2";
-            this.uniSelection52.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection51
-            // 
-            this.uniSelection51.AutoSize = true;
-            this.uniSelection51.Location = new System.Drawing.Point(253, 183);
-            this.uniSelection51.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection51.Name = "uniSelection51";
-            this.uniSelection51.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection51.TabIndex = 75;
-            this.uniSelection51.TabStop = true;
-            this.uniSelection51.Text = "1";
-            this.uniSelection51.UseVisualStyleBackColor = true;
-            // 
-            // unionsLabel
-            // 
-            this.unionsLabel.AutoSize = true;
-            this.unionsLabel.ForeColor = System.Drawing.Color.White;
-            this.unionsLabel.Location = new System.Drawing.Point(22, 184);
-            this.unionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.unionsLabel.Name = "unionsLabel";
-            this.unionsLabel.Size = new System.Drawing.Size(78, 13);
-            this.unionsLabel.TabIndex = 74;
-            this.unionsLabel.Text = "Student unions";
-            // 
-            // uniSelection45
-            // 
-            this.uniSelection45.AutoSize = true;
-            this.uniSelection45.Location = new System.Drawing.Point(550, 155);
-            this.uniSelection45.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection45.Name = "uniSelection45";
-            this.uniSelection45.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection45.TabIndex = 73;
-            this.uniSelection45.TabStop = true;
-            this.uniSelection45.Text = "5";
-            this.uniSelection45.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection44
-            // 
-            this.uniSelection44.AutoSize = true;
-            this.uniSelection44.Location = new System.Drawing.Point(476, 155);
-            this.uniSelection44.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection44.Name = "uniSelection44";
-            this.uniSelection44.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection44.TabIndex = 72;
-            this.uniSelection44.TabStop = true;
-            this.uniSelection44.Text = "4";
-            this.uniSelection44.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection43
-            // 
-            this.uniSelection43.AutoSize = true;
-            this.uniSelection43.Location = new System.Drawing.Point(401, 155);
-            this.uniSelection43.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection43.Name = "uniSelection43";
-            this.uniSelection43.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection43.TabIndex = 71;
-            this.uniSelection43.TabStop = true;
-            this.uniSelection43.Text = "3";
-            this.uniSelection43.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection42
-            // 
-            this.uniSelection42.AutoSize = true;
-            this.uniSelection42.Location = new System.Drawing.Point(327, 155);
-            this.uniSelection42.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection42.Name = "uniSelection42";
-            this.uniSelection42.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection42.TabIndex = 70;
-            this.uniSelection42.TabStop = true;
-            this.uniSelection42.Text = "2";
-            this.uniSelection42.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection41
-            // 
-            this.uniSelection41.AutoSize = true;
-            this.uniSelection41.Location = new System.Drawing.Point(253, 155);
-            this.uniSelection41.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection41.Name = "uniSelection41";
-            this.uniSelection41.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection41.TabIndex = 69;
-            this.uniSelection41.TabStop = true;
-            this.uniSelection41.Text = "1";
-            this.uniSelection41.UseVisualStyleBackColor = true;
-            // 
-            // facilitiesLabel
-            // 
-            this.facilitiesLabel.AutoSize = true;
-            this.facilitiesLabel.ForeColor = System.Drawing.Color.White;
-            this.facilitiesLabel.Location = new System.Drawing.Point(22, 157);
-            this.facilitiesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.facilitiesLabel.Name = "facilitiesLabel";
-            this.facilitiesLabel.Size = new System.Drawing.Size(225, 13);
-            this.facilitiesLabel.TabIndex = 68;
-            this.facilitiesLabel.Text = "Quality of academic facilities (library, PCs, etc.)";
-            // 
-            // uniSelection35
-            // 
-            this.uniSelection35.AutoSize = true;
-            this.uniSelection35.Location = new System.Drawing.Point(550, 128);
-            this.uniSelection35.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection35.Name = "uniSelection35";
-            this.uniSelection35.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection35.TabIndex = 67;
-            this.uniSelection35.TabStop = true;
-            this.uniSelection35.Text = "5";
-            this.uniSelection35.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection34
-            // 
-            this.uniSelection34.AutoSize = true;
-            this.uniSelection34.Location = new System.Drawing.Point(476, 128);
-            this.uniSelection34.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection34.Name = "uniSelection34";
-            this.uniSelection34.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection34.TabIndex = 66;
-            this.uniSelection34.TabStop = true;
-            this.uniSelection34.Text = "4";
-            this.uniSelection34.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection33
-            // 
-            this.uniSelection33.AutoSize = true;
-            this.uniSelection33.Location = new System.Drawing.Point(401, 128);
-            this.uniSelection33.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection33.Name = "uniSelection33";
-            this.uniSelection33.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection33.TabIndex = 65;
-            this.uniSelection33.TabStop = true;
-            this.uniSelection33.Text = "3";
-            this.uniSelection33.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection32
-            // 
-            this.uniSelection32.AutoSize = true;
-            this.uniSelection32.Location = new System.Drawing.Point(327, 128);
-            this.uniSelection32.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection32.Name = "uniSelection32";
-            this.uniSelection32.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection32.TabIndex = 64;
-            this.uniSelection32.TabStop = true;
-            this.uniSelection32.Text = "2";
-            this.uniSelection32.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection31
-            // 
-            this.uniSelection31.AutoSize = true;
-            this.uniSelection31.Location = new System.Drawing.Point(253, 128);
-            this.uniSelection31.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection31.Name = "uniSelection31";
-            this.uniSelection31.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection31.TabIndex = 63;
-            this.uniSelection31.TabStop = true;
-            this.uniSelection31.Text = "1";
-            this.uniSelection31.UseVisualStyleBackColor = true;
-            // 
-            // accessLabel
-            // 
-            this.accessLabel.AutoSize = true;
-            this.accessLabel.ForeColor = System.Drawing.Color.White;
-            this.accessLabel.Location = new System.Drawing.Point(22, 129);
-            this.accessLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.accessLabel.Name = "accessLabel";
-            this.accessLabel.Size = new System.Drawing.Size(88, 13);
-            this.accessLabel.TabIndex = 62;
-            this.accessLabel.Text = "Access to faculty";
-            // 
-            // uniSelection25
-            // 
-            this.uniSelection25.AutoSize = true;
-            this.uniSelection25.Location = new System.Drawing.Point(550, 100);
-            this.uniSelection25.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection25.Name = "uniSelection25";
-            this.uniSelection25.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection25.TabIndex = 61;
-            this.uniSelection25.TabStop = true;
-            this.uniSelection25.Text = "5";
-            this.uniSelection25.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection24
-            // 
-            this.uniSelection24.AutoSize = true;
-            this.uniSelection24.Location = new System.Drawing.Point(476, 100);
-            this.uniSelection24.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection24.Name = "uniSelection24";
-            this.uniSelection24.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection24.TabIndex = 60;
-            this.uniSelection24.TabStop = true;
-            this.uniSelection24.Text = "4";
-            this.uniSelection24.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection23
-            // 
-            this.uniSelection23.AutoSize = true;
-            this.uniSelection23.Location = new System.Drawing.Point(401, 100);
-            this.uniSelection23.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection23.Name = "uniSelection23";
-            this.uniSelection23.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection23.TabIndex = 59;
-            this.uniSelection23.TabStop = true;
-            this.uniSelection23.Text = "3";
-            this.uniSelection23.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection22
-            // 
-            this.uniSelection22.AutoSize = true;
-            this.uniSelection22.Location = new System.Drawing.Point(327, 100);
-            this.uniSelection22.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection22.Name = "uniSelection22";
-            this.uniSelection22.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection22.TabIndex = 58;
-            this.uniSelection22.TabStop = true;
-            this.uniSelection22.Text = "2";
-            this.uniSelection22.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection21
-            // 
-            this.uniSelection21.AutoSize = true;
-            this.uniSelection21.Location = new System.Drawing.Point(253, 100);
-            this.uniSelection21.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection21.Name = "uniSelection21";
-            this.uniSelection21.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection21.TabIndex = 57;
-            this.uniSelection21.TabStop = true;
-            this.uniSelection21.Text = "1";
-            this.uniSelection21.UseVisualStyleBackColor = true;
-            // 
-            // activitiesLabel
-            // 
-            this.activitiesLabel.AutoSize = true;
-            this.activitiesLabel.ForeColor = System.Drawing.Color.White;
-            this.activitiesLabel.Location = new System.Drawing.Point(22, 102);
-            this.activitiesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.activitiesLabel.Name = "activitiesLabel";
-            this.activitiesLabel.Size = new System.Drawing.Size(184, 13);
-            this.activitiesLabel.TabIndex = 56;
-            this.activitiesLabel.Text = "Availability of extracurricular activities ";
-            // 
-            // uniSelection15
-            // 
-            this.uniSelection15.AutoSize = true;
-            this.uniSelection15.Location = new System.Drawing.Point(550, 72);
-            this.uniSelection15.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection15.Name = "uniSelection15";
-            this.uniSelection15.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection15.TabIndex = 55;
-            this.uniSelection15.TabStop = true;
-            this.uniSelection15.Text = "5";
-            this.uniSelection15.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection14
-            // 
-            this.uniSelection14.AutoSize = true;
-            this.uniSelection14.Location = new System.Drawing.Point(476, 72);
-            this.uniSelection14.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection14.Name = "uniSelection14";
-            this.uniSelection14.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection14.TabIndex = 54;
-            this.uniSelection14.TabStop = true;
-            this.uniSelection14.Text = "4";
-            this.uniSelection14.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection13
-            // 
-            this.uniSelection13.AutoSize = true;
-            this.uniSelection13.Location = new System.Drawing.Point(401, 72);
-            this.uniSelection13.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection13.Name = "uniSelection13";
-            this.uniSelection13.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection13.TabIndex = 53;
-            this.uniSelection13.TabStop = true;
-            this.uniSelection13.Text = "3";
-            this.uniSelection13.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection12
-            // 
-            this.uniSelection12.AutoSize = true;
-            this.uniSelection12.Location = new System.Drawing.Point(327, 72);
-            this.uniSelection12.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection12.Name = "uniSelection12";
-            this.uniSelection12.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection12.TabIndex = 52;
-            this.uniSelection12.TabStop = true;
-            this.uniSelection12.Text = "2";
-            this.uniSelection12.UseVisualStyleBackColor = true;
-            // 
-            // uniSelection11
-            // 
-            this.uniSelection11.AutoSize = true;
-            this.uniSelection11.Location = new System.Drawing.Point(253, 72);
-            this.uniSelection11.Margin = new System.Windows.Forms.Padding(2);
-            this.uniSelection11.Name = "uniSelection11";
-            this.uniSelection11.Size = new System.Drawing.Size(31, 17);
-            this.uniSelection11.TabIndex = 51;
-            this.uniSelection11.TabStop = true;
-            this.uniSelection11.Text = "1";
-            this.uniSelection11.UseVisualStyleBackColor = true;
-            // 
-            // varietyLabel
-            // 
-            this.varietyLabel.AutoSize = true;
-            this.varietyLabel.ForeColor = System.Drawing.Color.White;
-            this.varietyLabel.Location = new System.Drawing.Point(22, 74);
-            this.varietyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.varietyLabel.Name = "varietyLabel";
-            this.varietyLabel.Size = new System.Drawing.Size(91, 13);
-            this.varietyLabel.TabIndex = 50;
-            this.varietyLabel.Text = "Variety of courses";
-            // 
-            // evaluationLabel
-            // 
-            this.evaluationLabel.AutoSize = true;
-            this.evaluationLabel.ForeColor = System.Drawing.Color.White;
-            this.evaluationLabel.Location = new System.Drawing.Point(144, 41);
-            this.evaluationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.evaluationLabel.Name = "evaluationLabel";
-            this.evaluationLabel.Size = new System.Drawing.Size(390, 13);
-            this.evaluationLabel.TabIndex = 1;
-            this.evaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
-    "atisfied";
-            // 
-            // universityLabel
-            // 
-            this.universityLabel.AutoSize = true;
-            this.universityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.universityLabel.ForeColor = System.Drawing.Color.White;
-            this.universityLabel.Location = new System.Drawing.Point(277, 13);
-            this.universityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.universityLabel.Name = "universityLabel";
-            this.universityLabel.Size = new System.Drawing.Size(125, 20);
-            this.universityLabel.TabIndex = 0;
-            this.universityLabel.Text = "University review";
-            // 
             // courseReview
             // 
             this.courseReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
@@ -2055,6 +1531,570 @@
             this.courseLabel.TabIndex = 2;
             this.courseLabel.Text = "Course review";
             // 
+            // universityLabel
+            // 
+            this.universityLabel.AutoSize = true;
+            this.universityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.universityLabel.ForeColor = System.Drawing.Color.White;
+            this.universityLabel.Location = new System.Drawing.Point(277, 13);
+            this.universityLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.universityLabel.Name = "universityLabel";
+            this.universityLabel.Size = new System.Drawing.Size(125, 20);
+            this.universityLabel.TabIndex = 0;
+            this.universityLabel.Text = "University review";
+            // 
+            // evaluationLabel
+            // 
+            this.evaluationLabel.AutoSize = true;
+            this.evaluationLabel.ForeColor = System.Drawing.Color.White;
+            this.evaluationLabel.Location = new System.Drawing.Point(144, 41);
+            this.evaluationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.evaluationLabel.Name = "evaluationLabel";
+            this.evaluationLabel.Size = new System.Drawing.Size(390, 13);
+            this.evaluationLabel.TabIndex = 1;
+            this.evaluationLabel.Text = "1 – Very Unsatisfied | 2 – Unsatisfied | 3 – Neutral | 4 – Satisfied | 5 – Very S" +
+    "atisfied";
+            // 
+            // varietyLabel
+            // 
+            this.varietyLabel.AutoSize = true;
+            this.varietyLabel.ForeColor = System.Drawing.Color.White;
+            this.varietyLabel.Location = new System.Drawing.Point(22, 74);
+            this.varietyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.varietyLabel.Name = "varietyLabel";
+            this.varietyLabel.Size = new System.Drawing.Size(91, 13);
+            this.varietyLabel.TabIndex = 50;
+            this.varietyLabel.Text = "Variety of courses";
+            // 
+            // activitiesLabel
+            // 
+            this.activitiesLabel.AutoSize = true;
+            this.activitiesLabel.ForeColor = System.Drawing.Color.White;
+            this.activitiesLabel.Location = new System.Drawing.Point(22, 102);
+            this.activitiesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.activitiesLabel.Name = "activitiesLabel";
+            this.activitiesLabel.Size = new System.Drawing.Size(184, 13);
+            this.activitiesLabel.TabIndex = 56;
+            this.activitiesLabel.Text = "Availability of extracurricular activities ";
+            // 
+            // accessLabel
+            // 
+            this.accessLabel.AutoSize = true;
+            this.accessLabel.ForeColor = System.Drawing.Color.White;
+            this.accessLabel.Location = new System.Drawing.Point(22, 129);
+            this.accessLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.accessLabel.Name = "accessLabel";
+            this.accessLabel.Size = new System.Drawing.Size(88, 13);
+            this.accessLabel.TabIndex = 62;
+            this.accessLabel.Text = "Access to faculty";
+            // 
+            // facilitiesLabel
+            // 
+            this.facilitiesLabel.AutoSize = true;
+            this.facilitiesLabel.ForeColor = System.Drawing.Color.White;
+            this.facilitiesLabel.Location = new System.Drawing.Point(22, 157);
+            this.facilitiesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.facilitiesLabel.Name = "facilitiesLabel";
+            this.facilitiesLabel.Size = new System.Drawing.Size(225, 13);
+            this.facilitiesLabel.TabIndex = 68;
+            this.facilitiesLabel.Text = "Quality of academic facilities (library, PCs, etc.)";
+            // 
+            // unionsLabel
+            // 
+            this.unionsLabel.AutoSize = true;
+            this.unionsLabel.ForeColor = System.Drawing.Color.White;
+            this.unionsLabel.Location = new System.Drawing.Point(22, 184);
+            this.unionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.unionsLabel.Name = "unionsLabel";
+            this.unionsLabel.Size = new System.Drawing.Size(78, 13);
+            this.unionsLabel.TabIndex = 74;
+            this.unionsLabel.Text = "Student unions";
+            // 
+            // costLabel
+            // 
+            this.costLabel.AutoSize = true;
+            this.costLabel.ForeColor = System.Drawing.Color.White;
+            this.costLabel.Location = new System.Drawing.Point(22, 212);
+            this.costLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.costLabel.Name = "costLabel";
+            this.costLabel.Size = new System.Drawing.Size(82, 13);
+            this.costLabel.TabIndex = 80;
+            this.costLabel.Text = "Cost of studying";
+            // 
+            // commentsLabel
+            // 
+            this.commentsLabel.AutoSize = true;
+            this.commentsLabel.ForeColor = System.Drawing.Color.White;
+            this.commentsLabel.Location = new System.Drawing.Point(22, 238);
+            this.commentsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.commentsLabel.Name = "commentsLabel";
+            this.commentsLabel.Size = new System.Drawing.Size(104, 13);
+            this.commentsLabel.TabIndex = 86;
+            this.commentsLabel.Text = "Additional comments";
+            // 
+            // universityComments
+            // 
+            this.universityComments.Location = new System.Drawing.Point(253, 238);
+            this.universityComments.Margin = new System.Windows.Forms.Padding(2);
+            this.universityComments.Multiline = true;
+            this.universityComments.Name = "universityComments";
+            this.universityComments.Size = new System.Drawing.Size(326, 52);
+            this.universityComments.TabIndex = 87;
+            // 
+            // submitUniversityReview
+            // 
+            this.submitUniversityReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(43)))), ((int)(((byte)(177)))));
+            this.submitUniversityReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.submitUniversityReview.Location = new System.Drawing.Point(476, 303);
+            this.submitUniversityReview.Margin = new System.Windows.Forms.Padding(2);
+            this.submitUniversityReview.Name = "submitUniversityReview";
+            this.submitUniversityReview.Size = new System.Drawing.Size(102, 29);
+            this.submitUniversityReview.TabIndex = 88;
+            this.submitUniversityReview.Text = "Submit";
+            this.submitUniversityReview.UseVisualStyleBackColor = false;
+            this.submitUniversityReview.Click += new System.EventHandler(this.SubmitUniversityReview_Click);
+            // 
+            // universityReview
+            // 
+            this.universityReview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.universityReview.Controls.Add(this.quality);
+            this.universityReview.Controls.Add(this.unions);
+            this.universityReview.Controls.Add(this.cost);
+            this.universityReview.Controls.Add(this.accessability);
+            this.universityReview.Controls.Add(this.variety);
+            this.universityReview.Controls.Add(this.availability);
+            this.universityReview.Controls.Add(this.submitUniversityReview);
+            this.universityReview.Controls.Add(this.universityComments);
+            this.universityReview.Controls.Add(this.commentsLabel);
+            this.universityReview.Controls.Add(this.costLabel);
+            this.universityReview.Controls.Add(this.unionsLabel);
+            this.universityReview.Controls.Add(this.facilitiesLabel);
+            this.universityReview.Controls.Add(this.accessLabel);
+            this.universityReview.Controls.Add(this.activitiesLabel);
+            this.universityReview.Controls.Add(this.varietyLabel);
+            this.universityReview.Controls.Add(this.evaluationLabel);
+            this.universityReview.Controls.Add(this.universityLabel);
+            this.universityReview.ForeColor = System.Drawing.Color.White;
+            this.universityReview.Location = new System.Drawing.Point(4, 22);
+            this.universityReview.Margin = new System.Windows.Forms.Padding(2);
+            this.universityReview.Name = "universityReview";
+            this.universityReview.Padding = new System.Windows.Forms.Padding(2);
+            this.universityReview.Size = new System.Drawing.Size(664, 349);
+            this.universityReview.TabIndex = 8;
+            this.universityReview.Text = "universityReview";
+            // 
+            // quality
+            // 
+            this.quality.Controls.Add(this.radioButton1);
+            this.quality.Controls.Add(this.radioButton2);
+            this.quality.Controls.Add(this.radioButton3);
+            this.quality.Controls.Add(this.radioButton4);
+            this.quality.Controls.Add(this.radioButton5);
+            this.quality.Location = new System.Drawing.Point(253, 152);
+            this.quality.Name = "quality";
+            this.quality.Size = new System.Drawing.Size(325, 25);
+            this.quality.TabIndex = 91;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(2, 6);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(31, 17);
+            this.radioButton1.TabIndex = 12;
+            this.radioButton1.Text = "1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(74, 6);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(31, 17);
+            this.radioButton2.TabIndex = 13;
+            this.radioButton2.Tag = "2";
+            this.radioButton2.Text = "2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(148, 6);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(31, 17);
+            this.radioButton3.TabIndex = 14;
+            this.radioButton3.Tag = "3";
+            this.radioButton3.Text = "3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(223, 6);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(31, 17);
+            this.radioButton4.TabIndex = 15;
+            this.radioButton4.Text = "4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(297, 6);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(31, 17);
+            this.radioButton5.TabIndex = 16;
+            this.radioButton5.Text = "5";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // unions
+            // 
+            this.unions.Controls.Add(this.radioButton6);
+            this.unions.Controls.Add(this.radioButton7);
+            this.unions.Controls.Add(this.radioButton8);
+            this.unions.Controls.Add(this.radioButton9);
+            this.unions.Controls.Add(this.radioButton10);
+            this.unions.Location = new System.Drawing.Point(253, 180);
+            this.unions.Name = "unions";
+            this.unions.Size = new System.Drawing.Size(325, 25);
+            this.unions.TabIndex = 92;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(2, 6);
+            this.radioButton6.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(31, 17);
+            this.radioButton6.TabIndex = 12;
+            this.radioButton6.Text = "1";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(74, 6);
+            this.radioButton7.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(31, 17);
+            this.radioButton7.TabIndex = 13;
+            this.radioButton7.Text = "2";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(148, 6);
+            this.radioButton8.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(31, 17);
+            this.radioButton8.TabIndex = 14;
+            this.radioButton8.Text = "3";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(223, 6);
+            this.radioButton9.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(31, 17);
+            this.radioButton9.TabIndex = 15;
+            this.radioButton9.Text = "4";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(297, 6);
+            this.radioButton10.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(31, 17);
+            this.radioButton10.TabIndex = 16;
+            this.radioButton10.Text = "5";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // cost
+            // 
+            this.cost.Controls.Add(this.radioButton11);
+            this.cost.Controls.Add(this.radioButton12);
+            this.cost.Controls.Add(this.radioButton13);
+            this.cost.Controls.Add(this.radioButton14);
+            this.cost.Controls.Add(this.radioButton15);
+            this.cost.Location = new System.Drawing.Point(253, 207);
+            this.cost.Name = "cost";
+            this.cost.Size = new System.Drawing.Size(325, 25);
+            this.cost.TabIndex = 93;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(2, 6);
+            this.radioButton11.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(31, 17);
+            this.radioButton11.TabIndex = 12;
+            this.radioButton11.Text = "1";
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(74, 6);
+            this.radioButton12.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(31, 17);
+            this.radioButton12.TabIndex = 13;
+            this.radioButton12.Text = "2";
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(148, 6);
+            this.radioButton13.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(31, 17);
+            this.radioButton13.TabIndex = 14;
+            this.radioButton13.Text = "3";
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
+            // radioButton14
+            // 
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.Location = new System.Drawing.Point(223, 6);
+            this.radioButton14.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(31, 17);
+            this.radioButton14.TabIndex = 15;
+            this.radioButton14.Text = "4";
+            this.radioButton14.UseVisualStyleBackColor = true;
+            // 
+            // radioButton15
+            // 
+            this.radioButton15.AutoSize = true;
+            this.radioButton15.Location = new System.Drawing.Point(297, 6);
+            this.radioButton15.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton15.Name = "radioButton15";
+            this.radioButton15.Size = new System.Drawing.Size(31, 17);
+            this.radioButton15.TabIndex = 16;
+            this.radioButton15.Text = "5";
+            this.radioButton15.UseVisualStyleBackColor = true;
+            // 
+            // accessability
+            // 
+            this.accessability.Controls.Add(this.radioButton16);
+            this.accessability.Controls.Add(this.radioButton17);
+            this.accessability.Controls.Add(this.radioButton18);
+            this.accessability.Controls.Add(this.radioButton19);
+            this.accessability.Controls.Add(this.radioButton20);
+            this.accessability.Location = new System.Drawing.Point(253, 121);
+            this.accessability.Name = "accessability";
+            this.accessability.Size = new System.Drawing.Size(325, 25);
+            this.accessability.TabIndex = 94;
+            // 
+            // radioButton16
+            // 
+            this.radioButton16.AutoSize = true;
+            this.radioButton16.Location = new System.Drawing.Point(2, 6);
+            this.radioButton16.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton16.Name = "radioButton16";
+            this.radioButton16.Size = new System.Drawing.Size(31, 17);
+            this.radioButton16.TabIndex = 12;
+            this.radioButton16.Text = "1";
+            this.radioButton16.UseVisualStyleBackColor = true;
+            // 
+            // radioButton17
+            // 
+            this.radioButton17.AutoSize = true;
+            this.radioButton17.Location = new System.Drawing.Point(74, 6);
+            this.radioButton17.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton17.Name = "radioButton17";
+            this.radioButton17.Size = new System.Drawing.Size(31, 17);
+            this.radioButton17.TabIndex = 13;
+            this.radioButton17.Tag = "2";
+            this.radioButton17.Text = "2";
+            this.radioButton17.UseVisualStyleBackColor = true;
+            // 
+            // radioButton18
+            // 
+            this.radioButton18.AutoSize = true;
+            this.radioButton18.Location = new System.Drawing.Point(148, 6);
+            this.radioButton18.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton18.Name = "radioButton18";
+            this.radioButton18.Size = new System.Drawing.Size(31, 17);
+            this.radioButton18.TabIndex = 14;
+            this.radioButton18.Text = "3";
+            this.radioButton18.UseVisualStyleBackColor = true;
+            // 
+            // radioButton19
+            // 
+            this.radioButton19.AutoSize = true;
+            this.radioButton19.Location = new System.Drawing.Point(223, 6);
+            this.radioButton19.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton19.Name = "radioButton19";
+            this.radioButton19.Size = new System.Drawing.Size(31, 17);
+            this.radioButton19.TabIndex = 15;
+            this.radioButton19.Text = "4";
+            this.radioButton19.UseVisualStyleBackColor = true;
+            // 
+            // radioButton20
+            // 
+            this.radioButton20.AutoSize = true;
+            this.radioButton20.Location = new System.Drawing.Point(297, 6);
+            this.radioButton20.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton20.Name = "radioButton20";
+            this.radioButton20.Size = new System.Drawing.Size(31, 17);
+            this.radioButton20.TabIndex = 16;
+            this.radioButton20.Text = "5";
+            this.radioButton20.UseVisualStyleBackColor = true;
+            // 
+            // variety
+            // 
+            this.variety.Controls.Add(this.radioButton21);
+            this.variety.Controls.Add(this.radioButton22);
+            this.variety.Controls.Add(this.radioButton23);
+            this.variety.Controls.Add(this.radioButton24);
+            this.variety.Controls.Add(this.radioButton25);
+            this.variety.Location = new System.Drawing.Point(253, 62);
+            this.variety.Name = "variety";
+            this.variety.Size = new System.Drawing.Size(325, 25);
+            this.variety.TabIndex = 90;
+            // 
+            // radioButton21
+            // 
+            this.radioButton21.AutoSize = true;
+            this.radioButton21.Location = new System.Drawing.Point(2, 6);
+            this.radioButton21.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton21.Name = "radioButton21";
+            this.radioButton21.Size = new System.Drawing.Size(31, 17);
+            this.radioButton21.TabIndex = 12;
+            this.radioButton21.Tag = "1";
+            this.radioButton21.Text = "1";
+            this.radioButton21.UseVisualStyleBackColor = true;
+            // 
+            // radioButton22
+            // 
+            this.radioButton22.AutoSize = true;
+            this.radioButton22.Location = new System.Drawing.Point(74, 6);
+            this.radioButton22.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton22.Name = "radioButton22";
+            this.radioButton22.Size = new System.Drawing.Size(31, 17);
+            this.radioButton22.TabIndex = 13;
+            this.radioButton22.Tag = "2";
+            this.radioButton22.Text = "2";
+            this.radioButton22.UseVisualStyleBackColor = true;
+            // 
+            // radioButton23
+            // 
+            this.radioButton23.AutoSize = true;
+            this.radioButton23.Location = new System.Drawing.Point(148, 6);
+            this.radioButton23.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton23.Name = "radioButton23";
+            this.radioButton23.Size = new System.Drawing.Size(31, 17);
+            this.radioButton23.TabIndex = 14;
+            this.radioButton23.Text = "3";
+            this.radioButton23.UseVisualStyleBackColor = true;
+            // 
+            // radioButton24
+            // 
+            this.radioButton24.AutoSize = true;
+            this.radioButton24.Location = new System.Drawing.Point(223, 6);
+            this.radioButton24.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton24.Name = "radioButton24";
+            this.radioButton24.Size = new System.Drawing.Size(31, 17);
+            this.radioButton24.TabIndex = 15;
+            this.radioButton24.Tag = "4";
+            this.radioButton24.Text = "4";
+            this.radioButton24.UseVisualStyleBackColor = true;
+            // 
+            // radioButton25
+            // 
+            this.radioButton25.AutoSize = true;
+            this.radioButton25.Location = new System.Drawing.Point(297, 6);
+            this.radioButton25.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton25.Name = "radioButton25";
+            this.radioButton25.Size = new System.Drawing.Size(31, 17);
+            this.radioButton25.TabIndex = 16;
+            this.radioButton25.Tag = "5";
+            this.radioButton25.Text = "5";
+            this.radioButton25.UseVisualStyleBackColor = true;
+            // 
+            // availability
+            // 
+            this.availability.Controls.Add(this.radioButton26);
+            this.availability.Controls.Add(this.radioButton27);
+            this.availability.Controls.Add(this.radioButton28);
+            this.availability.Controls.Add(this.radioButton29);
+            this.availability.Controls.Add(this.radioButton30);
+            this.availability.Location = new System.Drawing.Point(253, 91);
+            this.availability.Name = "availability";
+            this.availability.Size = new System.Drawing.Size(325, 25);
+            this.availability.TabIndex = 89;
+            // 
+            // radioButton26
+            // 
+            this.radioButton26.AutoSize = true;
+            this.radioButton26.Location = new System.Drawing.Point(2, 6);
+            this.radioButton26.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton26.Name = "radioButton26";
+            this.radioButton26.Size = new System.Drawing.Size(31, 17);
+            this.radioButton26.TabIndex = 12;
+            this.radioButton26.Tag = "1";
+            this.radioButton26.Text = "1";
+            this.radioButton26.UseVisualStyleBackColor = true;
+            // 
+            // radioButton27
+            // 
+            this.radioButton27.AutoSize = true;
+            this.radioButton27.Location = new System.Drawing.Point(74, 6);
+            this.radioButton27.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton27.Name = "radioButton27";
+            this.radioButton27.Size = new System.Drawing.Size(31, 17);
+            this.radioButton27.TabIndex = 13;
+            this.radioButton27.Tag = "2";
+            this.radioButton27.Text = "2";
+            this.radioButton27.UseVisualStyleBackColor = true;
+            // 
+            // radioButton28
+            // 
+            this.radioButton28.AutoSize = true;
+            this.radioButton28.Location = new System.Drawing.Point(148, 6);
+            this.radioButton28.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton28.Name = "radioButton28";
+            this.radioButton28.Size = new System.Drawing.Size(31, 17);
+            this.radioButton28.TabIndex = 14;
+            this.radioButton28.Tag = "3";
+            this.radioButton28.Text = "3";
+            this.radioButton28.UseVisualStyleBackColor = true;
+            // 
+            // radioButton29
+            // 
+            this.radioButton29.AutoSize = true;
+            this.radioButton29.Location = new System.Drawing.Point(223, 6);
+            this.radioButton29.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton29.Name = "radioButton29";
+            this.radioButton29.Size = new System.Drawing.Size(31, 17);
+            this.radioButton29.TabIndex = 15;
+            this.radioButton29.Text = "4";
+            this.radioButton29.UseVisualStyleBackColor = true;
+            // 
+            // radioButton30
+            // 
+            this.radioButton30.AutoSize = true;
+            this.radioButton30.Location = new System.Drawing.Point(297, 6);
+            this.radioButton30.Margin = new System.Windows.Forms.Padding(2);
+            this.radioButton30.Name = "radioButton30";
+            this.radioButton30.Size = new System.Drawing.Size(31, 17);
+            this.radioButton30.TabIndex = 16;
+            this.radioButton30.Text = "5";
+            this.radioButton30.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2083,8 +2123,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.programmesGrid)).EndInit();
             this.findSchoolsTab.ResumeLayout(false);
             this.findSchoolsTab.PerformLayout();
-            this.universityReview.ResumeLayout(false);
-            this.universityReview.PerformLayout();
             this.courseReview.ResumeLayout(false);
             this.courseReview.PerformLayout();
             this.encouragement.ResumeLayout(false);
@@ -2099,6 +2137,20 @@
             this.presentation.PerformLayout();
             this.clarity.ResumeLayout(false);
             this.clarity.PerformLayout();
+            this.universityReview.ResumeLayout(false);
+            this.universityReview.PerformLayout();
+            this.quality.ResumeLayout(false);
+            this.quality.PerformLayout();
+            this.unions.ResumeLayout(false);
+            this.unions.PerformLayout();
+            this.cost.ResumeLayout(false);
+            this.cost.PerformLayout();
+            this.accessability.ResumeLayout(false);
+            this.accessability.PerformLayout();
+            this.variety.ResumeLayout(false);
+            this.variety.PerformLayout();
+            this.availability.ResumeLayout(false);
+            this.availability.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2158,48 +2210,6 @@
         private GMap.NET.WindowsForms.GMapControl gMap;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.DataGridView programmesGrid;
-        private System.Windows.Forms.TabPage universityReview;
-        private System.Windows.Forms.Label evaluationLabel;
-        private System.Windows.Forms.Label universityLabel;
-        private System.Windows.Forms.Button submitUniversityReview;
-        private System.Windows.Forms.TextBox universityComments;
-        private System.Windows.Forms.Label commentsLabel;
-        private System.Windows.Forms.RadioButton uniSelection65;
-        private System.Windows.Forms.RadioButton uniSelection64;
-        private System.Windows.Forms.RadioButton uniSelection63;
-        private System.Windows.Forms.RadioButton uniSelection62;
-        private System.Windows.Forms.RadioButton uniSelection61;
-        private System.Windows.Forms.Label costLabel;
-        private System.Windows.Forms.RadioButton uniSelection55;
-        private System.Windows.Forms.RadioButton uniSelection54;
-        private System.Windows.Forms.RadioButton uniSelection53;
-        private System.Windows.Forms.RadioButton uniSelection52;
-        private System.Windows.Forms.RadioButton uniSelection51;
-        private System.Windows.Forms.Label unionsLabel;
-        private System.Windows.Forms.RadioButton uniSelection45;
-        private System.Windows.Forms.RadioButton uniSelection44;
-        private System.Windows.Forms.RadioButton uniSelection43;
-        private System.Windows.Forms.RadioButton uniSelection42;
-        private System.Windows.Forms.RadioButton uniSelection41;
-        private System.Windows.Forms.Label facilitiesLabel;
-        private System.Windows.Forms.RadioButton uniSelection35;
-        private System.Windows.Forms.RadioButton uniSelection34;
-        private System.Windows.Forms.RadioButton uniSelection33;
-        private System.Windows.Forms.RadioButton uniSelection32;
-        private System.Windows.Forms.RadioButton uniSelection31;
-        private System.Windows.Forms.Label accessLabel;
-        private System.Windows.Forms.RadioButton uniSelection25;
-        private System.Windows.Forms.RadioButton uniSelection24;
-        private System.Windows.Forms.RadioButton uniSelection23;
-        private System.Windows.Forms.RadioButton uniSelection22;
-        private System.Windows.Forms.RadioButton uniSelection21;
-        private System.Windows.Forms.Label activitiesLabel;
-        private System.Windows.Forms.RadioButton uniSelection15;
-        private System.Windows.Forms.RadioButton uniSelection14;
-        private System.Windows.Forms.RadioButton uniSelection13;
-        private System.Windows.Forms.RadioButton uniSelection12;
-        private System.Windows.Forms.RadioButton uniSelection11;
-        private System.Windows.Forms.Label varietyLabel;
         private System.Windows.Forms.TabPage courseReview;
         private System.Windows.Forms.Panel encouragement;
         private System.Windows.Forms.RadioButton encouragement1;
@@ -2251,5 +2261,53 @@
         private System.Windows.Forms.Label contentLabel;
         private System.Windows.Forms.Label courseEvaluationLabel;
         private System.Windows.Forms.Label courseLabel;
+        private System.Windows.Forms.TabPage universityReview;
+        private System.Windows.Forms.Panel quality;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Panel unions;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.Panel cost;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.RadioButton radioButton15;
+        private System.Windows.Forms.Panel accessability;
+        private System.Windows.Forms.RadioButton radioButton16;
+        private System.Windows.Forms.RadioButton radioButton17;
+        private System.Windows.Forms.RadioButton radioButton18;
+        private System.Windows.Forms.RadioButton radioButton19;
+        private System.Windows.Forms.RadioButton radioButton20;
+        private System.Windows.Forms.Panel variety;
+        private System.Windows.Forms.RadioButton radioButton21;
+        private System.Windows.Forms.RadioButton radioButton22;
+        private System.Windows.Forms.RadioButton radioButton23;
+        private System.Windows.Forms.RadioButton radioButton24;
+        private System.Windows.Forms.RadioButton radioButton25;
+        private System.Windows.Forms.Panel availability;
+        private System.Windows.Forms.RadioButton radioButton26;
+        private System.Windows.Forms.RadioButton radioButton27;
+        private System.Windows.Forms.RadioButton radioButton28;
+        private System.Windows.Forms.RadioButton radioButton29;
+        private System.Windows.Forms.RadioButton radioButton30;
+        private System.Windows.Forms.Button submitUniversityReview;
+        private System.Windows.Forms.TextBox universityComments;
+        private System.Windows.Forms.Label commentsLabel;
+        private System.Windows.Forms.Label costLabel;
+        private System.Windows.Forms.Label unionsLabel;
+        private System.Windows.Forms.Label facilitiesLabel;
+        private System.Windows.Forms.Label accessLabel;
+        private System.Windows.Forms.Label activitiesLabel;
+        private System.Windows.Forms.Label varietyLabel;
+        private System.Windows.Forms.Label evaluationLabel;
+        private System.Windows.Forms.Label universityLabel;
     }
 }
