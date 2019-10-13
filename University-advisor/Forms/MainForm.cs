@@ -186,11 +186,13 @@ namespace University_advisor.Forms
         private void ProgrammesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //TODO show review form for specific program
+            tabsController.SelectTab(courseReview);
         }
 
         private void ReviewSubmit_Click(object sender, EventArgs e)
         {
             //TODO show form for submitting a review for university
+            tabsController.SelectTab(universityReview);
         }
     }
 }
