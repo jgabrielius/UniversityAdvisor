@@ -54,7 +54,7 @@ namespace University_advisor.Forms
             }
             else
             {
-                Logger.Log(Messages.userAttemptedToChangePassword);
+                Logger.Log(Messages.userAttemptedToChangePassword + "/" + Messages.passwordChangeUnsuccessful);
                 MessageBox.Show(Messages.userDontExist);
             }
         }

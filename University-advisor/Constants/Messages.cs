@@ -27,6 +27,7 @@ namespace University_advisor.Constants
         public const string wrongPasswordOrNoUser = "Wrong password or no user exists";
         public const string passwordsDoNotMatch = "Passwords do not match";
         public const string passwordTooShort = "Password needs to be at least 6 characters long";
+        public const string passwordChangeUnsuccessful = "Attempt to change password was unsuccessful";
         //University
         public const string universityUpdateSuccess = "University updated successfully.";
         public const string universityUpdateFailed = "Error changing university";

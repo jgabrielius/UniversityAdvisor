@@ -15,8 +15,8 @@ namespace University_advisor.Services
     {
         private static void SendThroughSmtp(MailMessage msg)
         {
-            var login = new NetworkCredential("universityadvisor.lt@gmail.com", "Komanda1");
-            var client = new SmtpClient("smtp.gmail.com", 587);
+            var login = new NetworkCredential(ClientSettings.universityAdvisorMailName, ClientSettings.universityAdvisorMailPassword);
+            var client = new SmtpClient(ClientSettings.smtpMailName, 587);
             client.EnableSsl = true;
             client.Credentials = login;
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
@@ -28,7 +28,7 @@ namespace University_advisor.Services
             {
                 var msg = new MailMessage();
                 msg.To.Add(new MailAddress(recipient));
-                msg.From = new MailAddress("universityadvisor.lt@gmail.com");
+                msg.From = new MailAddress(ClientSettings.universityAdvisorMailName);
                 msg.Subject = subject;
                 msg.Body = message;
                 SendThroughSmtp(msg);
