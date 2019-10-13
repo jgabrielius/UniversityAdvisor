@@ -130,6 +130,20 @@ namespace University_advisor.Forms
             }
             universitiesGrid.DataSource = table;
         }
+        private void InstantiateProgramsGrid(int universityId)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Group", typeof(string));
+            table.Columns.Add("Direction", typeof(string));
+            table.Columns.Add("Program", typeof(string));
+            table.Columns.Add("City", typeof(string));
+            ArrayList programmes = SqlDriver.Fetch($"SELECT [group],direction,program,city FROM studyProgrammes WHERE universityId = {universityId}");
+            foreach (Dictionary<string, object> row in programmes)
+            {
+                table.Rows.Add(row["group"], row["direction"], row["program"], row["city"]);
+            }
+            programmesGrid.DataSource = table;
+        }
 
         private void UniversitiesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -139,45 +153,11 @@ namespace University_advisor.Forms
             int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
             string selectedName = dgv.CurrentRow.Cells["Name"].Value.ToString();
             universityName.Text = selectedName;
+            InstantiateProgramsGrid(selectedId);
             tabsController.SelectTab(universityTab);
-
         }
 
-        private void ReviewSubmit_Click(object sender, EventArgs e)
-        {
-            string review = universityReview.Text;
-            int rating = 0;
-            if (veryBadButton.Checked)
-            {
-                rating = 1;
-            }
-            else if (badButton.Checked)
-            {
-                rating = 2;
-            }
-            else if (goodButton.Checked)
-            {
-                rating = 3;
-            }
-            else if (veryGoodButton.Checked)
-            {
-                rating = 4;
-            }
 
-            if (review.Length == 0 || rating == 0)
-            {
-                MessageBox.Show("Your review or rating is empty", "Error");
-            }
-            else
-            {
-                MessageBox.Show("Thank you for submitting your review", "Review submitted");
-                universityReview.Clear();
-                veryBadButton.Checked = false;
-                badButton.Checked = false;
-                goodButton.Checked = false;
-                veryGoodButton.Checked = false;
-            }
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Add(50);
@@ -201,6 +181,16 @@ namespace University_advisor.Forms
         private void SearchButton_Click(object sender, EventArgs e)
         {
             map.UpdateMap(comboBox1.Text, textBox1.Text);
+        }
+
+        private void ProgrammesGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //TODO show review form for specific program
+        }
+
+        private void ReviewSubmit_Click(object sender, EventArgs e)
+        {
+            //TODO show form for submitting a review for university
         }
     }
 }
