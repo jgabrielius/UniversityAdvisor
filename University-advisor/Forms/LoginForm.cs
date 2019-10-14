@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Forms
 {
@@ -17,18 +18,18 @@ namespace University_advisor.Forms
         {
             if (String.IsNullOrEmpty(usernameTextBox.Text))
             {
-                MessageBox.Show("User is not specified");
+                MessageBox.Show(Messages.userNotSpecified);
                 return;
             }
             if (String.IsNullOrEmpty(passwordTextBox.Text))
             {
-                MessageBox.Show("Password is not specified");
+                MessageBox.Show(Messages.passwordNotSpecified);
                 return;
             }
 
             if (ValidateFields(usernameTextBox.Text, passwordTextBox.Text))
             {
-                Logger.Log("User logged in");
+                Logger.Log(Messages.userLogInSuccess);
                 Hide();
                 var mainForm = new MainForm(usernameTextBox.Text);
                 mainForm.Closed += (s, args) => this.Close();
@@ -36,8 +37,8 @@ namespace University_advisor.Forms
             }
             else
             {
-                Logger.Log("User could not log in");
-                MessageBox.Show("Wrong password or no user exists");
+                Logger.Log(Messages.userLogInFailed);
+                MessageBox.Show(Messages.wrongPasswordOrNoUser);
             }
         }
 

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Services
 {
@@ -17,6 +18,8 @@ namespace University_advisor.Services
             this.currentUser = currentUser;
         }
 
+        public UserEditingService() { }
+
         public void ChangePassword(string currentPassword, string newPassword, string newPassword2)
         {
             string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
@@ -27,8 +30,8 @@ namespace University_advisor.Services
             {
                 if (newPassword.Equals(currentPassword))
                 {
-                    MessageBox.Show("New password cannot be the same as old one.");
-                    Logger.Log("New password cannot be the same as old one.");
+                    MessageBox.Show(Messages.newPasswordSameAsOld);
+                    Logger.Log(Messages.newPasswordSameAsOld);
                 }
                 else if (newPassword.Equals(newPassword2))
                 {
@@ -37,13 +40,13 @@ namespace University_advisor.Services
                     {
                         if (SqlDriver.Execute(sqlUpdatePassword))
                         {
-                            MessageBox.Show("Password updated successfully.");
-                            Logger.Log("Password updated successfully.");
+                            MessageBox.Show(Messages.passwordUpdateSuccess);
+                            Logger.Log(Messages.passwordUpdateSuccess);
                         }
                         else
                         {
-                            MessageBox.Show("Error changing password.");
-                            Logger.Log("Error changing password.");
+                            MessageBox.Show(Messages.passwordUpdateFailed);
+                            Logger.Log(Messages.passwordUpdateFailed);
                         }
                     }
                     catch (Exception ex)
@@ -54,8 +57,8 @@ namespace University_advisor.Services
                 }
                 else
                 {
-                    MessageBox.Show("Passwords doesn't match.");
-                    Logger.Log("Passwords doesn't match.");
+                    MessageBox.Show(Messages.passwordsDontMatch);
+                    Logger.Log(Messages.passwordsDontMatch);
                 }
 
             }
@@ -71,8 +74,8 @@ namespace University_advisor.Services
             {
                 if (newEmail.Equals(currentEmail))
                 {
-                    MessageBox.Show("New email cannot be the same as old one.");
-                    Logger.Log("New email cannot be the same as old one.");
+                    MessageBox.Show(Messages.newEmailSameAsOld);
+                    Logger.Log(Messages.newEmailSameAsOld);
 
                 }
                 else if (newEmail.Equals(newEmail2))
@@ -83,13 +86,13 @@ namespace University_advisor.Services
                     {
                         if (SqlDriver.Execute(sqlUpdateEmail))
                         {
-                            MessageBox.Show("Email updated successfully.");
-                            Logger.Log("Email updated successfully.");
+                            MessageBox.Show(Messages.emailUpdateSuccess);
+                            Logger.Log(Messages.emailUpdateSuccess);
                         }
                         else
                         {
-                            MessageBox.Show("Error changing email.");
-                            Logger.Log("Error changing email.");
+                            MessageBox.Show(Messages.emailUpdateFailed);
+                            Logger.Log(Messages.emailUpdateFailed);
                         }
                     }
                     catch (Exception ex)
@@ -99,8 +102,8 @@ namespace University_advisor.Services
                 }
                 else
                 {
-                    MessageBox.Show("Emails doesn't match.");
-                    Logger.Log("Emails doesn't match.");
+                    MessageBox.Show(Messages.emailsDontMatch);
+                    Logger.Log(Messages.emailsDontMatch);
 
                 }
             }
@@ -120,13 +123,13 @@ namespace University_advisor.Services
                 {
                     if (SqlDriver.Execute(sqlUpdateUniversityID))
                     {
-                        MessageBox.Show("University updated successfully.");
-                        Logger.Log("University updated successfully.");
+                        MessageBox.Show(Messages.universityUpdateSuccess);
+                        Logger.Log(Messages.universityUpdateSuccess);
                     }
                     else
                     {
-                        MessageBox.Show("Error changing university");
-                        Logger.Log("Error changing university");
+                        MessageBox.Show(Messages.universityUpdateFailed);
+                        Logger.Log(Messages.universityUpdateFailed);
                     }
                 }
                 catch (Exception ex)
@@ -137,8 +140,8 @@ namespace University_advisor.Services
             }
             else
             {
-                MessageBox.Show("New university cannot be the same as old one.");
-                Logger.Log("New university cannot be the same as old one.");
+                MessageBox.Show(Messages.newUniversitySameAsOld);
+                Logger.Log(Messages.newUniversitySameAsOld);
             }
         }
 
@@ -156,13 +159,13 @@ namespace University_advisor.Services
                 {
                     if (SqlDriver.Execute(sqlUpdateStatus))
                     {
-                        MessageBox.Show("Status updated successfully.");
-                        Logger.Log("Status updated successfully.");
+                        MessageBox.Show(Messages.statusUpdateSuccess);
+                        Logger.Log(Messages.statusUpdateSuccess);
                     }
                     else
                     {
-                        MessageBox.Show("Error changing status.");
-                        Logger.Log("Error changing status");
+                        MessageBox.Show(Messages.statusUpdateFailed);
+                        Logger.Log(Messages.statusUpdateFailed);
                     }
                 }
                 catch (Exception ex)
@@ -172,7 +175,7 @@ namespace University_advisor.Services
             }
             else
             {
-                Logger.Log("New status cannot be the same as old one.");
+                Logger.Log(Messages.newStatusSameAsOld);
             }
         }
 
@@ -194,13 +197,27 @@ namespace University_advisor.Services
         {
             var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
             var universityList = new List<string>();
-
-            foreach (Dictionary<string, object> row in universityResult)
+            if (universityResult.Count != 0)
             {
-                universityList.Add(row["name"].ToString());
+                foreach (Dictionary<string, object> row in universityResult)
+                {
+                    universityList.Add(row["name"].ToString());
+                }
             }
-
             return universityList;
+        } 
+
+        public List<String> GetUserInfo()
+        {
+            var sqlUserInfo = SqlDriver.Fetch("select email, first_name, last_name, universities.name, status from universities, users where users.universityid = universities.universityId and username = '" + currentUser + "';");
+            var userInfo = new List<string>();
+
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["email"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["first_name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["last_name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["name"].ToString());
+            userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["status"].ToString());
+            return userInfo;
         }
 
     }

@@ -11,7 +11,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Models;
+using University_advisor.Services;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Forms
 {
@@ -26,17 +28,9 @@ namespace University_advisor.Forms
         }
         private void SetValues()
         {
-            var universityResult = SqlDriver.Fetch("SELECT name FROM universities");
-            if (universityResult.Count != 0)
-            {
-                var universityList = new List<string>();
-                foreach (Dictionary<string, object> row in universityResult)
-                {
-                    universityList.Add(row["name"].ToString());
-                }
-                universityBox.DataSource = universityList;
-                statusBox.DataSource = statusList;
-            }
+            UserEditingService service = new UserEditingService();
+            universityBox.DataSource = service.GetAllUniversities();
+            statusBox.DataSource = statusList;
         }
 
         private void CreateAccountButton_Click(object sender, EventArgs e)
@@ -71,14 +65,14 @@ namespace University_advisor.Forms
             {
                 if (SqlDriver.Execute(txtSqlQuery))
                 {
-                    MessageBox.Show("New user is successfully created");
-                    Logger.Log("New user is successfully created");
+                    MessageBox.Show(Messages.userCreateSuccess);
+                    Logger.Log(Messages.userCreateSuccess);
                     Hide();
                 }
                 else
                 {
-                    MessageBox.Show("User cannot be created");
-                    Logger.Log("User cannot be created");
+                    MessageBox.Show(Messages.userCreateFailed);
+                    Logger.Log(Messages.userCreateFailed);
                 }
             }
             catch (Exception e)
@@ -93,26 +87,26 @@ namespace University_advisor.Forms
                 String.IsNullOrEmpty(lastNameText.Text) || String.IsNullOrEmpty(emailText.Text) ||
                 String.IsNullOrEmpty(passwordText.Text) || String.IsNullOrEmpty(confirmPasswordText.Text))
             {
-                MessageBox.Show("Do not leave empty fields");
+                MessageBox.Show(Messages.emptyFields);
                 return false;
             }
 
             var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             if (!regex.Match(emailText.Text).Success)
             {
-                MessageBox.Show("Wrong email format");
+                MessageBox.Show(Messages.badEmailFormat);
                 return false;
             }
 
             if (!passwordText.Text.Equals(confirmPasswordText.Text))
             {
-                MessageBox.Show("Passwords do not match");
+                MessageBox.Show(Messages.passwordsDoNotMatch);
                 return false;
             }
 
             if (passwordText.Text.Length < 6)
             {
-                MessageBox.Show("Passwords needs to be at least 6 characters long");
+                MessageBox.Show(Messages.passwordTooShort);
                 return false;
             }
             return true;

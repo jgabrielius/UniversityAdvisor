@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using University_advisor.Constants;
 
 namespace University_advisor.Tools
 {
@@ -30,7 +31,7 @@ namespace University_advisor.Tools
         {
             if (!VerifyDirectory())
             {
-                Console.WriteLine("Log file could not be be created");
+                Console.WriteLine(Messages.logCreateFailed);
                 return;
             }
             else

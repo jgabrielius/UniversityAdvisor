@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Services
 {
@@ -44,11 +45,11 @@ namespace University_advisor.Services
             {
                 if (SqlDriver.Execute(sqlUpdatePassword))
                 {
-                    Logger.Log("Password updated successfully.");
+                    Logger.Log(Messages.passwordUpdateSuccess);
                 }
                 else
                 {
-                    Logger.Log("Error changing password");
+                    Logger.Log(Messages.passwordUpdateFailed);
                 }
             }
             catch (Exception ex)
