@@ -64,6 +64,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.aboutTab = new System.Windows.Forms.TabPage();
+            this.currentStatusLabel = new System.Windows.Forms.Label();
+            this.currentUniversityLabel = new System.Windows.Forms.Label();
+            this.currentLastnameLabel = new System.Windows.Forms.Label();
+            this.currentFirstnameLabel = new System.Windows.Forms.Label();
+            this.currentEmailLabel = new System.Windows.Forms.Label();
+            this.currentUserLabel = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.logOutTab = new System.Windows.Forms.TabPage();
             this.noButton = new System.Windows.Forms.Button();
@@ -685,26 +697,169 @@
             // aboutTab
             // 
             this.aboutTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(40)))), ((int)(((byte)(62)))));
+            this.aboutTab.Controls.Add(this.currentStatusLabel);
+            this.aboutTab.Controls.Add(this.currentUniversityLabel);
+            this.aboutTab.Controls.Add(this.currentLastnameLabel);
+            this.aboutTab.Controls.Add(this.currentFirstnameLabel);
+            this.aboutTab.Controls.Add(this.currentEmailLabel);
+            this.aboutTab.Controls.Add(this.currentUserLabel);
+            this.aboutTab.Controls.Add(this.label23);
+            this.aboutTab.Controls.Add(this.label22);
+            this.aboutTab.Controls.Add(this.label21);
+            this.aboutTab.Controls.Add(this.label20);
+            this.aboutTab.Controls.Add(this.label19);
+            this.aboutTab.Controls.Add(this.label18);
             this.aboutTab.Controls.Add(this.label3);
-            this.aboutTab.Location = new System.Drawing.Point(4, 22);
-            this.aboutTab.Margin = new System.Windows.Forms.Padding(2);
+            this.aboutTab.Location = new System.Drawing.Point(4, 25);
+            this.aboutTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.aboutTab.Name = "aboutTab";
-            this.aboutTab.Padding = new System.Windows.Forms.Padding(2);
-            this.aboutTab.Size = new System.Drawing.Size(664, 349);
+            this.aboutTab.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.aboutTab.Size = new System.Drawing.Size(888, 433);
             this.aboutTab.TabIndex = 4;
             this.aboutTab.Text = "aboutTab";
+            // 
+            // currentStatusLabel
+            // 
+            this.currentStatusLabel.AutoSize = true;
+            this.currentStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentStatusLabel.Location = new System.Drawing.Point(204, 343);
+            this.currentStatusLabel.Name = "currentStatusLabel";
+            this.currentStatusLabel.Size = new System.Drawing.Size(93, 33);
+            this.currentStatusLabel.TabIndex = 13;
+            this.currentStatusLabel.Text = "status";
+            // 
+            // currentUniversityLabel
+            // 
+            this.currentUniversityLabel.AutoSize = true;
+            this.currentUniversityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentUniversityLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentUniversityLabel.Location = new System.Drawing.Point(206, 299);
+            this.currentUniversityLabel.Name = "currentUniversityLabel";
+            this.currentUniversityLabel.Size = new System.Drawing.Size(140, 33);
+            this.currentUniversityLabel.TabIndex = 12;
+            this.currentUniversityLabel.Text = "university";
+            // 
+            // currentLastnameLabel
+            // 
+            this.currentLastnameLabel.AutoSize = true;
+            this.currentLastnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentLastnameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentLastnameLabel.Location = new System.Drawing.Point(206, 253);
+            this.currentLastnameLabel.Name = "currentLastnameLabel";
+            this.currentLastnameLabel.Size = new System.Drawing.Size(134, 33);
+            this.currentLastnameLabel.TabIndex = 11;
+            this.currentLastnameLabel.Text = "lastname";
+            // 
+            // currentFirstnameLabel
+            // 
+            this.currentFirstnameLabel.AutoSize = true;
+            this.currentFirstnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentFirstnameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentFirstnameLabel.Location = new System.Drawing.Point(204, 207);
+            this.currentFirstnameLabel.Name = "currentFirstnameLabel";
+            this.currentFirstnameLabel.Size = new System.Drawing.Size(136, 33);
+            this.currentFirstnameLabel.TabIndex = 10;
+            this.currentFirstnameLabel.Text = "firstname";
+            // 
+            // currentEmailLabel
+            // 
+            this.currentEmailLabel.AutoSize = true;
+            this.currentEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentEmailLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentEmailLabel.Location = new System.Drawing.Point(204, 162);
+            this.currentEmailLabel.Name = "currentEmailLabel";
+            this.currentEmailLabel.Size = new System.Drawing.Size(86, 33);
+            this.currentEmailLabel.TabIndex = 9;
+            this.currentEmailLabel.Text = "email";
+            // 
+            // currentUserLabel
+            // 
+            this.currentUserLabel.AutoSize = true;
+            this.currentUserLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
+            this.currentUserLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.currentUserLabel.Location = new System.Drawing.Point(204, 118);
+            this.currentUserLabel.Name = "currentUserLabel";
+            this.currentUserLabel.Size = new System.Drawing.Size(145, 33);
+            this.currentUserLabel.TabIndex = 8;
+            this.currentUserLabel.Text = "username";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label23.Location = new System.Drawing.Point(86, 343);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(112, 33);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Status:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label22.Location = new System.Drawing.Point(36, 299);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(164, 33);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "University:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label21.Location = new System.Drawing.Point(31, 253);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(169, 33);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "Last name:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label20.Location = new System.Drawing.Point(25, 207);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(173, 33);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "First name:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label19.Location = new System.Drawing.Point(95, 162);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(103, 33);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Email:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label18.Location = new System.Drawing.Point(31, 118);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(167, 33);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Username:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.8F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(225, 110);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(286, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 44);
+            this.label3.Size = new System.Drawing.Size(280, 39);
             this.label3.TabIndex = 1;
-            this.label3.Text = "ABOUT TAB";
+            this.label3.Text = "YOUR PROFILE:";
             // 
             // logOutTab
             // 
@@ -2309,5 +2464,17 @@
         private System.Windows.Forms.Label varietyLabel;
         private System.Windows.Forms.Label evaluationLabel;
         private System.Windows.Forms.Label universityLabel;
+        private System.Windows.Forms.Label currentStatusLabel;
+        private System.Windows.Forms.Label currentUniversityLabel;
+        private System.Windows.Forms.Label currentLastnameLabel;
+        private System.Windows.Forms.Label currentFirstnameLabel;
+        private System.Windows.Forms.Label currentEmailLabel;
+        private System.Windows.Forms.Label currentUserLabel;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }
