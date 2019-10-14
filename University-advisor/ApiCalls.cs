@@ -7,6 +7,7 @@ using System.Windows;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
+using University_advisor.Tools;
 
 namespace University_advisor
 {
@@ -29,11 +30,10 @@ namespace University_advisor
                 {
                     var reader = new StreamReader(responseStream, Encoding.GetEncoding("utf-8"));
                     string errorText = reader.ReadToEnd();
-                    //TO DO: Log error
+                    Logger.Log(errorText);
                 }
                 throw;
             }
         }
-
     }
 }

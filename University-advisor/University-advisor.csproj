@@ -97,6 +97,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiCalls.cs" />
+    <Compile Include="Constants\ClientSettings.cs" />
+    <Compile Include="Constants\Messages.cs" />
     <Compile Include="ControlGMap.cs" />
     <Compile Include="Forms\ForgotPasswordForm.cs">
       <SubType>Form</SubType>

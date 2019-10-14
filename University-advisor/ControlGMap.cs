@@ -59,7 +59,6 @@ namespace University_advisor
         }
         public void UpdateMap(string range, string address) {
             ClearMarkers();
-
             try
             {
                 if (double.TryParse(range, out double n) && address != "")
