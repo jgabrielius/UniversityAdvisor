@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor
 {
@@ -32,14 +33,14 @@ namespace University_advisor
             SQLiteConnection dbConnection = Connect();
             if(dbConnection == null)
             {
-                Logger.Log("Failed to connect to database. Aborting query");
+                Logger.Log(Messages.dbConnectFailed);
                 return false;
             }
             try
             {
                 SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
-                Logger.Log("Query executed successfully");
+                Logger.Log(Messages.queryExecuteSuccess);
             }
             catch (SQLiteException e)
             {
@@ -50,12 +51,12 @@ namespace University_advisor
             return true;
         }
 
-        public static ArrayList FetchNew(string sql)
+        public static ArrayList Fetch(string sql)
         {
             SQLiteConnection dbConnection = Connect();
             if (dbConnection == null)
             {
-                Console.WriteLine("Failed to connect to database. Aborting query");
+                Console.WriteLine(Messages.dbConnectFailed);
                 return null;
             }
             try
@@ -79,36 +80,6 @@ namespace University_advisor
             catch (SQLiteException e)
             {
                 Debug.WriteLine(e.StackTrace);
-                return null;
-            }
-        }
-        public static ArrayList Fetch(string sql)
-        {
-            SQLiteConnection dbConnection = Connect();
-            if (dbConnection == null)
-            {
-                Logger.Log("Failed to connect to database. Aborting query");
-                return null;
-            }
-            try
-            {
-                ArrayList al = new ArrayList();
-                SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
-                SQLiteDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    Object[] temp = new object[reader.FieldCount];
-                    reader.GetValues(temp);
-                    al.Add(temp);
-                }
-                reader.Close();
-                dbConnection.Close();
-                Logger.Log("Query executed successfully");
-                return al;
-            }
-            catch (SQLiteException e)
-            {
-                Logger.Log(e.Message);
                 return null;
             }
         }

@@ -11,7 +11,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Models;
+using University_advisor.Services;
 using University_advisor.Tools;
+using University_advisor.Constants;
 
 namespace University_advisor.Forms
 {
@@ -21,24 +23,14 @@ namespace University_advisor.Forms
         public SignupForm()
         {
             InitializeComponent();
+            CenterToScreen();
             SetValues();
         }
         private void SetValues()
         {
-            var universityResult = SqlDriver.Fetch("SELECT name FROM highSchool");
-            if (universityResult.Count != 0)
-            {
-                var universityList = new List<string>();
-                foreach (Object[] row in universityResult)
-                {
-                    foreach (object column in row)
-                    {
-                        universityList.Add(column.ToString());
-                    }
-                }
-                universityBox.DataSource = universityList;
-                statusBox.DataSource = statusList;
-            }
+            UserEditingService service = new UserEditingService();
+            universityBox.DataSource = service.GetAllUniversities();
+            statusBox.DataSource = statusList;
         }
 
         private void CreateAccountButton_Click(object sender, EventArgs e)
@@ -53,28 +45,34 @@ namespace University_advisor.Forms
                     Email = emailText.Text,
                     University = universityBox.SelectedItem.ToString(),
                     Status = statusBox.SelectedItem.ToString(),
-                    Password = passwordText.Text,
+                    Password = Helper.CreateMD5(passwordText.Text),
                 };
                 SendUserToDb(newUser);
+
+                Hide();
+                var loginForm = new LoginForm();
+                loginForm.Closed += (s, args) => this.Close();
+                loginForm.ShowDialog();
             }
+
         }
 
         private void SendUserToDb(UserModel newUser)
         {
-            string txtSqlQuery = "INSERT INTO userData (username, first_name, last_name, email, university, status, password) VALUES ";
-            txtSqlQuery += "('" + newUser.Username + "', '" + newUser.FirstName + "', '" + newUser.LastName + "', '" + newUser.Email + "', '" + newUser.University + "', '" + newUser.Status + "', '" + newUser.Password + "');";
+            string txtSqlQuery = "INSERT INTO users (username, first_name, last_name, email, universityId, status, password) VALUES ";
+            txtSqlQuery += $"('{newUser.Username}', '{newUser.FirstName}', '{newUser.LastName}', '{newUser.Email}', (SELECT universityId FROM universities WHERE name = '{newUser.University}'), '{newUser.Status}', '{newUser.Password}');";
             try
             {
                 if (SqlDriver.Execute(txtSqlQuery))
                 {
-                    MessageBox.Show("New user is successfully created");
-                    Logger.Log("New user is successfully created");
+                    MessageBox.Show(Messages.userCreateSuccess);
+                    Logger.Log(Messages.userCreateSuccess);
                     Hide();
                 }
                 else
                 {
-                    MessageBox.Show("User cannot be created");
-                    Logger.Log("User cannot be created");
+                    MessageBox.Show(Messages.userCreateFailed);
+                    Logger.Log(Messages.userCreateFailed);
                 }
             }
             catch (Exception e)
@@ -89,29 +87,37 @@ namespace University_advisor.Forms
                 String.IsNullOrEmpty(lastNameText.Text) || String.IsNullOrEmpty(emailText.Text) ||
                 String.IsNullOrEmpty(passwordText.Text) || String.IsNullOrEmpty(confirmPasswordText.Text))
             {
-                MessageBox.Show("Do not leave empty fields");
+                MessageBox.Show(Messages.emptyFields);
                 return false;
             }
 
             var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             if (!regex.Match(emailText.Text).Success)
             {
-                MessageBox.Show("Wrong email format");
+                MessageBox.Show(Messages.badEmailFormat);
                 return false;
             }
 
             if (!passwordText.Text.Equals(confirmPasswordText.Text))
             {
-                MessageBox.Show("Passwords do not match");
+                MessageBox.Show(Messages.passwordsDoNotMatch);
                 return false;
             }
-            
-            if(passwordText.Text.Length<6)
+
+            if (passwordText.Text.Length < 6)
             {
-                MessageBox.Show("Passwords needs to be at least 6 characters long");
+                MessageBox.Show(Messages.passwordTooShort);
                 return false;
             }
             return true;
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            var loginForm = new LoginForm();
+            loginForm.Closed += (s, args) => this.Close();
+            loginForm.ShowDialog();
         }
     }
 }
