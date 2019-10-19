@@ -83,5 +83,15 @@ namespace University_advisor
                 return null;
             }
         }
+
+        public static bool Exists(string sql)
+        {
+            var result = Fetch(sql);
+            if(result.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

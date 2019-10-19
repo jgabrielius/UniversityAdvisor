@@ -228,8 +228,7 @@ namespace University_advisor.Forms
             int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
             selectedCourse = selectedId;
             string userId = GetUserId(currentUser);
-            var reviews = SqlDriver.Fetch($"SELECT * FROM coursereviews WHERE userId = {userId} AND courseId = {selectedCourse} LIMIT 1");
-            if (reviews != null && reviews.Count > 0)
+            if (SqlDriver.Exists($"SELECT * FROM coursereviews WHERE userId = {userId} AND courseId = {selectedCourse} LIMIT 1"))
             {
                 MessageBox.Show(Messages.reviewAlreadySubmitted);
                 return;
@@ -240,8 +239,7 @@ namespace University_advisor.Forms
         private void ReviewSubmit_Click(object sender, EventArgs e)
         {
             string userId = GetUserId(currentUser);
-            var reviews = SqlDriver.Fetch($"SELECT * FROM universityReviews WHERE userId = {userId} AND universityId = {selectedUniversity} LIMIT 1");
-            if (reviews != null && reviews.Count > 0)
+            if (SqlDriver.Exists($"SELECT * FROM universityReviews WHERE userId = {userId} AND universityId = {selectedUniversity} LIMIT 1"))
             {
                 MessageBox.Show(Messages.reviewAlreadySubmitted);
                 return;
