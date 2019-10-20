@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using System.Device.Location;
 using System.Globalization;
 using University_advisor.Models;
+using University_advisor.Constants;
 using Newtonsoft.Json;
 
 namespace University_advisor
 {
     class GeoLocation
     {
-        string LocationIqApiKey = "5e66cc9d64db23";
         public (double, double) GetCoordinates(string url)
         {
             var jsonRes = new ApiCalls().GetLocationJson(url);
@@ -30,8 +30,8 @@ namespace University_advisor
         }
         public string ConstructApiUrl(string address)
         {
-            string text = "https://eu1.locationiq.com/v1/search.php?key=" + LocationIqApiKey + "&q=" + address + "&format=json";
-            return text.Replace(" ", "%20");
+            var apiCallUrl = "https://eu1.locationiq.com/v1/search.php?key=" + ClientSettings.locationApiKey + "&q=" + address + "&format=json";
+            return apiCallUrl.Replace(" ", "%20");
         }
         public List<MarkerModel> GetSchoolsInRangeMarkers(double range, MarkerModel user)
         {
@@ -46,14 +46,14 @@ namespace University_advisor
                 var distance = GetDistance(user.Latitude, user.Longitude, Convert.ToDouble(lat), Convert.ToDouble(lon));
                 if (distance <= range * 1000)
                 {
-                    var newUniInfo = new MarkerModel
+                    var newSchoolInfo = new MarkerModel
                     {
                         Latitude = Convert.ToDouble(lat),
                         Longitude = Convert.ToDouble(lon),
                         Name = name,
                         Type = 1
                     };
-                    schoolsInRange.Add(newUniInfo);
+                    schoolsInRange.Add(newSchoolInfo);
                 }
             }
             return (schoolsInRange);
