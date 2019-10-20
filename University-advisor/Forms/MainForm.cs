@@ -233,11 +233,23 @@ namespace University_advisor.Forms
                 return;
             int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
             selectedCourse = selectedId;
+            string userId = GetUserId(currentUser);
+            if (SqlDriver.Exists($"SELECT * FROM coursereviews WHERE userId = {userId} AND courseId = {selectedCourse} LIMIT 1"))
+            {
+                MessageBox.Show(Messages.reviewAlreadySubmitted);
+                return;
+            }
             tabsController.SelectTab(courseReview);
         }
 
         private void ReviewSubmit_Click(object sender, EventArgs e)
         {
+            string userId = GetUserId(currentUser);
+            if (SqlDriver.Exists($"SELECT * FROM universityReviews WHERE userId = {userId} AND universityId = {selectedUniversity} LIMIT 1"))
+            {
+                MessageBox.Show(Messages.reviewAlreadySubmitted);
+                return;
+            }
             tabsController.SelectTab(universityReview);
         }
 
@@ -252,8 +264,8 @@ namespace University_advisor.Forms
                 insert += item.Key + ",";
                 values += item.Value + ",";
             }
-            insert += "courseId)";
-            values += selectedCourse + ")";
+            insert += "userId,courseId)";
+            values += GetUserId(currentUser) + "," + selectedCourse +")";
             SqlDriver.Execute(insert + values);
             InstantiateGrid();//Renew grid after submitting a review
             InstantiateProgramsGrid(selectedUniversity);
@@ -271,15 +283,21 @@ namespace University_advisor.Forms
                 insert += item.Key + ",";
                 values += item.Value + ",";
             }
-            insert += "universityId)";
-            values += selectedUniversity + ")";
+            insert += "userId,universityId)";
+            values += GetUserId(currentUser) + ","+selectedUniversity + ")";
             SqlDriver.Execute(insert + values);
             InstantiateGrid();//Renew grid after submitting a review
             InstantiateProgramsGrid(selectedUniversity);
             tabsController.SelectTab(universityTab);
         }
 
-        private Dictionary<string, string> ExtractReviews(List<Panel> panels)
+        private string GetUserId(string username)
+        {
+            var user = (Dictionary<string,object>)SqlDriver.Fetch($"SELECT userId FROM users WHERE username = '{username}'")[0];
+            return user["userId"].ToString();
+        }   
+
+        private Dictionary<string,string> ExtractReviews(List<Panel> panels)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
             foreach (Panel p in panels)
