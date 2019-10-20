@@ -45,7 +45,7 @@ namespace University_advisor.Forms
                     Email = emailText.Text,
                     University = universityBox.SelectedItem.ToString(),
                     Status = statusBox.SelectedItem.ToString(),
-                    Password = Helper.CreateMD5(passwordText.Text),
+                    Password = PasswordHasher.CreateMD5(passwordText.Text),
                 };
                 SendUserToDb(newUser);
 

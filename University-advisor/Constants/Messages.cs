@@ -41,7 +41,7 @@ namespace University_advisor.Constants
         public const string userNotSpecified = "User is not specified";
         //User
         public const string userAttemptedToChangePassword = "User attempted to change password";
-        public const string userDontExist = "User with provided information does not exist.";
+        public const string userDoesNotExist = "User with provided information does not exist.";
         public const string userLogInSuccess = "User logged in";
         public const string userLogInFailed = "User could not log in";
         public const string userCreateSuccess = "New user is successfully created";
