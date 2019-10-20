@@ -17,7 +17,7 @@ namespace University_advisor
         {
             try
             {
-                SQLiteConnection dbConnection = new SQLiteConnection("Data Source=../../Database.sqlite;Version=3;");
+                var dbConnection = new SQLiteConnection("Data Source=../../Database.sqlite;Version=3;");
                 dbConnection.Open();
                 return dbConnection;
             }
@@ -30,15 +30,17 @@ namespace University_advisor
 
         public static bool Execute(string sql)
         {
-            SQLiteConnection dbConnection = Connect();
-            if(dbConnection == null)
+            var dbConnection = Connect();
+
+            if (dbConnection == null)
             {
                 Logger.Log(Messages.dbConnectFailed);
                 return false;
             }
+
             try
             {
-                SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
+                var command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
                 Logger.Log(Messages.queryExecuteSuccess);
             }
@@ -47,39 +49,43 @@ namespace University_advisor
                 Logger.Log(e.Message);
                 return false;
             }
+
             dbConnection.Close();
             return true;
         }
 
         public static ArrayList Fetch(string sql)
         {
-            SQLiteConnection dbConnection = Connect();
+            var dbConnection = Connect();
             if (dbConnection == null)
             {
-                Console.WriteLine(Messages.dbConnectFailed);
+                Logger.Log(Messages.dbConnectFailed);
                 return null;
             }
+
             try
             {
-                ArrayList al = new ArrayList();
-                SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
-                SQLiteDataReader reader = command.ExecuteReader();
+                var al = new ArrayList();
+                var command = new SQLiteCommand(sql, dbConnection);
+                var reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
                     Dictionary<string, object> dictionary = new Dictionary<string, object>();
-                    for(int i = 0; i < reader.FieldCount; i++)
+                    for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        dictionary[reader.GetName(i)]=reader.GetValue(i);
+                        dictionary[reader.GetName(i)] = reader.GetValue(i);
                     }
                     al.Add(dictionary);
                 }
+
                 reader.Close();
                 dbConnection.Close();
                 return al;
             }
             catch (SQLiteException e)
             {
-                Debug.WriteLine(e.StackTrace);
+                Logger.Log(e.StackTrace);
                 return null;
             }
         }
@@ -87,7 +93,7 @@ namespace University_advisor
         public static bool Exists(string sql)
         {
             var result = Fetch(sql);
-            if(result.Count > 0)
+            if (result.Count > 0)
             {
                 return true;
             }

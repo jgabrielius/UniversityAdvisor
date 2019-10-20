@@ -4,16 +4,16 @@ using System.Text;
 
 namespace University_advisor.Tools
 {
-    public static class Helper
+    public static class PasswordHasher
     {
         public static string CreateMD5(string input)
         {
-            MD5 md5 = MD5.Create();
-            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
-            byte[] outputBytes = md5.ComputeHash(inputBytes);
+            var md5 = MD5.Create();
+            var inputBytes = Encoding.ASCII.GetBytes(input);
+            var outputBytes = md5.ComputeHash(inputBytes);
 
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < outputBytes.Length; i++)
+            var sb = new StringBuilder();
+            for (var i = 0; i < outputBytes.Length; i++)
             {
                 sb.Append(outputBytes[i].ToString("X2"));
             }
