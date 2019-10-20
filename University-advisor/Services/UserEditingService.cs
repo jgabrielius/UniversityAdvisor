@@ -34,7 +34,7 @@ namespace University_advisor.Services
                 }
                 else if (newInputSetting.Equals(newInputSetting2))
                 {
-                    string sqlUpdate = "UPDATE users SET " + setting + " ='" + newInputSetting + "' WHERE username='" + currentUser + "';";
+                    var sqlUpdate = "UPDATE users SET " + setting + " ='" + newInputSetting + "' WHERE username='" + currentUser + "';";
                     try
                     {
                         if (SqlDriver.Execute(sqlUpdate))
@@ -70,11 +70,11 @@ namespace University_advisor.Services
         {
             if (!selectedUniversity.Equals(GetCurrentUniversity()))
             {
-                string sqlGetNewUniversityID = "select universityid from universities where name ='" + selectedUniversity + "';";
-                ArrayList newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
-                string newUniversityId = ((Dictionary<string, object>)newUniversityIdFromDB[0])["universityId"].ToString();
+                var sqlGetNewUniversityID = "select universityid from universities where name ='" + selectedUniversity + "';";
+                var newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
+                var newUniversityId = ((Dictionary<string, object>)newUniversityIdFromDB[0])["universityId"].ToString();
+                var sqlUpdateUniversityID = "update users set universityid =" + newUniversityId + " where username ='" + currentUser + "';";
 
-                string sqlUpdateUniversityID = "update users set universityid =" + newUniversityId + " where username ='" + currentUser + "';";
                 try
                 {
                     if (SqlDriver.Execute(sqlUpdateUniversityID))
@@ -105,7 +105,7 @@ namespace University_advisor.Services
         {
             if (!selectedStatus.Equals(GetCurrentSetting("status")))
             {
-                string sqlUpdateStatus = "UPDATE users SET status='" + selectedStatus + "' WHERE username='" + currentUser + "';";
+                var sqlUpdateStatus = "UPDATE users SET status='" + selectedStatus + "' WHERE username='" + currentUser + "';";
 
                 try
                 {
