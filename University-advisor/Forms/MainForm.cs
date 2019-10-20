@@ -92,20 +92,38 @@ namespace University_advisor.Forms
 
         private void ChangePassword_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser)
+            if (currentPassword.Text == Messages.emptyString ||
+                 newPassword.Text == Messages.emptyString || newPassword2.Text == Messages.emptyString)
+            {
+                MessageBox.Show(Messages.emptyFields);
+                Logger.Log(Messages.emptyFields);
+            }
+            else
+            {
+                new UserEditingService(currentUser)
                 .UpdateSetting("password", Helper.CreateMD5(currentPassword.Text),
                 Helper.CreateMD5(newPassword.Text), Helper.CreateMD5(newPassword2.Text),
                 Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
                 Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
-            ClearValues();
+                ClearValues();
+            }
         }
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).UpdateSetting("email", currentEmail.Text,
+            if (currentEmail.Text == Messages.emptyString ||
+                 newEmail.Text == Messages.emptyString || newEmail2.Text == Messages.emptyString)
+            {
+                MessageBox.Show(Messages.emptyFields);
+                Logger.Log(Messages.emptyFields);
+            }
+            else
+            {
+                new UserEditingService(currentUser).UpdateSetting("email", currentEmail.Text,
                 newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
                 Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
-            ClearValues();
+                ClearValues();
+            }
         }
 
         private void ChangeUniversity_Click(object sender, EventArgs e)
