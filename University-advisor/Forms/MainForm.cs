@@ -203,12 +203,8 @@ namespace University_advisor.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(50);
-            comboBox1.Items.Add(100);
-            comboBox1.Items.Add(250);
-            comboBox1.Items.Add(500);
-            comboBox1.Items.Add(1000);
-            comboBox1.Items.Add(2000);
+            int[] rangeValues = new int[]{50, 100, 250, 500, 1000, 2000};
+            foreach (var integer in rangeValues) rangeComboBox.Items.Add(integer); 
 
             searchButton.TabStop = false;
             searchButton.FlatStyle = FlatStyle.Flat;
@@ -223,7 +219,7 @@ namespace University_advisor.Forms
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            map.UpdateMap(comboBox1.Text, textBox1.Text);
+            map.UpdateMap(rangeComboBox.Text, addressTextBox.Text, incorrectDataLabel);
         }
 
         private void ProgrammesGrid_CellClick(object sender, DataGridViewCellEventArgs e)

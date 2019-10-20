@@ -54,5 +54,8 @@ namespace University_advisor.Constants
         public const string logCreateFailed = "Log file could not be be created";
         //Reviews
         public const string reviewAlreadySubmitted = "Error. You have already submitted this type of review";
+        //General
+        public const string incorrectInformation = "Incorrect information";
+        public const string emptyString = "";
     }
 }

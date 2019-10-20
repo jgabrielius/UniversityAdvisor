@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using University_advisor.Models;
 using University_advisor.Tools;
+using University_advisor.Constants;
 using GMap.NET;
+using System.Windows.Forms;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
@@ -57,7 +59,7 @@ namespace University_advisor
         public void CenterMap(double lat, double lon) {
             map.Position = new PointLatLng(lat, lon);
         }
-        public void UpdateMap(string range, string address) {
+        public void UpdateMap(string range, string address, Label messageLabel) {
             ClearMarkers();
             try
             {
@@ -78,11 +80,19 @@ namespace University_advisor
                     CreateMarker(userMarker);
 
                     foreach (var school in schoolsInRange) CreateMarker(school);
+
+                    SetMessage(messageLabel, Messages.emptyString);
+                }
+                else {
+                    SetMessage(messageLabel, Messages.incorrectInformation);
                 }
             }
             catch (Exception e) {
                 Logger.Log(e.Message);
             }
+        }
+        public void SetMessage(Label label, string message) {
+            label.Text = message;
         }
     }
 }
