@@ -16,6 +16,7 @@ namespace University_advisor.Constants
         public const string emailsDontMatch = "Emails doesn't match.";
         public const string newEmailSameAsOld = "New email cannot be the same as old one.";
         public const string emailNotSpecified = "Email is not specified";
+        public const string emailIncorrect = "Current email is incorrect.";
         public const string badEmailFormat = "Wrong email format";
         //Password
         public const string passwordUpdateSuccess = "Password updated successfully.";
@@ -25,6 +26,7 @@ namespace University_advisor.Constants
         public const string passwordNotSpecified = "Password is not specified";
         public const string passwordUpdateSuccessInbox = "Password successfully updated. Check your inbox.";
         public const string wrongPasswordOrNoUser = "Wrong password or no user exists";
+        public const string passwordIncorrect = "Incorrect current password.";
         public const string passwordsDoNotMatch = "Passwords do not match";
         public const string passwordTooShort = "Password needs to be at least 6 characters long";
         public const string passwordChangeUnsuccessful = "Attempt to change password was unsuccessful";

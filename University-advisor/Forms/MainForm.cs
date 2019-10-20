@@ -92,13 +92,19 @@ namespace University_advisor.Forms
 
         private void ChangePassword_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).ChangePassword(currentPassword.Text, newPassword.Text, newPassword2.Text);
+            new UserEditingService(currentUser)
+                .UpdateSetting("password", Helper.CreateMD5(currentPassword.Text),
+                Helper.CreateMD5(newPassword.Text), Helper.CreateMD5(newPassword2.Text),
+                Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
+                Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
             ClearValues();
         }
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).ChangeEmail(currentEmail.Text, newEmail.Text, newEmail2.Text);
+            new UserEditingService(currentUser).UpdateSetting("email", currentEmail.Text,
+                newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
+                Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
             ClearValues();
         }
 
@@ -120,7 +126,7 @@ namespace University_advisor.Forms
             universityBox.DataSource = service.GetAllUniversities();
             universityBox.SelectedItem = service.GetCurrentUniversity();
             statusBox.DataSource = statusList;
-            statusBox.SelectedItem = service.GetCurrentStatus();
+            statusBox.SelectedItem = service.GetCurrentSetting("status");
         }
 
         private void ClearValues()
@@ -174,7 +180,7 @@ namespace University_advisor.Forms
                 $" WHERE universityId = {universityId} group by studyProgramId,[group], direction, program, city");
             foreach (Dictionary<string, object> row in programmes)
             {
-                table.Rows.Add(row["studyProgramId"],row["group"], row["direction"], row["program"], row["presentation"], row["clarity"], row["feedback"], row["encouragement"], row["effectiveness"], row["satisfaction"]);
+                table.Rows.Add(row["studyProgramId"], row["group"], row["direction"], row["program"], row["presentation"], row["clarity"], row["feedback"], row["encouragement"], row["effectiveness"], row["satisfaction"]);
             }
             programmesGrid.DataSource = null;
             programmesGrid.Rows.Clear();
@@ -253,9 +259,9 @@ namespace University_advisor.Forms
             Dictionary<string, string> result = ExtractReviews(panels);
             string insert = "INSERT INTO coursereviews (";
             string values = "VALUES (";
-            foreach(var item in result)
+            foreach (var item in result)
             {
-                insert += item.Key+",";
+                insert += item.Key + ",";
                 values += item.Value + ",";
             }
             insert += "userId,courseId)";
@@ -268,7 +274,7 @@ namespace University_advisor.Forms
 
         private void SubmitUniversityReview_Click(object sender, EventArgs e)
         {
-            List<Panel> panels = new List<Panel> { variety, availability, accessability, quality, unions, cost};
+            List<Panel> panels = new List<Panel> { variety, availability, accessability, quality, unions, cost };
             Dictionary<string, string> result = ExtractReviews(panels);
             string insert = "INSERT INTO universityReviews (";
             string values = "VALUES (";
@@ -294,16 +300,16 @@ namespace University_advisor.Forms
         private Dictionary<string,string> ExtractReviews(List<Panel> panels)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
-            foreach(Panel p in panels)
+            foreach (Panel p in panels)
             {
-                foreach(Control c in p.Controls)
+                foreach (Control c in p.Controls)
                 {
                     if (c.GetType() == typeof(RadioButton))
                     {
                         RadioButton btn = (RadioButton)c;
                         if (btn.Checked == true)
                         {
-                            result.Add(p.Name,btn.Text);
+                            result.Add(p.Name, btn.Text);
                         }
                     }
                 }
