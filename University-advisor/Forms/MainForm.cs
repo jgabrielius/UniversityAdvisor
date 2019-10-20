@@ -88,8 +88,8 @@ namespace University_advisor.Forms
         private void ChangePassword_Click(object sender, EventArgs e)
         {
             new UserEditingService(currentUser)
-                .UpdateSetting("password", Helper.CreateMD5(currentPassword.Text),
-                Helper.CreateMD5(newPassword.Text), Helper.CreateMD5(newPassword2.Text),
+                .UpdateSetting("password", PasswordHasher.CreateMD5(currentPassword.Text),
+                PasswordHasher.CreateMD5(newPassword.Text), PasswordHasher.CreateMD5(newPassword2.Text),
                 Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
                 Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
             ClearValues();

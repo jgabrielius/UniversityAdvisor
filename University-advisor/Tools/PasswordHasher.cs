@@ -4,7 +4,7 @@ using System.Text;
 
 namespace University_advisor.Tools
 {
-    public static class Helper
+    public static class PasswordHasher
     {
         public static string CreateMD5(string input)
         {
