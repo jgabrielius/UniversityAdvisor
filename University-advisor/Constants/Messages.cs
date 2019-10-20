@@ -55,7 +55,7 @@ namespace University_advisor.Constants
         //Reviews
         public const string reviewAlreadySubmitted = "Error. You have already submitted this type of review";
         //General
-        public const string inccorectInformation = "Incorrect information";
+        public const string incorrectInformation = "Incorrect information";
         public const string emptyString = "";
     }
 }
