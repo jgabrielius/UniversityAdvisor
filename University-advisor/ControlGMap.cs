@@ -84,7 +84,7 @@ namespace University_advisor
                     SetMessage(messageLabel, Messages.emptyString);
                 }
                 else {
-                    SetMessage(messageLabel, Messages.inccorectInformation);
+                    SetMessage(messageLabel, Messages.incorrectInformation);
                 }
             }
             catch (Exception e) {
