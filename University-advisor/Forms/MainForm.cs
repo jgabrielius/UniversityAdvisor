@@ -100,12 +100,20 @@ namespace University_advisor.Forms
             }
             else
             {
-                new UserEditingService(currentUser)
-                .UpdateSetting("password", Helper.CreateMD5(currentPassword.Text),
-                Helper.CreateMD5(newPassword.Text), Helper.CreateMD5(newPassword2.Text),
-                Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
-                Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
-                ClearValues();
+                if (newPassword.Text.Length >= 6 && newPassword2.Text.Length >= 6)
+                {
+                    new UserEditingService(currentUser)
+                    .UpdateSetting("password", Helper.CreateMD5(currentPassword.Text),
+                    Helper.CreateMD5(newPassword.Text), Helper.CreateMD5(newPassword2.Text),
+                    Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
+                    Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
+                    ClearValues();
+                }
+                else
+                {
+                    MessageBox.Show(Messages.passwordTooShort);
+                    Logger.Log(Messages.passwordTooShort);
+                }
             }
         }
 
@@ -119,10 +127,14 @@ namespace University_advisor.Forms
             }
             else
             {
-                new UserEditingService(currentUser).UpdateSetting("email", currentEmail.Text,
-                newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
-                Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
-                ClearValues();
+                UserEditingService service = new UserEditingService(currentUser);
+                if (service.CheckEmailFormat(newEmail.Text) && service.CheckEmailFormat(newEmail2.Text))
+                {
+                    service.UpdateSetting("email", currentEmail.Text,
+                    newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
+                    Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
+                    ClearValues();
+                }
             }
         }
 
@@ -221,8 +233,8 @@ namespace University_advisor.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int[] rangeValues = new int[]{50, 100, 250, 500, 1000, 2000};
-            foreach (var integer in rangeValues) rangeComboBox.Items.Add(integer); 
+            int[] rangeValues = new int[] { 50, 100, 250, 500, 1000, 2000 };
+            foreach (var integer in rangeValues) rangeComboBox.Items.Add(integer);
 
             searchButton.TabStop = false;
             searchButton.FlatStyle = FlatStyle.Flat;
@@ -279,7 +291,7 @@ namespace University_advisor.Forms
                 values += item.Value + ",";
             }
             insert += "userId,courseId)";
-            values += GetUserId(currentUser) + "," + selectedCourse +")";
+            values += GetUserId(currentUser) + "," + selectedCourse + ")";
             SqlDriver.Execute(insert + values);
             InstantiateGrid();//Renew grid after submitting a review
             InstantiateProgramsGrid(selectedUniversity);
@@ -298,7 +310,7 @@ namespace University_advisor.Forms
                 values += item.Value + ",";
             }
             insert += "userId,universityId)";
-            values += GetUserId(currentUser) + ","+selectedUniversity + ")";
+            values += GetUserId(currentUser) + "," + selectedUniversity + ")";
             SqlDriver.Execute(insert + values);
             InstantiateGrid();//Renew grid after submitting a review
             InstantiateProgramsGrid(selectedUniversity);
@@ -307,11 +319,11 @@ namespace University_advisor.Forms
 
         private string GetUserId(string username)
         {
-            var user = (Dictionary<string,object>)SqlDriver.Fetch($"SELECT userId FROM users WHERE username = '{username}'")[0];
+            var user = (Dictionary<string, object>)SqlDriver.Fetch($"SELECT userId FROM users WHERE username = '{username}'")[0];
             return user["userId"].ToString();
-        }   
+        }
 
-        private Dictionary<string,string> ExtractReviews(List<Panel> panels)
+        private Dictionary<string, string> ExtractReviews(List<Panel> panels)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
             foreach (Panel p in panels)

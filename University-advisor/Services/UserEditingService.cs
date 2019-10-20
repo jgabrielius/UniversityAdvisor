@@ -169,5 +169,20 @@ namespace University_advisor.Services
             userInfo.Add(((Dictionary<string, object>)sqlUserInfo[0])["status"].ToString());
             return userInfo;
         }
+
+        public bool CheckEmailFormat(string email)
+        {
+            var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (regex.Match(email).Success)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(Messages.badEmailFormat);
+                Logger.Log(Messages.badEmailFormat);
+                return false;
+            }
+        }
     }
 }
