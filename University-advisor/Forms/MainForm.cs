@@ -87,20 +87,50 @@ namespace University_advisor.Forms
 
         private void ChangePassword_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser)
-                .UpdateSetting("password", PasswordHasher.CreateMD5(currentPassword.Text),
-                PasswordHasher.CreateMD5(newPassword.Text), PasswordHasher.CreateMD5(newPassword2.Text),
-                Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
-                Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
-            ClearValues();
+            if (String.IsNullOrEmpty(currentPassword.Text) ||
+                 String.IsNullOrEmpty(newPassword.Text) || String.IsNullOrEmpty(newPassword2.Text))
+            {
+                MessageBox.Show(Messages.emptyFields);
+                Logger.Log(Messages.emptyFields);
+            }
+            else
+            {
+                if (newPassword.Text.Length >= 6 && newPassword2.Text.Length >= 6)
+                {
+                    new UserEditingService(currentUser)
+                    .UpdateSetting("password", PasswordHasher.CreateMD5(currentPassword.Text),
+                    PasswordHasher.CreateMD5(newPassword.Text), PasswordHasher.CreateMD5(newPassword2.Text),
+                    Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
+                    Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
+                    ClearValues();
+                }
+                else
+                {
+                    MessageBox.Show(Messages.passwordTooShort);
+                    Logger.Log(Messages.passwordTooShort);
+                }
+            }
         }
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).UpdateSetting("email", currentEmail.Text,
-                newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
-                Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
-            ClearValues();
+            if (String.IsNullOrEmpty(currentEmail.Text) ||
+                 String.IsNullOrEmpty(newEmail.Text) || String.IsNullOrEmpty(newEmail2.Text))
+            {
+                MessageBox.Show(Messages.emptyFields);
+                Logger.Log(Messages.emptyFields);
+            }
+            else
+            {
+                UserEditingService service = new UserEditingService(currentUser);
+                if (service.CheckEmailFormat(newEmail.Text) && service.CheckEmailFormat(newEmail2.Text))
+                {
+                    service.UpdateSetting("email", currentEmail.Text,
+                    newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
+                    Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
+                    ClearValues();
+                }
+            }
         }
 
         private void ChangeUniversity_Click(object sender, EventArgs e)
