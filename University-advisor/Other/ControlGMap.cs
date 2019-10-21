@@ -19,7 +19,8 @@ namespace University_advisor
         GMapControl map;
         GMapOverlay markers;
 
-        public ControlGMap(GMapControl gMap) {
+        public ControlGMap(GMapControl gMap)
+        {
             map = gMap;
             markers = new GMapOverlay("markers");
             map.Overlays.Add(markers);
@@ -28,15 +29,19 @@ namespace University_advisor
             map.ShowCenter = false;
             CenterMap(55.169437, 23.881275);
         }
-        public void ClearMarkers() {
+        public void ClearMarkers()
+        {
             markers.Markers.Clear();
         }
-        public void AddMarker(GMapMarker marker) {
+        public void AddMarker(GMapMarker marker)
+        {
             markers.Markers.Add(marker);
         }
-        public void CreateMarker(MarkerModel markerInfo) {
+        public void CreateMarker(MarkerModel markerInfo)
+        {
             GMapMarker newMarker;
-            switch (markerInfo.Type) {
+            switch (markerInfo.Type)
+            {
                 case 1:
                     newMarker = new GMarkerGoogle(
                     new PointLatLng(markerInfo.Latitude, markerInfo.Longitude),
@@ -56,10 +61,12 @@ namespace University_advisor
             newMarker.ToolTipText = markerInfo.Name;
             AddMarker(newMarker);
         }
-        public void CenterMap(double lat, double lon) {
+        public void CenterMap(double lat, double lon)
+        {
             map.Position = new PointLatLng(lat, lon);
         }
-        public void UpdateMap(string range, string address, Label messageLabel) {
+        public void UpdateMap(string range, string address, Label messageLabel)
+        {
             ClearMarkers();
             try
             {
@@ -83,15 +90,18 @@ namespace University_advisor
 
                     SetMessage(messageLabel, Messages.emptyString);
                 }
-                else {
+                else
+                {
                     SetMessage(messageLabel, Messages.incorrectInformation);
                 }
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Logger.Log(e.Message);
             }
         }
-        public void SetMessage(Label label, string message) {
+        public void SetMessage(Label label, string message)
+        {
             label.Text = message;
         }
     }

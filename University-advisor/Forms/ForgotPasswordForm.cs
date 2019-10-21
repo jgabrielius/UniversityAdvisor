@@ -34,6 +34,8 @@ namespace University_advisor.Forms
                 return;
             }
 
+            Logger.Log(Messages.userAttemptedToChangePassword);
+
             if (ValidateFields(usernameText.Text, emailText.Text))
             {
                 try
@@ -54,8 +56,8 @@ namespace University_advisor.Forms
             }
             else
             {
-                Logger.Log(Messages.userAttemptedToChangePassword + "/" + Messages.passwordChangeUnsuccessful);
-                MessageBox.Show(Messages.userDontExist);
+                Logger.Log(Messages.userDoesNotExist);
+                MessageBox.Show(Messages.userDoesNotExist);
             }
         }
 
