@@ -16,6 +16,7 @@ namespace University_advisor.Constants
         public const string emailsDontMatch = "Emails doesn't match.";
         public const string newEmailSameAsOld = "New email cannot be the same as old one.";
         public const string emailNotSpecified = "Email is not specified";
+        public const string emailIncorrect = "Current email is incorrect.";
         public const string badEmailFormat = "Wrong email format";
         //Password
         public const string passwordUpdateSuccess = "Password updated successfully.";
@@ -25,6 +26,7 @@ namespace University_advisor.Constants
         public const string passwordNotSpecified = "Password is not specified";
         public const string passwordUpdateSuccessInbox = "Password successfully updated. Check your inbox.";
         public const string wrongPasswordOrNoUser = "Wrong password or no user exists";
+        public const string passwordIncorrect = "Incorrect current password.";
         public const string passwordsDoNotMatch = "Passwords do not match";
         public const string passwordTooShort = "Password needs to be at least 6 characters long";
         public const string passwordChangeUnsuccessful = "Attempt to change password was unsuccessful";
@@ -39,7 +41,7 @@ namespace University_advisor.Constants
         public const string userNotSpecified = "User is not specified";
         //User
         public const string userAttemptedToChangePassword = "User attempted to change password";
-        public const string userDontExist = "User with provided information does not exist.";
+        public const string userDoesNotExist = "User with provided information does not exist.";
         public const string userLogInSuccess = "User logged in";
         public const string userLogInFailed = "User could not log in";
         public const string userCreateSuccess = "New user is successfully created";
@@ -50,5 +52,10 @@ namespace University_advisor.Constants
         public const string queryExecuteSuccess = "Query executed successfully";
         //Logger
         public const string logCreateFailed = "Log file could not be be created";
+        //Reviews
+        public const string reviewAlreadySubmitted = "Error. You have already submitted this type of review";
+        //General
+        public const string incorrectInformation = "Incorrect information";
+        public const string emptyString = "";
     }
 }

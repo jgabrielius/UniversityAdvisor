@@ -52,7 +52,7 @@ namespace University_advisor.Forms
 
         private bool ValidateFields(string username, string password)
         {
-            string hashedPassword = Helper.CreateMD5(password);
+            var hashedPassword = PasswordHasher.CreateMD5(password);
             var credentialResult = SqlDriver.Fetch($"SELECT username, password FROM users WHERE username='{username}' AND password='{hashedPassword}';");
             return (credentialResult != null && credentialResult.Count == 1);
         }

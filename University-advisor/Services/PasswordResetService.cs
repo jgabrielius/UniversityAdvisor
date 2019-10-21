@@ -38,8 +38,8 @@ namespace University_advisor.Services
 
         private void UpdatePassword(string newPassword, string username)
         {
-            var sqlUpdatePassword = "UPDATE users SET password='" + 
-                                        Helper.CreateMD5(newPassword) + 
+            var sqlUpdatePassword = "UPDATE users SET password='" +
+                                        PasswordHasher.CreateMD5(newPassword) +
                                         "' WHERE username='" + username + "';";
             try
             {

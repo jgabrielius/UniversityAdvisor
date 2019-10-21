@@ -11,25 +11,27 @@ using University_advisor.Tools;
 
 namespace University_advisor
 {
-    class ApiCalls {
-        public string GetLocationJson(string url) {
+    class ApiCalls
+    {
+        public string GetLocationJson(string url)
+        {
             var request = (HttpWebRequest)WebRequest.Create(url);
             try
             {
-                WebResponse response = request.GetResponse();
-                using (Stream responseStream = response.GetResponseStream())
+                var response = request.GetResponse();
+                using (var responseStream = response.GetResponseStream())
                 {
                     var reader = new StreamReader(responseStream, Encoding.UTF8);
                     return reader.ReadToEnd();
                 }
             }
-            catch(WebException ex)
+            catch (WebException ex)
             {
                 var errorResponse = ex.Response;
                 using (var responseStream = errorResponse.GetResponseStream())
                 {
                     var reader = new StreamReader(responseStream, Encoding.GetEncoding("utf-8"));
-                    string errorText = reader.ReadToEnd();
+                    var errorText = reader.ReadToEnd();
                     Logger.Log(errorText);
                 }
                 throw;

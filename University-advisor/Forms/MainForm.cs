@@ -16,6 +16,7 @@ using University_advisor.Models;
 using Control = System.Windows.Forms.Control;
 using RadioButton = System.Windows.Forms.RadioButton;
 using Panel = System.Windows.Forms.Panel;
+using University_advisor.Constants;
 
 namespace University_advisor.Forms
 {
@@ -29,7 +30,6 @@ namespace University_advisor.Forms
 
         public MainForm(string username)
         {
-            Debug.Write("loaded main");
             InitializeComponent();
             CenterToScreen();
             InstantiateGrid();
@@ -38,10 +38,6 @@ namespace University_advisor.Forms
             tabsController.Appearance = TabAppearance.FlatButtons;
             tabsController.ItemSize = new Size(0, 1);
             tabsController.SizeMode = TabSizeMode.Fixed;
-        }
-
-        private void menuPanel_Paint(object sender, PaintEventArgs e)
-        {
         }
 
         private void LogoButton_Click(object sender, EventArgs e)
@@ -63,7 +59,7 @@ namespace University_advisor.Forms
         private void AboutButton_Click(object sender, EventArgs e)
         {
             tabsController.SelectTab(aboutTab);
-            UserEditingService service = new UserEditingService(currentUser);
+            var service = new UserEditingService(currentUser);
             var userInfo = service.GetUserInfo();
 
             currentUserLabel.Text = currentUser;
@@ -91,14 +87,50 @@ namespace University_advisor.Forms
 
         private void ChangePassword_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).ChangePassword(currentPassword.Text, newPassword.Text, newPassword2.Text);
-            ClearValues();
+            if (String.IsNullOrEmpty(currentPassword.Text) ||
+                 String.IsNullOrEmpty(newPassword.Text) || String.IsNullOrEmpty(newPassword2.Text))
+            {
+                MessageBox.Show(Messages.emptyFields);
+                Logger.Log(Messages.emptyFields);
+            }
+            else
+            {
+                if (newPassword.Text.Length >= 6 && newPassword2.Text.Length >= 6)
+                {
+                    new UserEditingService(currentUser)
+                    .UpdateSetting("password", PasswordHasher.CreateMD5(currentPassword.Text),
+                    PasswordHasher.CreateMD5(newPassword.Text), PasswordHasher.CreateMD5(newPassword2.Text),
+                    Messages.newPasswordSameAsOld, Messages.passwordUpdateSuccess,
+                    Messages.passwordUpdateFailed, Messages.passwordsDoNotMatch, Messages.passwordIncorrect);
+                    ClearValues();
+                }
+                else
+                {
+                    MessageBox.Show(Messages.passwordTooShort);
+                    Logger.Log(Messages.passwordTooShort);
+                }
+            }
         }
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
-            new UserEditingService(currentUser).ChangeEmail(currentEmail.Text, newEmail.Text, newEmail2.Text);
-            ClearValues();
+            if (String.IsNullOrEmpty(currentEmail.Text) ||
+                 String.IsNullOrEmpty(newEmail.Text) || String.IsNullOrEmpty(newEmail2.Text))
+            {
+                MessageBox.Show(Messages.emptyFields);
+                Logger.Log(Messages.emptyFields);
+            }
+            else
+            {
+                UserEditingService service = new UserEditingService(currentUser);
+                if (service.CheckEmailFormat(newEmail.Text) && service.CheckEmailFormat(newEmail2.Text))
+                {
+                    service.UpdateSetting("email", currentEmail.Text,
+                    newEmail.Text, newEmail2.Text, Messages.newEmailSameAsOld, Messages.emailUpdateSuccess,
+                    Messages.emailUpdateFailed, Messages.emailsDontMatch, Messages.emailIncorrect);
+                    ClearValues();
+                }
+            }
         }
 
         private void ChangeUniversity_Click(object sender, EventArgs e)
@@ -115,11 +147,11 @@ namespace University_advisor.Forms
 
         private void SetValues()
         {
-            UserEditingService service = new UserEditingService(currentUser);
+            var service = new UserEditingService(currentUser);
             universityBox.DataSource = service.GetAllUniversities();
             universityBox.SelectedItem = service.GetCurrentUniversity();
             statusBox.DataSource = statusList;
-            statusBox.SelectedItem = service.GetCurrentStatus();
+            statusBox.SelectedItem = service.GetCurrentSetting("status");
         }
 
         private void ClearValues()
@@ -134,7 +166,8 @@ namespace University_advisor.Forms
 
         private void InstantiateGrid()
         {
-            DataTable table = new DataTable();
+            var table = new DataTable();
+
             table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Name", typeof(string));
             table.Columns.Add("Variety of courses", typeof(string));
@@ -143,20 +176,23 @@ namespace University_advisor.Forms
             table.Columns.Add("Quality of academic facilities (library, PCs, etc.)", typeof(string));
             table.Columns.Add("Student unions", typeof(string));
             table.Columns.Add("Cost of studying", typeof(string));
-            ArrayList universities = SqlDriver.Fetch("SELECT u.universityId,name,avg(variety) as variety,avg(availability) as availability,avg(accessability) as accessability,avg(quality) as quality,avg(unions) as unions,avg(cost) as cost " +
+
+            var universities = SqlDriver.Fetch("SELECT u.universityId,name,avg(variety) as variety,avg(availability) as availability,avg(accessability) as accessability,avg(quality) as quality,avg(unions) as unions,avg(cost) as cost " +
                 "FROM universities u LEFT JOIN universityReviews ur ON u.universityId=ur.universityId " +
                 "GROUP BY u.universityId,name");
+
             foreach (Dictionary<string, object> row in universities)
             {
                 table.Rows.Add(row["universityId"], row["name"], row["variety"], row["availability"], row["accessability"], row["quality"], row["unions"], row["cost"]);
             }
+
             universitiesGrid.DataSource = null;
             universitiesGrid.Rows.Clear();
             universitiesGrid.DataSource = table;
         }
         private void InstantiateProgramsGrid(int universityId)
         {
-            DataTable table = new DataTable();
+            var table = new DataTable();
             table.Columns.Add("Id", typeof(int));
             table.Columns.Add("Group", typeof(string));
             table.Columns.Add("Direction", typeof(string));
@@ -167,14 +203,17 @@ namespace University_advisor.Forms
             table.Columns.Add("Encouragment of participation/discussion", typeof(string));
             table.Columns.Add("Overall teaching effectiveness", typeof(string));
             table.Columns.Add("How satisfied were you with this course", typeof(string));
-            ArrayList programmes = SqlDriver.Fetch($"SELECT studyProgramId,[group],direction,program,city," +
+
+            var programmes = SqlDriver.Fetch($"SELECT studyProgramId,[group],direction,program,city," +
                 $"avg(presentation) as presentation,avg(clarity) as clarity,avg(feedback) as feedback, avg(encouragement) as encouragement,avg(effectiveness) as effectiveness,avg(satisfaction) as satisfaction " +
                 $"FROM studyProgrammes left join courseReviews on studyProgramId=courseId" +
                 $" WHERE universityId = {universityId} group by studyProgramId,[group], direction, program, city");
+
             foreach (Dictionary<string, object> row in programmes)
             {
-                table.Rows.Add(row["studyProgramId"],row["group"], row["direction"], row["program"], row["presentation"], row["clarity"], row["feedback"], row["encouragement"], row["effectiveness"], row["satisfaction"]);
+                table.Rows.Add(row["studyProgramId"], row["group"], row["direction"], row["program"], row["presentation"], row["clarity"], row["feedback"], row["encouragement"], row["effectiveness"], row["satisfaction"]);
             }
+
             programmesGrid.DataSource = null;
             programmesGrid.Rows.Clear();
             programmesGrid.DataSource = table;
@@ -182,11 +221,16 @@ namespace University_advisor.Forms
 
         private void UniversitiesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView dgv = sender as DataGridView;
+            var dgv = sender as DataGridView;
+
             if (dgv == null)
+            {
                 return;
-            int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
-            string selectedName = dgv.CurrentRow.Cells["Name"].Value.ToString();
+            }
+
+            var selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
+            var selectedName = dgv.CurrentRow.Cells["Name"].Value.ToString();
+
             universityName.Text = selectedName;
             InstantiateProgramsGrid(selectedId);
             selectedUniversity = selectedId;
@@ -196,12 +240,8 @@ namespace University_advisor.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(50);
-            comboBox1.Items.Add(100);
-            comboBox1.Items.Add(250);
-            comboBox1.Items.Add(500);
-            comboBox1.Items.Add(1000);
-            comboBox1.Items.Add(2000);
+            int[] rangeValues = new int[] { 50, 100, 250, 500, 1000, 2000 };
+            foreach (var integer in rangeValues) rangeComboBox.Items.Add(integer);
 
             searchButton.TabStop = false;
             searchButton.FlatStyle = FlatStyle.Flat;
@@ -216,75 +256,100 @@ namespace University_advisor.Forms
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            map.UpdateMap(comboBox1.Text, textBox1.Text);
+            map.UpdateMap(rangeComboBox.Text, addressTextBox.Text, incorrectDataLabel);
         }
 
         private void ProgrammesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView dgv = sender as DataGridView;
+            var dgv = sender as DataGridView;
+
             if (dgv == null)
+            {
                 return;
+            }
+
             int selectedId = (int)dgv.CurrentRow.Cells["Id"].Value;
             selectedCourse = selectedId;
+            string userId = GetUserId(currentUser);
+
+            if (SqlDriver.Exists($"SELECT * FROM coursereviews WHERE userId = {userId} AND courseId = {selectedCourse} LIMIT 1"))
+            {
+                MessageBox.Show(Messages.reviewAlreadySubmitted);
+                return;
+            }
             tabsController.SelectTab(courseReview);
         }
 
         private void ReviewSubmit_Click(object sender, EventArgs e)
         {
+            var userId = GetUserId(currentUser);
+            if (SqlDriver.Exists($"SELECT * FROM universityReviews WHERE userId = {userId} AND universityId = {selectedUniversity} LIMIT 1"))
+            {
+                MessageBox.Show(Messages.reviewAlreadySubmitted);
+                return;
+            }
             tabsController.SelectTab(universityReview);
         }
 
         private void SubmitCourseReview_Click(object sender, EventArgs e)
         {
-            List<Panel> panels = new List<Panel> { presentation, clarity, feedback, encouragement, effectiveness, satisfaction };
-            Dictionary<string, string> result = ExtractReviews(panels);
+            var panels = new List<Panel> { presentation, clarity, feedback, encouragement, effectiveness, satisfaction };
+            var result = ExtractReviews(panels);
             string insert = "INSERT INTO coursereviews (";
-            string values = "VALUES (";
-            foreach(var item in result)
-            {
-                insert += item.Key+",";
-                values += item.Value + ",";
-            }
-            insert += "courseId)";
-            values += selectedCourse+")";
-            SqlDriver.Execute(insert + values);
-            InstantiateGrid();//Renew grid after submitting a review
-            InstantiateProgramsGrid(selectedUniversity);
-            tabsController.SelectTab(universityTab);
-        }
-
-        private void SubmitUniversityReview_Click(object sender, EventArgs e)
-        {
-            List<Panel> panels = new List<Panel> { variety, availability, accessability, quality, unions, cost};
-            Dictionary<string, string> result = ExtractReviews(panels);
-            string insert = "INSERT INTO universityReviews (";
             string values = "VALUES (";
             foreach (var item in result)
             {
                 insert += item.Key + ",";
                 values += item.Value + ",";
             }
-            insert += "universityId)";
-            values += selectedUniversity + ")";
+            insert += "userId,courseId)";
+            values += GetUserId(currentUser) + "," + selectedCourse + ")";
             SqlDriver.Execute(insert + values);
-            InstantiateGrid();//Renew grid after submitting a review
+            // Renew grid after submitting a review.
+            InstantiateGrid();
             InstantiateProgramsGrid(selectedUniversity);
             tabsController.SelectTab(universityTab);
         }
 
-        private Dictionary<string,string> ExtractReviews(List<Panel> panels)
+        private void SubmitUniversityReview_Click(object sender, EventArgs e)
         {
-            Dictionary<string, string> result = new Dictionary<string, string>();
-            foreach(Panel p in panels)
+            var panels = new List<Panel> { variety, availability, accessability, quality, unions, cost };
+            var result = ExtractReviews(panels);
+            var insert = "INSERT INTO universityReviews (";
+            var values = "VALUES (";
+            foreach (var item in result)
             {
-                foreach(Control c in p.Controls)
+                insert += item.Key + ",";
+                values += item.Value + ",";
+            }
+            insert += "userId,universityId)";
+            values += GetUserId(currentUser) + "," + selectedUniversity + ")";
+            SqlDriver.Execute(insert + values);
+            // Renew grid after submitting a review.
+            InstantiateGrid();
+            InstantiateProgramsGrid(selectedUniversity);
+            tabsController.SelectTab(universityTab);
+        }
+
+        private string GetUserId(string username)
+        {
+            var user = (Dictionary<string, object>)SqlDriver.Fetch($"SELECT userId FROM users WHERE username = '{username}'")[0];
+            return user["userId"].ToString();
+        }
+
+        private Dictionary<string, string> ExtractReviews(List<Panel> panels)
+        {
+            var result = new Dictionary<string, string>();
+            foreach (Panel p in panels)
+            {
+                foreach (Control c in p.Controls)
                 {
                     if (c.GetType() == typeof(RadioButton))
                     {
                         RadioButton btn = (RadioButton)c;
                         if (btn.Checked == true)
                         {
-                            result.Add(p.Name,btn.Text);
+                            result.Add(p.Name, btn.Text);
                         }
                     }
                 }

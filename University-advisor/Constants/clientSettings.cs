@@ -10,6 +10,7 @@ namespace University_advisor.Constants
     {
         public const string smtpMailName = "smtp.gmail.com";
         public const string universityAdvisorMailName = "universityadvisor.lt@gmail.com";
-        public const string universityAdvisorMailPassword = "komanda1";
+        public const string universityAdvisorMailPassword = "Komanda1";
+        public const string locationApiKey = "5e66cc9d64db23";
     }
 }

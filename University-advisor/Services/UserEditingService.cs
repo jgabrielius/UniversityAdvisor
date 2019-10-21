@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using University_advisor.Tools;
 using University_advisor.Constants;
+using System.Text.RegularExpressions;
 
 namespace University_advisor.Services
 {
@@ -20,79 +21,31 @@ namespace University_advisor.Services
 
         public UserEditingService() { }
 
-        public void ChangePassword(string currentPassword, string newPassword, string newPassword2)
+        public void UpdateSetting(string setting, string currentInputSetting, string newInputSetting,
+            string newInputSetting2, string messageSameAsOld, string messageSuccess, string messageFail,
+            string messageDontMatch, string incorrectCurrentSetting)
         {
-            string sqlGetCurrentPassword = "SELECT password from users where username='" + currentUser + "';";
-            ArrayList passwordFromDB = SqlDriver.Fetch(sqlGetCurrentPassword);
-            string password = ((Dictionary<string, object>)passwordFromDB[0])["password"].ToString();
-
-            if (Helper.CreateMD5(currentPassword).Equals(password))
+            if (currentInputSetting.Equals(GetCurrentSetting(setting)))
             {
-                if (newPassword.Equals(currentPassword))
+                if (newInputSetting.Equals(GetCurrentSetting(setting)))
                 {
-                    MessageBox.Show(Messages.newPasswordSameAsOld);
-                    Logger.Log(Messages.newPasswordSameAsOld);
+                    MessageBox.Show(messageSameAsOld);
+                    Logger.Log(messageSameAsOld);
                 }
-                else if (newPassword.Equals(newPassword2))
+                else if (newInputSetting.Equals(newInputSetting2))
                 {
-                    string sqlUpdatePassword = "UPDATE users SET password='" + Helper.CreateMD5(newPassword) + "' WHERE username='" + currentUser + "';";
+                    var sqlUpdate = "UPDATE users SET " + setting + " ='" + newInputSetting + "' WHERE username='" + currentUser + "';";
                     try
                     {
-                        if (SqlDriver.Execute(sqlUpdatePassword))
+                        if (SqlDriver.Execute(sqlUpdate))
                         {
-                            MessageBox.Show(Messages.passwordUpdateSuccess);
-                            Logger.Log(Messages.passwordUpdateSuccess);
+                            MessageBox.Show(messageSuccess);
+                            Logger.Log(messageSuccess);
                         }
                         else
                         {
-                            MessageBox.Show(Messages.passwordUpdateFailed);
-                            Logger.Log(Messages.passwordUpdateFailed);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.Log(ex.Message);
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show(Messages.passwordsDontMatch);
-                    Logger.Log(Messages.passwordsDontMatch);
-                }
-
-            }
-        }
-
-        public void ChangeEmail(string currentEmail, string newEmail, string newEmail2)
-        {
-            string sqlGetCurrentEmail = "SELECT email from users where username='" + currentUser + "';";
-            ArrayList emailFromDB = SqlDriver.Fetch(sqlGetCurrentEmail);
-            string email = ((Dictionary<string, object>)emailFromDB[0])["email"].ToString();
-
-            if (currentEmail.Equals(email))
-            {
-                if (newEmail.Equals(currentEmail))
-                {
-                    MessageBox.Show(Messages.newEmailSameAsOld);
-                    Logger.Log(Messages.newEmailSameAsOld);
-
-                }
-                else if (newEmail.Equals(newEmail2))
-                {
-                    string sqlUpdateEmail = "UPDATE users SET email='" + newEmail + "' WHERE username='" + currentUser + "';";
-
-                    try
-                    {
-                        if (SqlDriver.Execute(sqlUpdateEmail))
-                        {
-                            MessageBox.Show(Messages.emailUpdateSuccess);
-                            Logger.Log(Messages.emailUpdateSuccess);
-                        }
-                        else
-                        {
-                            MessageBox.Show(Messages.emailUpdateFailed);
-                            Logger.Log(Messages.emailUpdateFailed);
+                            MessageBox.Show(messageFail);
+                            Logger.Log(messageFail);
                         }
                     }
                     catch (Exception ex)
@@ -102,23 +55,26 @@ namespace University_advisor.Services
                 }
                 else
                 {
-                    MessageBox.Show(Messages.emailsDontMatch);
-                    Logger.Log(Messages.emailsDontMatch);
-
+                    MessageBox.Show(messageDontMatch);
+                    Logger.Log(messageDontMatch);
                 }
             }
-
+            else
+            {
+                MessageBox.Show(incorrectCurrentSetting);
+                Logger.Log(incorrectCurrentSetting);
+            }
         }
 
         public void ChangeUniversity(string selectedUniversity)
         {
             if (!selectedUniversity.Equals(GetCurrentUniversity()))
             {
-                string sqlGetNewUniversityID = "select universityid from universities where name ='" + selectedUniversity + "';";
-                ArrayList newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
-                string newUniversityId = ((Dictionary<string, object>)newUniversityIdFromDB[0])["universityId"].ToString();
+                var sqlGetNewUniversityID = "select universityid from universities where name ='" + selectedUniversity + "';";
+                var newUniversityIdFromDB = SqlDriver.Fetch(sqlGetNewUniversityID);
+                var newUniversityId = ((Dictionary<string, object>)newUniversityIdFromDB[0])["universityId"].ToString();
+                var sqlUpdateUniversityID = "update users set universityid =" + newUniversityId + " where username ='" + currentUser + "';";
 
-                string sqlUpdateUniversityID = "update users set universityid =" + newUniversityId + " where username ='" + currentUser + "';";
                 try
                 {
                     if (SqlDriver.Execute(sqlUpdateUniversityID))
@@ -147,13 +103,9 @@ namespace University_advisor.Services
 
         public void ChangeStatus(string selectedStatus)
         {
-            string sqlGetCurrentStatus = "SELECT status from users where username='" + currentUser + "';";
-            ArrayList statusFromDB = SqlDriver.Fetch(sqlGetCurrentStatus);
-            string currentStatus = ((Dictionary<string, object>)statusFromDB[0])["status"].ToString();
-
-            if (!selectedStatus.Equals(currentStatus))
+            if (!selectedStatus.Equals(GetCurrentSetting("status")))
             {
-                string sqlUpdateStatus = "UPDATE users SET status='" + selectedStatus + "' WHERE username='" + currentUser + "';";
+                var sqlUpdateStatus = "UPDATE users SET status='" + selectedStatus + "' WHERE username='" + currentUser + "';";
 
                 try
                 {
@@ -179,18 +131,16 @@ namespace University_advisor.Services
             }
         }
 
-        public string GetCurrentUniversity()
+        public string GetCurrentSetting(string setting)
         {
-            string sqlGetCurrentUniversity = "select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';";
-            ArrayList universityIdFromDB = SqlDriver.Fetch(sqlGetCurrentUniversity);
-            return ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
+            var settingFromDB = SqlDriver.Fetch("SELECT " + setting + " from users where username='" + currentUser + "';");
+            return ((Dictionary<string, object>)settingFromDB[0])[setting].ToString();
         }
 
-        public string GetCurrentStatus()
+        public string GetCurrentUniversity()
         {
-            string sqlGetCurrentStatus = "select status from users where username = '" + currentUser + "';";
-            ArrayList statusFromDB = SqlDriver.Fetch(sqlGetCurrentStatus);
-            return ((Dictionary<string, object>)statusFromDB[0])["status"].ToString();
+            var universityIdFromDB = SqlDriver.Fetch("select universities.name from universities, users where universities.universityId = users.universityid and users.username = '" + currentUser + "';");
+            return ((Dictionary<string, object>)universityIdFromDB[0])["name"].ToString();
         }
 
         public List<String> GetAllUniversities()
@@ -205,7 +155,7 @@ namespace University_advisor.Services
                 }
             }
             return universityList;
-        } 
+        }
 
         public List<String> GetUserInfo()
         {
@@ -220,5 +170,19 @@ namespace University_advisor.Services
             return userInfo;
         }
 
+        public bool CheckEmailFormat(string email)
+        {
+            var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (regex.Match(email).Success)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(Messages.badEmailFormat);
+                Logger.Log(Messages.badEmailFormat);
+                return false;
+            }
+        }
     }
 }
