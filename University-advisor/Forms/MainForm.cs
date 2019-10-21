@@ -92,8 +92,8 @@ namespace University_advisor.Forms
 
         private void ChangePassword_Click(object sender, EventArgs e)
         {
-            if (currentPassword.Text == Messages.emptyString ||
-                 newPassword.Text == Messages.emptyString || newPassword2.Text == Messages.emptyString)
+            if (String.IsNullOrEmpty(currentPassword.Text) ||
+                 String.IsNullOrEmpty(newPassword.Text) || String.IsNullOrEmpty(newPassword2.Text))
             {
                 MessageBox.Show(Messages.emptyFields);
                 Logger.Log(Messages.emptyFields);
@@ -119,8 +119,8 @@ namespace University_advisor.Forms
 
         private void ChangeEmail_Click(object sender, EventArgs e)
         {
-            if (currentEmail.Text == Messages.emptyString ||
-                 newEmail.Text == Messages.emptyString || newEmail2.Text == Messages.emptyString)
+            if (String.IsNullOrEmpty(currentEmail.Text) ||
+                 String.IsNullOrEmpty(newEmail.Text) || String.IsNullOrEmpty(newEmail2.Text))
             {
                 MessageBox.Show(Messages.emptyFields);
                 Logger.Log(Messages.emptyFields);
